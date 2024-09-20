@@ -1,6 +1,8 @@
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
+theme: jekyll-theme-NAME
+remote_theme: fongandrew/hydeout
 
 # Setup
 title:            Qinglan Shan
