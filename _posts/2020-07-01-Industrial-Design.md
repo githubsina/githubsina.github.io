@@ -2,7 +2,7 @@
 title: "Industrial Design Portfolio"
 layout: post
 categories:
-  - Creative Portfolio
+  - collections
 tags:
   - design
   - creative

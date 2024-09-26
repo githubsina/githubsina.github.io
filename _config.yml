@@ -5,8 +5,8 @@ remote_theme: fongandrew/hydeout
 
 # Setup
 title:            Qinglan Shan
-tagline:          'Embodied Learning, and Mixed Reality'
-description:      'Embodied Learning, and Mixed Reality'
+tagline:          'Embodied Learning, Mixed reality and Human-computer Interaction in STEM education'
+description:      'Embodied Learning, Mixed reality and Human-computer Interaction in STEM education'
 baseurl:          '/hydeout'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
@@ -16,7 +16,8 @@ baseurl:          '/hydeout'
 
 author:
   name:           'Shan, Qinglan'
-  url:            https://twitter.com/fongandrewc
+  url:            https://qinglanshan.com
+
 
 paginate:         2
 # paginate_path:    '/page:num'
@@ -26,6 +27,7 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+  - jemoji
 
 # Sidebar link settings
 sidebar_home_link:  true
