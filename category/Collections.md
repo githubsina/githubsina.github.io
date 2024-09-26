@@ -3,4 +3,4 @@ layout: category
 title: Collections
 ---
 
-Another sample category page.
+Here I will continue to show my photography works, and design works.

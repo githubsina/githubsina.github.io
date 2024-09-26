@@ -1,12 +1,12 @@
 ---
 layout: project
 title: "Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR"
-sidebar_link: true
+sidebar_link: false
 ---
 
 ## ICVR 2022
 # Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR
-[Qinglan Shan](https://qinglanshan.com/)<sup>1</sup>,  Kaiying Mao; Yuhan Dong, etc.
+[Qinglan Shan](https://qinglanshan.com/)<sup>1</sup>, Kaiying Mao; Yuhan Dong, etc.
 
 ## Keywords
 Human-Computer Interaction, Brain-Computer Interface, Steady-State Visual-Evoked Potential, Virtual Reality
