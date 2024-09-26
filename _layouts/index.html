@@ -6,6 +6,10 @@ layout: default
   {% include pagination-newer.html %}
 
   {{ content }}
+  <br /><br /><br />
+  {% include highlights.html %}
+
+  {% include talks.html %}
 
   {% for post in paginator.posts %}
   <article class="post-body">
