@@ -9,7 +9,8 @@ sidebar_link: true
 
 I am a Third-year Ph.D. student at [Microsystem Laboratory](https://www.epfl.ch/labs/lmis1/) at the Swiss Federal Institute Lausanne [EPFL](https://www.epfl.ch/en/), jointly enrolled in Swiss Federal Institute Zürich [ETHz](https://ethz.ch/en.html). In my research I seek to connect extended reality- and microengineering techniques to students learning and assessments analysis. Also, I am seeking for other field that could inplement deisgn-based method into interdisciplinary field as well. I am supervised by [Prof. Dr. Juergen Brugger](https://people.epfl.ch/juergen.brugger) and co-supervised by [Prof. Dr. Manu Kapur](https://www.manukapur.com/). 
 
-Outside of academia, I enjoy photography :camera_flash:, snowbording :snowboarder: and playing badminton, hiking, and reading.
+Outside of academia, I enjoy photography :camera_flash:, snowbording :snowboarder:
+, badminton :badminton:, and reading :books:.
 
 
 ### Contact
@@ -27,7 +28,7 @@ Outside of academia, I enjoy photography :camera_flash:, snowbording :snowboarde
 #### [2022 - present] PhD Learning Science
 _EPFL-ETHz_, _Switzerland_
 - Building Mixed reality and human-computer interaction with microfabrication teaching and creative applications.
-- Additional responsibilities: lecturing, lab assistance, creating assignments, supervised 1 master student project(semester).
+- Additional responsibilities: lecturing, lab assistance, creating assignments, 
 - Toolkit: MRTK, Sketch, Unity 3D, Python, C#, Blender, Premiere, Photoshop.
 
 
@@ -37,10 +38,17 @@ _Tsinghua University_, _China_
 - Toolkit: Unity 3D, Python, PyTorch, C#, Matlab.
 
 
-#### [2015 - 2019] BSc Industrial Design _National Scholorship_:trophy:
+#### [2015 - 2019] BSc Industrial Design :trophy: _National Scholorship_
 _Chengdu University of Technology_, _China_
 - Focus on industrial design and interaction design.
 - Toolkit: Unity 3D, Rhinoceros, SPSS, Maya, Keyshot 
+
+<hr/>
+
+<h3>Teaching</h3>
+ - Social Innovation Design, Tsinghua University [2021-2022]
+ - Micro fabrication technologies, EPFL [2023-2024]
+ - MEMS Practicals, EPFL [2023-2024]
 
 
 
