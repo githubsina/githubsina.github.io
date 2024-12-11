@@ -9,7 +9,7 @@ sidebar_link: true
 
 I am a Third-year Ph.D. candidate at [Microsystem Laboratory](https://www.epfl.ch/labs/lmis1/) at the Swiss Federal Institute Lausanne [EPFL](https://www.epfl.ch/en/), jointly enrolled in Swiss Federal Institute Zürich [ETH Zürich](https://ethz.ch/en.html). In my research I seek to connect Extended reality and microengineering techniques to students learning in higher education. Also, I am focusing on inplementing deisgn-based research method into interdisciplinary Human-computer Interaction (HCI) design, grounded with embodied learnig theory. I am supervised by [Prof. Dr. Jürgen Brugger](https://people.epfl.ch/juergen.brugger) and co-supervised by [Prof. Dr. Manu Kapur](https://www.manukapur.com/). 
 
-I completed my Computer Science master at [Tsinghua](https://www.tsinghua.edu.cn/en/). I explored how Virtual reality can support ambliopia children with game-based rehabilitation to overcome the consistency problem, and in particular investiagate the connection of neuroscience through electroencephalograph (EEG). 
+I completed my Computer Science master at [Tsinghua University](https://www.tsinghua.edu.cn/en/). I explored how Virtual reality can support amblyopia children with game-based rehabilitation to overcome the consistency problem. Besides, I investiagated the connection of neuroscience  through electroencephalograph (EEG). 
 
 Outside of academia, I enjoy photography, snowbording, badminton, tennis and cooking.
 :camera_flash: :snowboarder: :badminton: :tennis: 
