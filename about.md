@@ -23,18 +23,19 @@ Outside of academia, I enjoy photography, snowbording, badminton, tennis and coo
 <hr/>
 
 <h3>Publication</h3>
-- Qinglan Shan, et al. "From Misconnection to Connection: Bridging Intentional Learning and Actual Learning in Cleanroom" In ISLS Annual Meeting (2025). Under review. 
 
-- Qinglan Shan, Julia Chatain, Manu Kapur, Jürgen Brugger. "Mixed Reality for Experimental knowledge learning" In SEFI'52: The 52nd Annual Conference of the European Society for Engineering Education. (2024) [PDF](https://www.conftool.net/sefi2024/index.php/Shan-MixedLAB-443_b.pdf?page=downloadPaper&ismobile=false&filename=Shan-MixedLAB-443_b.pdf&form_id=443&form_index=2&form_version=final)
+- **Qinglan Shan**, et al. "From Misconnection to Connection: Bridging Intentional Learning and Actual Learning in Cleanroom" In ISLS Annual Meeting (2025). _Under review_. 
 
-- Qinglan Shan, Manu Kapur, Jürgen Brugger. "MixedLAB: Connecting Theory to Practice: Mixed Reality in Experimental Learning" In JDPLS'2: The 2nd Summer School of the Joint Dotoctoral Program in Learning Science. (2024)
+- **Qinglan Shan**, Julia Chatain, Manu Kapur, Jürgen Brugger. "Mixed Reality for Experimental knowledge learning" In SEFI'52: The 52nd Annual Conference of the European Society for Engineering Education. (2024) [PDF](https://www.conftool.net/sefi2024/index.php/Shan-MixedLAB-443_b.pdf?page=downloadPaper&ismobile=false&filename=Shan-MixedLAB-443_b.pdf&form_id=443&form_index=2&form_version=final)
 
-- Qinglan Shan, Christopher Hierold, Manu Kapur, Jürgen Brugger. "Mixed reality learning for microfabrication" In 24th MicroNanoFabrication Annual Review Meeting. (2024) 
+- **Qinglan Shan**, Manu Kapur, Jürgen Brugger. "MixedLAB: Connecting Theory to Practice: Mixed Reality in Experimental Learning" In JDPLS'2: The 2nd Summer School of the Joint Dotoctoral Program in Learning Science. (2024)
+
+- **Qinglan Shan**, Christopher Hierold, Manu Kapur, Jürgen Brugger. "Mixed reality learning for microfabrication" In 24th MicroNanoFabrication Annual Review Meeting. (2024) 
 [PDF](https://www.conftool.net/sefi2024/index.php/Shan-MixedLAB-443_b.pdf?page=downloadPaper&ismobile=false&filename=Shan-MixedLAB-443_b.pdf&form_id=443&form_index=2&form_version=final)
 
-- Qinglan Shan et al., "Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR," In ICVR'8: 2022 8th International Conference on Virtual Reality (2022) [Link](https://ieeexplore.ieee.org/abstract/document/9847922)
+- **Qinglan Shan**, Kaiying Mao, Yu Cheng, et al., "Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR," In ICVR'8: 2022 8th International Conference on Virtual Reality (2022) [Link](https://ieeexplore.ieee.org/abstract/document/9847922)
 
-- Qinglan Shan et al., In VRST '21: Proceedings of the 27th ACM Symposium on Virtual Reality Software and Technology. "VRBT: A Non-pharmacological VR approach towards hypertension" (2021) [PDF](https://dl.acm.org/doi/pdf/10.1145/3489849.3489934)
+- Yui Lo, **Qinglan Shan** et al., In VRST '21: Proceedings of the 27th ACM Symposium on Virtual Reality Software and Technology. "VRBT: A Non-pharmacological VR approach towards hypertension" (2021) [PDF](https://dl.acm.org/doi/pdf/10.1145/3489849.3489934)
 
 <hr/>
 <h3>Education</h3>

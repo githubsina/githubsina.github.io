@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR"
-sidebar_link: true
+sidebar_link: false
 ---
 
 ## ICVR 2022
