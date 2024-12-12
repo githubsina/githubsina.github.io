@@ -7,9 +7,9 @@ sidebar_link: true
 
 <img src="/assets/img/qinglan_profile.jpg" style="width:50%; max-width:1000px; height:auto;" alt="Profile Picture of Qinglan">
 
-I am a Third-year Ph.D. candidate at [Microsystem Laboratory](https://www.epfl.ch/labs/lmis1/) at the Swiss Federal Institute Lausanne [EPFL](https://www.epfl.ch/en/), jointly enrolled in Swiss Federal Institute Zürich [ETH Zürich](https://ethz.ch/en.html). In my research I seek to connect Extended reality and microengineering techniques to students learning in higher education. Also, I am focusing on inplementing deisgn-based research method into interdisciplinary Human-computer Interaction (HCI) design, grounded with embodied learnig theory. I am supervised by [Prof. Dr. Jürgen Brugger](https://people.epfl.ch/juergen.brugger) and co-supervised by [Prof. Dr. Manu Kapur](https://www.manukapur.com/). 
+I am a third-year Ph.D. candidate at [Microsystem Laboratory](https://www.epfl.ch/labs/lmis1/) at the Swiss Federal Institute Lausanne [EPFL](https://www.epfl.ch/en/), jointly enrolled in Swiss Federal Institute Zürich [ETH Zürich](https://ethz.ch/en.html). In my research I seek to connect Extended reality and microengineering techniques to students' learning in higher education. Also, I am focusing on implementing deisgn-based research method into interdisciplinary Human-computer Interaction (HCI) design, grounded with embodied learnig theory. I am supervised by [Prof. Dr. Jürgen Brugger](https://people.epfl.ch/juergen.brugger) and co-supervised by [Prof. Dr. Manu Kapur](https://www.manukapur.com/). 
 
-I completed my Computer Science master at [Tsinghua University](https://www.tsinghua.edu.cn/en/). I explored how Virtual reality can support amblyopia children with game-based rehabilitation to overcome the consistency problem. Besides, I investiagated the connection of neuroscience  through electroencephalograph (EEG). 
+I completed my Computer Science master at [Tsinghua University](https://www.tsinghua.edu.cn/en/). I explored how virtual reality can support amblyopia children with game-based rehabilitation to overcome the consistency problem. Besides, I investiagated the connection of neuroscience  through electroencephalograph (EEG). 
 
 Outside of academia, I enjoy photography, snowbording, badminton, tennis and cooking.
 :camera_flash: :snowboarder: :badminton: :tennis: 
@@ -41,7 +41,7 @@ Outside of academia, I enjoy photography, snowbording, badminton, tennis and coo
 <h3>Education</h3>
 
 
-#### [2022 - present] PhD Learning Science
+#### [2022 - 2026] PhD Learning Science
 _EPFL-ETHz_, _Switzerland_
 - Building Mixed reality and Human-computer Interaction with microfabrication teaching and creative applications.
 - Additional responsibilities: lecturing, lab assistance, creating assignments, 
@@ -61,10 +61,11 @@ _Chengdu University of Technology_, _China_
 
 <hr/>
 
-<h3>Teaching</h3>
+<h3>Teaching </h3>
  - Social Innovation Design, Tsinghua University [2021-2022]
- - Micro fabrication technologies, EPFL [2023-2024]
+ - Microfabrication technologies, EPFL [2023-2024]
  - MEMS Practicals, EPFL [2023-2024]
+ - 
 
 
 
