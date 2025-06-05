@@ -18,13 +18,13 @@ Outside of academia, I enjoy photography, snowbording, badminton, tennis and coo
 - qinglan.shan@epfl.ch
 - qinglan.shan@gess.ethz.ch
 - [Me @ LMIS1](https://people.epfl.ch/qinglan.shan/?lang=en)
-- [LinkedIn](linkedin.com/in/qinglan-shan-401490258)
+- [LinkedIn](www.linkedin.com/in/qinglan-shan)
 
 <hr/>
 
 <h3>Publication</h3>
 
-- **Qinglan Shan**, et al. "From Misconnection to Connection: Bridging Intentional Learning and Actual Learning in Cleanroom" In ISLS Annual Meeting (2025). _Under review_. 
+- **Qinglan Shan**, et al. "From Misconnection to Connection: Bridging Intentional Learning and Actual Learning in Cleanroom" In ISLS Annual Meeting (2025). _Accepted_. 
 
 - **Qinglan Shan**, Julia Chatain, Manu Kapur, Jürgen Brugger. "Mixed Reality for Experimental knowledge learning" In SEFI'52: The 52nd Annual Conference of the European Society for Engineering Education. (2024) [PDF](https://www.conftool.net/sefi2024/index.php/Shan-MixedLAB-443_b.pdf?page=downloadPaper&ismobile=false&filename=Shan-MixedLAB-443_b.pdf&form_id=443&form_index=2&form_version=final)
 
@@ -65,7 +65,6 @@ _Chengdu University of Technology_, _China_
  - Social Innovation Design, Tsinghua University [2021-2022]
  - Microfabrication technologies, EPFL [2023-2024]
  - MEMS Practicals, EPFL [2023-2024]
- - 
 
 
 
