@@ -18,7 +18,7 @@ Outside of academia, I enjoy photography, snowbording, badminton, tennis and coo
 - qinglan.shan@epfl.ch
 - qinglan.shan@gess.ethz.ch
 - [Me @ LMIS1](https://people.epfl.ch/qinglan.shan/?lang=en)
-- [LinkedIn](www.linkedin.com/in/qinglan-shan)
+- [LinkedIn](https://www.linkedin.com/in/qinglan-shan)
 
 <hr/>
 

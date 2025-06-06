@@ -16,3 +16,5 @@ Binocular rivalry (BR) is the competition of two eyes when shown with different 
 
 ## PDF
 :bouquet:[link](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9847922) 
+
+## [Go Back to Home Page](https://qinglanshan.com)  
