@@ -24,11 +24,12 @@ Outside of academia, I enjoy photography, snowbording, badminton, tennis and coo
 
 <h3>Publication</h3>
 
-- **Qinglan Shan**, et al. "From Misconnection to Connection: Bridging Intentional Learning and Actual Learning in Cleanroom" In ISLS Annual Meeting (2025). _Accepted_. 
+- **Qinglan Shan**, Manu Kapur, and Juergen Brugger. 2026. From Appren-ticeship to Autonomy: Mixed Reality-Assisted Training in a Cleanroom by a Hybrid Authoring Workflow. In Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA ’26), April 13–17, 2026, Barcelona, Spain. _(Conditional Acceptance)_
+
+- **Qinglan Shan**, Fan Wang, Arnaud Bertsch, Manu Kapur, and Juergen Brugger. "Mixed-reality training in a cleanroom to bridge intentional learning and actual learning". In Proceedings of the 19th International Conference of the Learning Sciences-ICLS 2025, pp. 3227-3229. International Society of the Learning Sciences, 2025.[Link]( https://doi.org/10.22318/icls2025.114782)
 
 - **Qinglan Shan**, Julia Chatain, Manu Kapur, Jürgen Brugger. "Mixed Reality for Experimental knowledge learning" In SEFI'52: The 52nd Annual Conference of the European Society for Engineering Education. (2024) [PDF](https://www.conftool.net/sefi2024/index.php/Shan-MixedLAB-443_b.pdf?page=downloadPaper&ismobile=false&filename=Shan-MixedLAB-443_b.pdf&form_id=443&form_index=2&form_version=final)
 
-- **Qinglan Shan**, Manu Kapur, Jürgen Brugger. "MixedLAB: Connecting Theory to Practice: Mixed Reality in Experimental Learning" In JDPLS'2: The 2nd Summer School of the Joint Dotoctoral Program in Learning Science. (2024)
 
 - **Qinglan Shan**, Christopher Hierold, Manu Kapur, Jürgen Brugger. "Mixed reality learning for microfabrication" In 24th MicroNanoFabrication Annual Review Meeting. (2024) 
 [PDF](https://www.conftool.net/sefi2024/index.php/Shan-MixedLAB-443_b.pdf?page=downloadPaper&ismobile=false&filename=Shan-MixedLAB-443_b.pdf&form_id=443&form_index=2&form_version=final)
