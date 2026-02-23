@@ -24,7 +24,7 @@ Outside of academia, I enjoy photography, snowbording, badminton, tennis and coo
 
 <h3>Publication</h3>
 
-- **Qinglan Shan**, Manu Kapur, and Juergen Brugger. 2026. From Appren-ticeship to Autonomy: Mixed Reality-Assisted Training in a Cleanroom by a Hybrid Authoring Workflow. In Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA ’26), April 13–17, 2026, Barcelona, Spain. _(Conditional Acceptance)_
+- **Qinglan Shan**, Manu Kapur, and Juergen Brugger. 2026. From Apprenticeship to Autonomy: Mixed Reality-Assisted Training in a Cleanroom by a Hybrid Authoring Workflow. In Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA ’26), April 13–17, 2026, Barcelona, Spain. _(Conditional Acceptance)_
 
 - **Qinglan Shan**, Fan Wang, Arnaud Bertsch, Manu Kapur, and Juergen Brugger. "Mixed-reality training in a cleanroom to bridge intentional learning and actual learning". In Proceedings of the 19th International Conference of the Learning Sciences-ICLS 2025, pp. 3227-3229. International Society of the Learning Sciences, 2025.[Link]( https://doi.org/10.22318/icls2025.114782)
 
