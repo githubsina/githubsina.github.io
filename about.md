@@ -28,7 +28,7 @@ Outside of academia, I enjoy photography, snowbording, badminton, tennis and coo
 
 - **Qinglan Shan**, Fan Wang, Arnaud Bertsch, Manu Kapur, and Juergen Brugger. "Mixed-reality training in a cleanroom to bridge intentional learning and actual learning". In Proceedings of the 19th International Conference of the Learning Sciences-ICLS 2025, pp. 3227-3229. International Society of the Learning Sciences, 2025.[Link]( https://doi.org/10.22318/icls2025.114782)
 
-- **Qinglan Shan**, Julia Chatain, Manu Kapur, Jürgen Brugger. "Mixed Reality for Experimental knowledge learning" In SEFI'52: The 52nd Annual Conference of the European Society for Engineering Education. (2024) [PDF](https://www.conftool.net/sefi2024/index.php/Shan-MixedLAB-443_b.pdf?page=downloadPaper&ismobile=false&filename=Shan-MixedLAB-443_b.pdf&form_id=443&form_index=2&form_version=final)
+- **Qinglan Shan**, Julia Chatain, Manu Kapur, Jürgen Brugger. "MixedLAB: Mixed Reality to Teach Students Experimental Knowledge in Microfabrication" In SEFI'52: The 52nd Annual Conference of the European Society for Engineering Education. (2024) [PDF](https://zenodo.org/records/14256909/files/124_Shan-MixedLAB-443_paper.pdf?download=1)
 
 
 - **Qinglan Shan**, Christopher Hierold, Manu Kapur, Jürgen Brugger. "Mixed reality learning for microfabrication" In 24th MicroNanoFabrication Annual Review Meeting. (2024) 
