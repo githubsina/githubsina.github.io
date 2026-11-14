@@ -1,0 +1,26 @@
+/* Shared fixes for the exported pages: render slots, phone layout. */
+dc-if, dc-for { display: contents; }
+html { -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: clip; }
+img, video { max-width: 100%; }
+p, h1, h2, h3, blockquote { text-wrap: pretty; }
+
+/* Home desk: a fixed 725 x 616 collage, scaled down to fit narrow screens (see site.js) */
+:root { --desk-s: 1; }
+[style*="width: 725px"][style*="height: 616px"] { transform: scale(var(--desk-s)); transform-origin: 0 0; }
+div:has(> [style*="width: 725px"][style*="height: 616px"]) { height: calc(670px * var(--desk-s)); }
+
+@media (max-width: 760px) {
+  /* headers: logo above, menu wraps underneath */
+  header { padding: 16px 16px 0 !important; }
+  header nav { gap: 6px 16px !important; }
+  header img[alt="Shan, Qinglan"] { height: 46px !important; }
+  section, footer { padding-left: 16px !important; padding-right: 16px !important; }
+  h1 { word-break: normal; overflow-wrap: anywhere; }
+  /* home: the phone hangs at the right of the greeting, its cord cut at the section top */
+  section:has(> .phone) { overflow: hidden; padding-top: 24px !important; }
+  section > .phone { position: absolute !important; right: 14px; top: 0; margin: 0 !important; transform: scale(.72); transform-origin: top right; z-index: 3; }
+  .light { display: none !important; }
+  /* paper notes: use the width of the phone */
+  .paper { width: min(94vw, 560px) !important; min-height: calc(min(94vw, 560px) * 415 / 583) !important; padding: 13% 11% 11% 11% !important; }
+}

@@ -1,5 +1,6 @@
 ---
-layout: index
+layout: page
+permalink: /legacy-home/
 title: Home
 ---
 

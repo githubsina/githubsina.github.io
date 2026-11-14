@@ -1,4 +1,435 @@
----
-layout: index
-title: Home
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qinglan Shan</title>
+<meta name="description" content="Qinglan Shan: mixed reality, embodied learning and HCI. Portfolio, projects, research and photographs.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0; background-color: #FEFDFB; }
+a{color:var(--ink)}a:hover{color:var(--accent)}
+.day{--paper:#F3EDE1;--ink:#22201C;--muted:#5C564C;--desk:#EBE3D3;--card:#FBF8F1;--accent:#B23A26;--veil:rgba(243,237,225,.82)}
+.night{--paper:#171513;--ink:#EEE7D7;--muted:#B3AA98;--desk:#221F1B;--card:#2B2722;--accent:#E8775C;--veil:rgba(15,14,12,.8)}
+.glow{background:radial-gradient(circle,rgba(255,214,140,.55) 0%,rgba(255,200,120,.18) 38%,transparent 68%);animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.8}}
+.cam .af{opacity:0}
+.cam:hover .af,.cam:focus-visible .af{animation:af .45s steps(2) 2 both}
+@keyframes af{0%{opacity:1;transform:scale(1.25)}100%{opacity:1;transform:scale(1)}}
+.flash{position:absolute;inset:-8%;border-radius:12px;background:#FFFFFF;animation:flash .25s ease-out both;pointer-events:none}
+@keyframes flash{0%{opacity:.95}100%{opacity:0}}
+.stk{position:absolute;background:none;border:0;padding:0;cursor:pointer;transform:rotate(var(--r));transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.stk img{display:block;width:100%;height:auto;filter:drop-shadow(2px 4px 0 rgba(34,32,28,.2))}
+.stk svg{display:block;width:100%;height:auto;filter:drop-shadow(2px 3px 0 rgba(34,32,28,.18))}
+.stk:hover,.stk:focus-visible{transform:rotate(calc(var(--r) + 5deg)) scale(1.07);z-index:5}
+.stk:focus-visible{outline:2px dashed #B23A26;outline-offset:6px}
+.card{transition:transform .25s ease}
+.card:hover{transform:translateY(-6px) rotate(0deg)!important}
+.ph{background-color:#E7DFCF;background-image:repeating-linear-gradient(-45deg,rgba(34,32,28,.07) 0 2px,transparent 2px 10px)}
+.spin{animation:spin 2.4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sheet{animation:unfold .6s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes unfold{0%{transform:scale(.12) rotate(-60deg);opacity:.4}70%{transform:scale(1.03) rotate(2deg);opacity:1}100%{transform:scale(1) rotate(-1.5deg)}}
+.wob{animation:wob 3s ease-in-out infinite}
+@keyframes wob{50%{transform:translateY(-4px) rotate(2deg)}}
+.navlink{text-decoration:none;font-family: 'Instrument Sans', sans-serif;font-size:14px;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
+.navlink:hover{border-bottom-color:#B23A26}
+.photo-tag{position:absolute;font-family:'Gaegu',cursive;font-weight:700;font-size:20px;text-decoration:none;color:var(--ink);background:var(--card);padding:4px 12px;box-shadow:2px 3px 0 rgba(34,32,28,.15);white-space:nowrap}
+.photo-tag:hover{color:#B23A26}
+.stk>img{position:relative}
+/* notebook desk + lamp light */
+.notebook{position:absolute;left:-6%;top:3%;width:112%;max-width:none;transform:rotate(-5deg);filter:drop-shadow(4px 10px 14px rgba(34,32,28,.22));pointer-events:none;user-select:none}
+.light{position:absolute;inset:-6% -10% -10% -8%;pointer-events:none;z-index:4;transition:opacity .8s ease, background .8s ease}
+.day .light{background:radial-gradient(circle at 78% 64%, rgba(255,222,160,.42) 0%, rgba(255,214,140,.16) 22%, rgba(255,214,140,0) 46%);mix-blend-mode:soft-light}
+.night .light{background:radial-gradient(circle at 78% 64%, rgba(255,206,130,.30) 0%, rgba(255,190,110,.12) 18%, rgba(23,21,19,.2) 34%, rgba(23,21,19,.66) 60%, rgba(23,21,19,.82) 100%)}
+.stk:hover,.stk:focus-visible{z-index:6}
+/* cassette reels */
+.tape>img.hub{position:absolute;width:10.842%;height:auto;filter:none;pointer-events:none}
+.tape:hover>img.hub,.tape:focus-visible>img.hub,.tape:active>img.hub{animation:spin 1.1s linear infinite}
+/* paper note */
+.paper{position:relative;width:clamp(300px,44vw,720px);max-width:100%;min-height:calc(clamp(300px,44vw,720px) * 415 / 583);background:url(assets/site/4dbe0b6f91adfcab60228e6a1f78e16b.webp) center/100% 100% no-repeat;padding:clamp(40px,9%,96px) 11% clamp(36px,8%,84px) 10.5%;box-sizing:border-box;color:#22201C;display:flex;filter:drop-shadow(0 14px 24px rgba(34,32,28,.25))}
+/* telephone */
+.phone{position:relative;flex:0 0 58px;align-self:flex-start;margin-top:-6px;background:none;border:0;padding:0;cursor:pointer}
+.phone .drop{display:block;animation:drop 1.5s cubic-bezier(.25,1.35,.45,1) .2s both}
+@keyframes drop{from{transform:translateY(-110vh)}to{transform:none}}
+.phone .spring{display:block;position:relative}
+.phone .cord{position:absolute;left:calc(44% - 11px);bottom:calc(100% - 6px);width:22px;height:960px;overflow:visible}
+.phone .hand{display:block;transform-origin:44% 2%}
+.phone .hand img{display:block;width:58px;height:auto;filter:drop-shadow(2px 6px 6px rgba(34,32,28,.25))}
+.phone:hover .spring,.phone:focus-visible .spring{animation:boing 1.5s cubic-bezier(.3,.6,.4,1)}
+@keyframes boing{0%{transform:none}18%{transform:translateY(-54px)}40%{transform:translateY(16px)}58%{transform:translateY(-8px)}76%{transform:translateY(4px)}100%{transform:none}}
+.phone:hover .hand,.phone:focus-visible .hand{animation:swing 1.9s ease-out}
+@keyframes swing{0%{transform:none}14%{transform:rotate(-15deg)}32%{transform:rotate(13deg)}50%{transform:rotate(-8deg)}68%{transform:rotate(5deg)}84%{transform:rotate(-2deg)}100%{transform:none}}
+.phone .waves path{opacity:0;animation:wave 2.4s ease-out infinite}
+.phone .waves path:nth-child(2){animation-delay:.3s}
+.phone .waves path:nth-child(3){animation-delay:.6s}
+@keyframes wave{0%{opacity:0;transform:translateX(-4px)}30%{opacity:.8}100%{opacity:0;transform:translateX(6px)}}
+.phone:focus-visible{outline:2px dashed #B23A26;outline-offset:6px}
+@media (min-width: 1360px){.phone{margin-left:-84px;margin-right:4px}}
+.prize{align-self:flex-start;background:none;border:0;padding:0;cursor:pointer;width:170px;transform:rotate(-8deg);transition:transform .35s cubic-bezier(.3,1.6,.5,1);filter:drop-shadow(2px 4px 0 rgba(34,32,28,.15))}
+.prize img{display:block;width:100%;height:auto}
+.prize:hover,.prize:focus-visible{transform:rotate(4deg) scale(1.08)}
+.prize:focus-visible{outline:2px dashed #B23A26;outline-offset:6px}
+.awards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(6px,.7vw,10px)}
+.awards li{display:grid;grid-template-columns:5.5em 1fr;gap:14px;align-items:baseline;border-bottom:1.5px dashed rgba(34,32,28,.3);padding-bottom:6px}
+.poke{position:absolute;left:96px;top:626px;z-index:5;margin:0;display:flex;align-items:flex-start;gap:6px;font-family:'Gaegu',cursive;font-size:22px;font-weight:700;color:var(--muted);transform:rotate(-2deg);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){.prize{transition:none}}
+@media (prefers-reduced-motion: reduce){.phone .drop,.phone .spring,.phone .hand,.phone .waves path,.tape>img.hub{animation:none!important}.phone .waves path{opacity:.6}}
+.tape .reel{position:absolute;left:0;top:0;width:100%;height:auto;overflow:visible;pointer-events:none;filter:none}
+.tape .reel path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .7s ease-in}
+.tape:hover .reel path,.tape:focus-visible .reel path{stroke-dashoffset:0;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.3,1)}
+.tape:hover .reel path:nth-child(2),.tape:focus-visible .reel path:nth-child(2){transition-delay:.25s}
+.tape:hover .reel,.tape:focus-visible .reel{animation:sway 2.6s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.5deg)}to{transform:rotate(2deg) translateY(2px)}}
+.tape .np{position:absolute;left:58%;top:-26px;font-family:'Gaegu',cursive;font-size:18px;color:var(--muted);white-space:nowrap;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.tape:hover .np,.tape:focus-visible .np{opacity:1;transform:none;animation:bob 1.6s ease-in-out .3s infinite}
+@keyframes bob{50%{transform:translateY(-3px) rotate(-4deg)}}
+</style>
+<link rel="stylesheet" href="assets/site/site.css">
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+<div class="{{theme}}" style="min-height: 100vh; background: var(--paper); color: var(--ink); font-family: 'Instrument Sans', sans-serif; transition: background .6s ease, color .6s ease; position: relative">
+
+<!-- NAV -->
+<header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="index.html" aria-label="Qinglan Shan, home" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.png" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 20px"><a class="navlink" href="#about">About Me</a><a class="navlink" href="gallery.html">Gallery</a><a class="navlink" href="xr-lab.html">XR Lab</a><a class="navlink" href="research.html">Research</a></nav>
+</header>
+
+<!-- HERO -->
+
+
+<!-- PRIZE COLLECTION -->
+<sc-if value="{{prizeOpen}}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px">
+<button aria-label="Close awards" onClick="{{closePrize}}" style="position: absolute; inset: 0; border: 0; background: var(--veil); cursor: pointer"></button>
+<div class="sheet paper" role="dialog" aria-label="Prize collection">
+<div style="position: relative; flex: 1; display: flex; flex-direction: column; gap: clamp(10px, 1.2vw, 18px)">
+<p style="margin: 0; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">prize collection</p>
+<h2 style="margin: 0; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-weight: 400; font-size: clamp(26px, 2.2vw, 34px); line-height: 1.1">获奖经历</h2>
+<ul class="awards">
+<sc-for list="{{awards}}" as="w" hint-placeholder-count="3">
+<li><span style="flex: 0 0 auto; font-size: clamp(13px, 1vw, 15px); font-weight: 600; color: #5C564C">{{w.year}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-size: clamp(16px, 1.25vw, 20px); font-weight: 400; color: #22201C">{{w.name}}</span><span style="font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-size: clamp(13px, 1vw, 15px); font-weight: 300; color: #5C564C">{{w.org}}</span></span></li>
+</sc-for>
+</ul>
+<button onClick="{{closePrize}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">put it away</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+<!-- PAPER BALL DETAIL OVERLAY -->
+<sc-if value="{{hasActive}}" hint-placeholder-val="{{ false }}">
+<div style="position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px">
+<button aria-label="Close note" onClick="{{close}}" style="position: absolute; inset: 0; border: 0; background: var(--veil); cursor: pointer"></button>
+<div class="sheet paper" role="dialog" aria-label="{{active.title}}">
+<div style="position: relative; flex: 1; display: flex; flex-direction: column; gap: clamp(8px, 1.2vw, 18px)">
+<p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{active.tag}}</p>
+<h2 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 700; font-size: clamp(30px, 2.6vw, 44px); line-height: 1; text-wrap: balance">{{active.title}} <span style="white-space: nowrap; display: inline-block; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-size: clamp(20px, 1.6vw, 26px); font-weight: 400; color: #5C564C">{{active.zh}}</span></h2>
+<p style="margin: 0; font-family: 'Gaegu', cursive; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.35; text-wrap: pretty">{{active.note}}</p>
+<sc-if value="{{active.note2}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.5">{{active.note2}}</p>
+</sc-if>
+<sc-if value="{{active.link}}" hint-placeholder-val="{{ false }}">
+<a href="{{active.link}}" style="align-self: flex-start; font-family: 'Instrument Sans', sans-serif; font-size: 14px; padding: 10px 0">{{active.linkLabel}} →</a>
+</sc-if>
+<button onClick="{{close}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">crumple it back</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+<!-- SELECTED WORK -->
+
+
+<!-- PHOTO STRIP TEASER -->
+
+
+<!-- XR LAB TEASER -->
+
+
+<!-- ABOUT / FOOTER -->
+<section style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; position: relative">
+<button class="phone" aria-label="Pick up the phone" onMouseEnter="{{sfx.phone}}">
+<span class="drop"><span class="spring">
+<svg class="cord" aria-hidden="true" viewBox="0 0 22 960" preserveAspectRatio="xMidYMax meet"><path d="M11 0 C 23 2, 23 5, 11 6 C -1 7, -1 10, 11 12 C 23 14, 23 17, 11 18 C -1 19, -1 22, 11 24 C 23 26, 23 29, 11 30 C -1 31, -1 34, 11 36 C 23 38, 23 41, 11 42 C -1 43, -1 46, 11 48 C 23 50, 23 53, 11 54 C -1 55, -1 58, 11 60 C 23 62, 23 65, 11 66 C -1 67, -1 70, 11 72 C 23 74, 23 77, 11 78 C -1 79, -1 82, 11 84 C 23 86, 23 89, 11 90 C -1 91, -1 94, 11 96 C 23 98, 23 101, 11 102 C -1 103, -1 106, 11 108 C 23 110, 23 113, 11 114 C -1 115, -1 118, 11 120 C 23 122, 23 125, 11 126 C -1 127, -1 130, 11 132 C 23 134, 23 137, 11 138 C -1 139, -1 142, 11 144 C 23 146, 23 149, 11 150 C -1 151, -1 154, 11 156 C 23 158, 23 161, 11 162 C -1 163, -1 166, 11 168 C 23 170, 23 173, 11 174 C -1 175, -1 178, 11 180 C 23 182, 23 185, 11 186 C -1 187, -1 190, 11 192 C 23 194, 23 197, 11 198 C -1 199, -1 202, 11 204 C 23 206, 23 209, 11 210 C -1 211, -1 214, 11 216 C 23 218, 23 221, 11 222 C -1 223, -1 226, 11 228 C 23 230, 23 233, 11 234 C -1 235, -1 238, 11 240 C 23 242, 23 245, 11 246 C -1 247, -1 250, 11 252 C 23 254, 23 257, 11 258 C -1 259, -1 262, 11 264 C 23 266, 23 269, 11 270 C -1 271, -1 274, 11 276 C 23 278, 23 281, 11 282 C -1 283, -1 286, 11 288 C 23 290, 23 293, 11 294 C -1 295, -1 298, 11 300 C 23 302, 23 305, 11 306 C -1 307, -1 310, 11 312 C 23 314, 23 317, 11 318 C -1 319, -1 322, 11 324 C 23 326, 23 329, 11 330 C -1 331, -1 334, 11 336 C 23 338, 23 341, 11 342 C -1 343, -1 346, 11 348 C 23 350, 23 353, 11 354 C -1 355, -1 358, 11 360 C 23 362, 23 365, 11 366 C -1 367, -1 370, 11 372 C 23 374, 23 377, 11 378 C -1 379, -1 382, 11 384 C 23 386, 23 389, 11 390 C -1 391, -1 394, 11 396 C 23 398, 23 401, 11 402 C -1 403, -1 406, 11 408 C 23 410, 23 413, 11 414 C -1 415, -1 418, 11 420 C 23 422, 23 425, 11 426 C -1 427, -1 430, 11 432 C 23 434, 23 437, 11 438 C -1 439, -1 442, 11 444 C 23 446, 23 449, 11 450 C -1 451, -1 454, 11 456 C 23 458, 23 461, 11 462 C -1 463, -1 466, 11 468 C 23 470, 23 473, 11 474 C -1 475, -1 478, 11 480 C 23 482, 23 485, 11 486 C -1 487, -1 490, 11 492 C 23 494, 23 497, 11 498 C -1 499, -1 502, 11 504 C 23 506, 23 509, 11 510 C -1 511, -1 514, 11 516 C 23 518, 23 521, 11 522 C -1 523, -1 526, 11 528 C 23 530, 23 533, 11 534 C -1 535, -1 538, 11 540 C 23 542, 23 545, 11 546 C -1 547, -1 550, 11 552 C 23 554, 23 557, 11 558 C -1 559, -1 562, 11 564 C 23 566, 23 569, 11 570 C -1 571, -1 574, 11 576 C 23 578, 23 581, 11 582 C -1 583, -1 586, 11 588 C 23 590, 23 593, 11 594 C -1 595, -1 598, 11 600 C 23 602, 23 605, 11 606 C -1 607, -1 610, 11 612 C 23 614, 23 617, 11 618 C -1 619, -1 622, 11 624 C 23 626, 23 629, 11 630 C -1 631, -1 634, 11 636 C 23 638, 23 641, 11 642 C -1 643, -1 646, 11 648 C 23 650, 23 653, 11 654 C -1 655, -1 658, 11 660 C 23 662, 23 665, 11 666 C -1 667, -1 670, 11 672 C 23 674, 23 677, 11 678 C -1 679, -1 682, 11 684 C 23 686, 23 689, 11 690 C -1 691, -1 694, 11 696 C 23 698, 23 701, 11 702 C -1 703, -1 706, 11 708 C 23 710, 23 713, 11 714 C -1 715, -1 718, 11 720 C 23 722, 23 725, 11 726 C -1 727, -1 730, 11 732 C 23 734, 23 737, 11 738 C -1 739, -1 742, 11 744 C 23 746, 23 749, 11 750 C -1 751, -1 754, 11 756 C 23 758, 23 761, 11 762 C -1 763, -1 766, 11 768 C 23 770, 23 773, 11 774 C -1 775, -1 778, 11 780 C 23 782, 23 785, 11 786 C -1 787, -1 790, 11 792 C 23 794, 23 797, 11 798 C -1 799, -1 802, 11 804 C 23 806, 23 809, 11 810 C -1 811, -1 814, 11 816 C 23 818, 23 821, 11 822 C -1 823, -1 826, 11 828 C 23 830, 23 833, 11 834 C -1 835, -1 838, 11 840 C 23 842, 23 845, 11 846 C -1 847, -1 850, 11 852 C 23 854, 23 857, 11 858 C -1 859, -1 862, 11 864 C 23 866, 23 869, 11 870 C -1 871, -1 874, 11 876 C 23 878, 23 881, 11 882 C -1 883, -1 886, 11 888 C 23 890, 23 893, 11 894 C -1 895, -1 898, 11 900 C 23 902, 23 905, 11 906 C -1 907, -1 910, 11 912 C 23 914, 23 917, 11 918 C -1 919, -1 922, 11 924 C 23 926, 23 929, 11 930 C -1 931, -1 934, 11 936 C 23 938, 23 941, 11 942 C -1 943, -1 946, 11 948 C 23 950, 23 953, 11 954 C -1 955, -1 958, 11 960" fill="none" stroke="#1C1918" stroke-width="2.2" stroke-linecap="round" transform="translate(0 0)"></path></svg>
+<span class="hand"><img src="assets/site/7f19540b829cda6ef87442fe79459c7d.png" alt=""></span>
+<svg class="waves" aria-hidden="true" viewBox="0 0 30 50" style="position: absolute; left: 62px; top: 44px; width: 26px; height: 44px; overflow: visible"><path d="M4 16 C 9 21, 9 29, 4 34" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path><path d="M11 10 C 19 18, 19 32, 11 40" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path><path d="M18 4 C 29 15, 29 35, 18 46" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path></svg>
+</span></span>
+</button><div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">XR DESIGNER · LEARNING SCIENCES RESEARCHER</p>
+<div style="display: flex; align-items: flex-start; gap: 22px">
+
+<h1 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 400; font-size: clamp(56px, 7vw, 96px); line-height: .95; letter-spacing: -.01em">Hi, I'm&nbsp;<br>Qinglan.</h1>
+</div>
+
+<p style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 30ch">I design mixed-reality spaces and embodied interactions, and study how people learn in them.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="xr-lab.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--ink); color: var(--paper); border-radius: 999px; font-weight: 500">See the work</a>
+<a href="research.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 999px; font-weight: 500">Publications</a>
+</div>
+</div>
+
+<!-- DESK COLLAGE -->
+<div style="flex: 1.5 1 520px; min-width: 0">
+<div style="position: relative; width: 725px; aspect-ratio: 1.12; height: 616px">
+
+
+
+<!-- camera: Sony A7C, links to photography -->
+<a class="stk cam" href="gallery.html" onMouseEnter="{{shoot}}" onFocus="{{shoot}}" aria-label="My camera — see my photographs" style="--r: -7deg; left: 12px; top: 70px; width: 29%; position: absolute">
+<img src="assets/site/ea95555f098ca6dbdb36a65c15e3c79a.png" alt="">
+<svg class="af" aria-hidden="true" viewBox="0 0 100 80" style="position: absolute; left: 56%; top: 15%; width: 28%; height: auto; filter: none"><path d="M4 18 V4 H18 M82 4 H96 V18 M96 62 V76 H82 M18 76 H4 V62" fill="none" stroke="#7BD88F" stroke-width="5"></path></svg>
+<span class="{{flashClass}}" aria-hidden="true"></span>
+</a>
+
+
+<!-- me: portrait sticker beside the camera -->
+<button class="stk" onClick="{{open.me}}" aria-label="That's me: open a note" style="--r: 6deg; left: 200px; top: 150px; width: 92px; position: absolute">
+<img src="assets/site/ced15c3f356a90feb8d8dadcf3bf4e2b.webp" alt="">
+</button>
+
+<!-- prize collection badge -->
+<button class="stk" onClick="{{openPrize}}" aria-label="Prize collection: see my awards" style="--r: -8deg; left: 478px; top: 286px; width: 116px; position: absolute">
+<img src="assets/site/1627bb1b5e6a16e5a8fcbf4305fe7add.webp" alt="">
+</button>
+
+<!-- book 眠 -->
+<button class="stk" aria-label="Murakami's Sleep — open note" onClick="{{open.book}}" onMouseEnter="{{sfx.book}}" style="--r: 6deg; left: 288px; top: 64px; width: 76px; height: 108px; position: absolute">
+<img src="assets/site/d3df763eeb3a5ce082c3f7c9aa235902.png" alt="">
+</button>
+
+<!-- shuttlecock -->
+<button class="stk" aria-label="Badminton — open note" onClick="{{open.badminton}}" onMouseEnter="{{sfx.badminton}}" style="--r: 12deg; left: 549px; top: 63px; width: 10%; position: absolute">
+<img src="assets/site/7c6437df0dc9295e9bc07927842b88c7.png" alt="" style="transform: rotate(8deg)">
+</button>
+
+<!-- snowboard -->
+<button class="stk" aria-label="Snowboarding — open note" onClick="{{open.snowboard}}" onMouseEnter="{{sfx.snow}}" style="--r: -14deg; left: 639px; top: 117px; width: 7.5%; position: absolute">
+<img src="assets/site/c053c9e68484fba8793830317aac9fc4.png" alt="">
+</button>
+
+<!-- chili -->
+<button class="stk" aria-label="Chili — open note" onClick="{{open.chili}}" style="--r: 10deg; left: 110px; top: 281px; width: 102px; position: absolute">
+<img src="assets/site/e7cb8623e2d4507d8837f4f92770ba2f.png" alt="">
+</button>
+
+<!-- teacup -->
+<button class="stk" aria-label="Tea — open note" onClick="{{open.tea}}" onMouseEnter="{{sfx.tea}}" style="--r: -6deg; left: 383px; top: 478px; width: 13%; position: absolute">
+<img src="{{cupSrc}}" alt="">
+</button>
+
+<!-- cassette R&B -->
+<button class="stk tape" aria-label="R and B — hover to play, click to open note" onClick="{{open.rnb}}" onMouseEnter="{{musicOn}}" onMouseLeave="{{musicOff}}" onFocus="{{musicOn}}" onBlur="{{musicOff}}" style="--r: -4deg; left: 84px; top: 446px; width: 22%; position: absolute">
+<svg class="reel" aria-hidden="true" viewBox="0 0 200 240"><path pathLength="1" d="M88 112 C 80 150, 40 140, 46 170 C 52 200, 104 196, 92 172 C 82 152, 34 182, 28 214 C 24 232, 44 238, 58 226" fill="none" stroke="#2A221D" stroke-width="2.4" stroke-linecap="round"></path><path pathLength="1" d="M112 112 C 124 146, 168 136, 166 166 C 164 192, 120 190, 128 168 C 136 148, 182 168, 178 200 C 176 222, 150 230, 140 214" fill="none" stroke="#3A2E26" stroke-width="2" stroke-linecap="round"></path></svg>
+<img src="assets/site/3775715188c9c0708ec4e0b6aead35f6.png" alt="">
+<img class="hub" src="assets/site/437930dfb3fc8483c191317531b7f72b.png" alt="" style="left: 25.808%; top: 38.95%">
+<img class="hub" src="assets/site/3405fa00723c5696fc6b2fd5f45de42e.png" alt="" style="left: 63.078%; top: 38.547%">
+<span class="np" aria-hidden="true">♪ side A</span>
+</button>
+
+<!-- tennis -->
+<button class="stk" aria-label="Tennis — open note" onClick="{{open.tennis}}" onMouseEnter="{{sfx.tennis}}" style="--r: 22deg; left: 439px; top: 127px; width: 14%; position: absolute">
+<img src="assets/site/81876e0fb45a1ef565590a81d4ae143c.png" alt="" style="transform: rotate(-48deg); width: 83px; height: 153px">
+</button>
+
+<!-- coffee -->
+
+
+<!-- cat: Mafia / 黑包 -->
+<button class="stk" aria-label="Mafia the cat — open note" onClick="{{open.cat}}" style="--r: 4deg; left: 296px; top: 291px; width: 23%; position: absolute">
+<img src="assets/site/bfab9230a8835f257b5d153b1b608902.png" alt="">
+</button>
+
+<!-- desk lamp: day / night switch -->
+
+<button class="stk" aria-label="{{lampLabel}}" aria-pressed="{{lampPressed}}" onClick="{{toggleNight}}" style="--r: 3deg; left: 598px; top: 372px; width: 150px; position: absolute; z-index: 5">
+<img src="{{lampSrc}}" alt="">
+</button>
+<p class="poke"><svg aria-hidden="true" viewBox="0 0 44 56" style="width: 34px; height: 44px; margin-top: -30px"><path d="M30 52 C 12 44, 8 26, 18 6 M8 16 L18 5 L27 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>poke the things on my desk</span></p>
+<span style="position: absolute; left: 600px; top: 642px; z-index: 5; transform: rotate(-3deg); font-family: 'Gaegu', cursive; font-size: 18px; color: var(--muted); white-space: nowrap">{{lampHint}}</span>
+</div>
+</div>
+<div class="light" aria-hidden="true" style="width: 903px; height: 675px; left: 581px; top: 6px; position: absolute"></div></section><footer id="about" style="max-width: 1240px; margin: 0 auto; padding: 120px 24px 64px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; position: relative">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px; max-width: 620px">
+<p style="margin: 0; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">About me</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.65">A PhD candidate at the Microsystems Laboratory, EPFL, jointly with ETH Zürich. I connect extended reality and microengineering to how students learn, using design-based research grounded in embodied learning.</p>
+<p style="margin: 0; font-family: 'Gaegu', cursive; font-size: 22px; color: var(--muted)">Off-hours: photography, snowboarding, badminton, tennis, and cooking with too much chili.</p>
+</div>
+<div style="flex: 0 1 320px; display: flex; flex-direction: column; gap: 10px; font-family: 'Instrument Sans', sans-serif; font-size: 14px">
+<p style="margin: 0; color: var(--muted)">SAY HELLO</p>
+<a href="mailto:qinglan.shan@epfl.ch" style="padding: 6px 0">qinglan.shan@epfl.ch</a>
+<a href="https://www.linkedin.com/in/qinglan-shan" style="padding: 6px 0">LinkedIn</a>
+<a href="https://people.epfl.ch/qinglan.shan" style="padding: 6px 0">EPFL profile</a>
+<p style="margin: 24px 0 0; color: var(--muted)">© 2026 Qinglan Shan</p>
+</div>
+</footer>
+</div>
+</template>
+<script type="text/x-dc" id="dc-logic">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { active: null, night: false, flash: false, prize: false };
+  }
+  componentDidMount() {
+    try { if (window.localStorage.getItem('qs-theme') === 'night') this.setState({ night: true }); } catch (e) {}
+  }
+  componentWillUnmount() {
+    this.stopMusic(true);
+  }
+  // Sound files live in the artifact's asset store. Fill in a assets/site/ url to switch a sound on.
+  sound(kind) {
+    const SOUNDS = {
+      tennis: 'assets/site/cde13d69239484489f9dca4bd92b4615.mp4',
+      badminton: 'assets/site/ac4d286e444b7770f3fe5ad967d47ef3.mp4',
+      book: 'assets/site/effe7930e67672688ed8a4cb7de73dc2.mp4',
+      tea: 'assets/site/b4597160965e6dcd24392336399fb378.mp4',
+      snow: 'assets/site/7c9ddbe162e3630e0839e47136f0e470.mp4',
+      lamp: 'assets/site/7f6ac5e4c9807fe33a5f99f7ce118cec.mp4',
+      phone: '',
+      music: 'assets/site/cff5993c7bb856fa7003520b7776b4d5.mp4'
+    };
+    const url = SOUNDS[kind];
+    if (!url) return null;
+    this.snd = this.snd || {};
+    if (!this.snd[kind]) { try { const el = new Audio(url); el.preload = 'auto'; this.snd[kind] = el; } catch (e) { return null; } }
+    return this.snd[kind];
+  }
+  sfx(kind) {
+    const now = Date.now(); this.last = this.last || {};
+    if (this.last[kind] && now - this.last[kind] < 600) return;
+    this.last[kind] = now;
+    const el = this.sound(kind); if (!el) return;
+    // long recordings are cut short with a quick fade so a hover stays a hover
+    const MAX = { tennis: 1.6, snow: 3.5, tea: 4.5 };
+    this.cut = this.cut || {};
+    clearInterval(this.cut[kind]);
+    try {
+      el.currentTime = 0; el.volume = 0.7; const r = el.play(); if (r && r.catch) r.catch(() => {});
+      if (MAX[kind]) {
+        const stopAt = MAX[kind];
+        this.cut[kind] = setInterval(() => {
+          if (el.paused) { clearInterval(this.cut[kind]); return; }
+          if (el.currentTime > stopAt - 0.5) el.volume = Math.max(0, el.volume - 0.1);
+          if (el.currentTime >= stopAt || el.volume <= 0) { el.pause(); clearInterval(this.cut[kind]); }
+        }, 50);
+      }
+    } catch (e) {}
+  }
+  startMusic() {
+    const el = this.sound('music'); if (!el) return;
+    clearInterval(this.fadeT);
+    try {
+      el.loop = true; if (el.paused) el.volume = 0;
+      const r = el.play(); if (r && r.catch) r.catch(() => {});
+      this.fadeT = setInterval(() => { el.volume = Math.min(0.6, el.volume + 0.06); if (el.volume >= 0.6) clearInterval(this.fadeT); }, 50);
+    } catch (e) {}
+  }
+  stopMusic(now) {
+    const el = this.snd && this.snd.music; if (!el) return;
+    clearInterval(this.fadeT);
+    if (now) { el.pause(); return; }
+    this.fadeT = setInterval(() => { el.volume = Math.max(0, el.volume - 0.05); if (el.volume <= 0) { clearInterval(this.fadeT); el.pause(); } }, 50);
+  }
+  setNight(night) {
+    this.setState({ night });
+    try { window.localStorage.setItem('qs-theme', night ? 'night' : 'day'); } catch (e) {}
+  }
+  shoot() {
+    const now = Date.now();
+    if (this.lastShot && now - this.lastShot < 1500) return;
+    this.lastShot = now;
+    setTimeout(() => this.setState({ flash: true }), 430);
+    setTimeout(() => this.setState({ flash: false }), 700);
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      this.ac = this.ac || new AC();
+      const ac = this.ac;
+      if (ac.state === 'suspended') ac.resume();
+      const t = ac.currentTime + 0.02;
+      const beep = (at) => {
+        const o = ac.createOscillator(); const g = ac.createGain();
+        o.type = 'square'; o.frequency.value = 2900;
+        g.gain.setValueAtTime(0, at); g.gain.linearRampToValueAtTime(0.05, at + 0.005);
+        g.gain.setValueAtTime(0.05, at + 0.045); g.gain.linearRampToValueAtTime(0, at + 0.055);
+        o.connect(g); g.connect(ac.destination); o.start(at); o.stop(at + 0.07);
+      };
+      const click = (at, dur, freq, vol) => {
+        const len = Math.floor(ac.sampleRate * dur);
+        const buf = ac.createBuffer(1, len, ac.sampleRate); const d = buf.getChannelData(0);
+        for (let i = 0; i < len; i += 1) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+        const src = ac.createBufferSource(); src.buffer = buf;
+        const f = ac.createBiquadFilter(); f.type = 'bandpass'; f.frequency.value = freq; f.Q.value = 0.9;
+        const g = ac.createGain(); g.gain.value = vol;
+        src.connect(f); f.connect(g); g.connect(ac.destination); src.start(at);
+      };
+      beep(t); beep(t + 0.1); beep(t + 0.2);
+      click(t + 0.43, 0.045, 3800, 0.9); click(t + 0.5, 0.07, 1600, 0.6);
+    } catch (e) {}
+  }
+  renderVals() {
+    const CUP = 'assets/site/224fedc880c0aabea1948ad07c97bdd9.png';
+    const notes = {
+      cat: { tag: 'family · 家人', title: 'Mafia', zh: '黑包', note: 'Also known as Mafia. [Age, habits, favourite spot in the flat.]' },
+      book: { tag: 'reading this month', title: 'Sleep', zh: '《眠》', note: 'Haruki Murakami. [Why this story stays with you.]' },
+      home: { tag: 'hometown · 家乡', title: 'Zhangjiajie', zh: '张家界', note: 'Where I grew up: the stone pillars that inspired the floating mountains in Avatar.' },
+      badminton: { tag: 'sport', title: 'Badminton', zh: '羽毛球', note: 'I played badminton at LUC (Lausanne University Club) and won women’s doubles and mixed matches for the club against the Rudi Team from Lausanne.' },
+      snowboard: { tag: 'sport', title: 'Snowboarding', zh: '单板滑雪', note: 'Five years of snowboarding, free-riding on all mountain pistes.' },
+      chili: { tag: 'kitchen', title: 'Chili', zh: '辣椒', note: 'A Hunan kid never cooks without it.' },
+      rnb: { tag: 'music', title: 'R&B', zh: '节奏布鲁斯', note: '[Three songs on repeat.]' },
+      tennis: { tag: 'sport', title: 'Tennis', zh: '网球', note: 'After I injured my shoulder, I switched from badminton to tennis.' },
+      me: { tag: 'say hello', title: 'Hi, that’s me', zh: '', note: 'Thank you for being interested in me! Don’t forget to reach out!', note2: '谢谢你对我感兴趣！请和我联络吧！', link: 'mailto:qinglan.shan@epfl.ch', linkLabel: 'Contact: qinglan.shan@epfl.ch' },
+      tea: { tag: 'ritual', title: 'Tea', zh: '茶', note: '[Which tea, and how you brew it.]' },
+      coffee: { tag: 'ritual', title: 'Coffee', zh: '咖啡', note: '[How you take it.]' }
+    };
+    const open = {};
+    Object.keys(notes).forEach((k) => { open[k] = () => this.setState({ active: k }); });
+    const active = this.state.active ? notes[this.state.active] : { tag: '', title: '', zh: '', note: '', note2: '' };
+    const night = this.state.night;
+    const fonts = { 'Caprasimo': "'Caprasimo', serif", 'Gochi Hand': "'Gochi Hand', cursive", 'Bagel Fat One': "'Bagel Fat One', sans-serif", 'Fraunces': "'Fraunces', serif" };
+    return {
+      nameFont: fonts[this.props.nameFont ?? 'Caprasimo'] || fonts['Caprasimo'],
+      open,
+      active,
+      prizeOpen: this.state.prize,
+      openPrize: () => this.setState({ prize: true }),
+      closePrize: () => this.setState({ prize: false }),
+      // 获奖经历: from the CV. Add rows as { year, name, org }.
+      awards: [
+        { year: '2021', name: '清华大学“一二·九”辅导员郭明秋奖', org: '学业与学生工作兼顾，每年全体研究生中评选约 40 人' },
+        { year: '2021', name: '清华大学优秀学生干部', org: '全校前 0.5%' },
+        { year: '2019–2022', name: '清华大学校级二等奖学金', org: '清华大学 · 计算机科学与技术 硕士' },
+        { year: '2019–2022', name: '清华大学先进研究生集体', org: '担任中法硕士项目班班长，带领班级获评' },
+        { year: '2019', name: '四川省优秀毕业生', org: '省级' },
+        { year: '2018', name: '国家奖学金', org: '全国本专科生获奖比例约 0.2%' },
+        { year: '2015–2019', name: '成都理工大学最高奖学金', org: '连续三年' }
+      ],
+      hasActive: !!this.state.active,
+      close: () => this.setState({ active: null }),
+      theme: night ? 'night' : 'day',
+      toggleNight: () => { this.sfx('lamp'); this.setNight(!night); },
+      lampSrc: night ? 'assets/site/f278cf13e9f353ff1d06e6449632811e.png' : 'assets/site/b361dddda7f288be160201de03407a48.png',
+      glowClass: night ? 'glow' : '',
+      lampPressed: night ? 'true' : 'false',
+      lampLabel: night ? 'Turn the lamp off — day mode' : 'Turn the lamp on — night mode',
+      lampHint: night ? 'click for daylight' : 'click for night',
+      shoot: () => this.shoot(),
+      sfx: { tennis: () => this.sfx('tennis'), badminton: () => this.sfx('badminton'), book: () => this.sfx('book'), tea: () => this.sfx('tea'), snow: () => this.sfx('snow'), phone: () => this.sfx('phone') },
+      cupSrc: CUP,
+      musicOn: () => this.startMusic(),
+      musicOff: () => this.stopMusic(false),
+      flashClass: this.state.flash ? 'flash' : ''
+    };
+  }
+}
+</script>
+<script src="assets/site/runtime.js"></script>
+<script src="assets/site/site.js"></script>
+</body>
+</html>
