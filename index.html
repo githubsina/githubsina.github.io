@@ -33,7 +33,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 @keyframes unfold{0%{transform:scale(.12) rotate(-60deg);opacity:.4}70%{transform:scale(1.03) rotate(2deg);opacity:1}100%{transform:scale(1) rotate(-1.5deg)}}
 .wob{animation:wob 3s ease-in-out infinite}
 @keyframes wob{50%{transform:translateY(-4px) rotate(2deg)}}
-.navlink{text-decoration:none;font-family: 'Instrument Sans', sans-serif;font-size:14px;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
+.navlink{text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:14px;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
 .photo-tag{position:absolute;font-family:'Gaegu',cursive;font-weight:700;font-size:20px;text-decoration:none;color:var(--ink);background:var(--card);padding:4px 12px;box-shadow:2px 3px 0 rgba(34,32,28,.15);white-space:nowrap}
 .photo-tag:hover{color:#B23A26}
@@ -91,7 +91,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <body>
 <div id="dc-root"></div>
 <template id="dc-template">
-<div class="{{theme}}" style="min-height: 100vh; background: var(--paper); color: var(--ink); font-family: 'Instrument Sans', sans-serif; transition: background .6s ease, color .6s ease; position: relative">
+<div class="{{theme}}" style="min-height: 100vh; background: var(--paper); color: var(--ink); font-family: 'Josefin Sans', sans-serif; transition: background .6s ease, color .6s ease; position: relative">
 
 <!-- NAV -->
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
@@ -127,14 +127,14 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <button aria-label="Close note" onClick="{{close}}" style="position: absolute; inset: 0; border: 0; background: var(--veil); cursor: pointer"></button>
 <div class="sheet paper" role="dialog" aria-label="{{active.title}}">
 <div style="position: relative; flex: 1; display: flex; flex-direction: column; gap: clamp(8px, 1.2vw, 18px)">
-<p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{active.tag}}</p>
+<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{active.tag}}</p>
 <h2 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 700; font-size: clamp(30px, 2.6vw, 44px); line-height: 1; text-wrap: balance">{{active.title}} <span style="white-space: nowrap; display: inline-block; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-size: clamp(20px, 1.6vw, 26px); font-weight: 400; color: #5C564C">{{active.zh}}</span></h2>
 <p style="margin: 0; font-family: 'Gaegu', cursive; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.35; text-wrap: pretty">{{active.note}}</p>
 <sc-if value="{{active.note2}}" hint-placeholder-val="{{ false }}">
 <p style="margin: 0; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.5">{{active.note2}}</p>
 </sc-if>
 <sc-if value="{{active.link}}" hint-placeholder-val="{{ false }}">
-<a href="{{active.link}}" style="align-self: flex-start; font-family: 'Instrument Sans', sans-serif; font-size: 14px; padding: 10px 0">{{active.linkLabel}} →</a>
+<a href="{{active.link}}" style="align-self: flex-start; font-family: 'Josefin Sans', sans-serif; font-size: 14px; padding: 10px 0">{{active.linkLabel}} →</a>
 </sc-if>
 <button onClick="{{close}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">crumple it back</button>
 </div>
@@ -160,7 +160,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <svg class="waves" aria-hidden="true" viewBox="0 0 30 50" style="position: absolute; left: 62px; top: 44px; width: 26px; height: 44px; overflow: visible"><path d="M4 16 C 9 21, 9 29, 4 34" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path><path d="M11 10 C 19 18, 19 32, 11 40" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path><path d="M18 4 C 29 15, 29 35, 18 46" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path></svg>
 </span></span>
 </button><div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">XR DESIGNER · LEARNING SCIENCES RESEARCHER</p>
+<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">XR DESIGNER · LEARNING SCIENCES RESEARCHER</p>
 <div style="display: flex; align-items: flex-start; gap: 22px">
 
 <h1 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 400; font-size: clamp(56px, 7vw, 96px); line-height: .95; letter-spacing: -.01em">Hi, I'm&nbsp;<br>Qinglan.</h1>
@@ -259,7 +259,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <p style="margin: 0; font-size: 18px; line-height: 1.65">A PhD candidate at the Microsystems Laboratory, EPFL, jointly with ETH Zürich. I connect extended reality and microengineering to how students learn, using design-based research grounded in embodied learning.</p>
 <p style="margin: 0; font-family: 'Gaegu', cursive; font-size: 22px; color: var(--muted)">Off-hours: photography, snowboarding, badminton, tennis, and cooking with too much chili.</p>
 </div>
-<div style="flex: 0 1 320px; display: flex; flex-direction: column; gap: 10px; font-family: 'Instrument Sans', sans-serif; font-size: 14px">
+<div style="flex: 0 1 320px; display: flex; flex-direction: column; gap: 10px; font-family: 'Josefin Sans', sans-serif; font-size: 14px">
 <p style="margin: 0; color: var(--muted)">SAY HELLO</p>
 <a href="mailto:qinglan.shan@epfl.ch" style="padding: 6px 0">qinglan.shan@epfl.ch</a>
 <a href="https://www.linkedin.com/in/qinglan-shan" style="padding: 6px 0">LinkedIn</a>

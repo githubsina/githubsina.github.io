@@ -10,7 +10,7 @@
 <style>
 body{margin:0;background:#F3EDE1}
 a{color:#22201C}a:hover{color:#B23A26}
-.navlink{text-decoration:none;font-family: 'Instrument Sans', sans-serif;font-size:14px;padding:10px 4px;border-bottom:2px solid transparent}
+.navlink{text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:14px;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
 .row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:center;padding:24px;background:#FBF8F1;border:1.5px solid #E6DECF;border-radius:28px;text-decoration:none;color:#22201C;transition:transform .25s ease,box-shadow .25s ease}
 .row:hover{transform:translateY(-4px);box-shadow:0 10px 0 rgba(34,32,28,.06);color:#22201C}
@@ -54,7 +54,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 .amb .lens{position:absolute;border-radius:50%;box-shadow:0 0 0 3px #B23A26,0 0 18px 4px rgba(178,58,38,.45);animation:ambpulse 1.8s ease-in-out infinite}
 .amb .lens.r{animation-delay:.9s}
 @keyframes ambpulse{0%,100%{opacity:.1}50%{opacity:1}}
-.amb .hz{position:absolute;padding:2px 7px;border-radius:999px;background:#B23A26;color:#FFFFFF;font-family:'Instrument Sans',sans-serif;font-size:clamp(9px,.8vw,12px);font-weight:600;white-space:nowrap;animation:ambpulse 1.8s ease-in-out infinite}
+.amb .hz{position:absolute;padding:2px 7px;border-radius:999px;background:#B23A26;color:#FFFFFF;font-family:'Josefin Sans',sans-serif;font-size:clamp(9px,.8vw,12px);font-weight:600;white-space:nowrap;animation:ambpulse 1.8s ease-in-out infinite}
 .amb .hz.r{animation-delay:.9s}
 .amb .scan{position:absolute;top:1.5%;height:97%;border:3px solid #B23A26;border-radius:14px;box-sizing:border-box;animation:ambscan 9s cubic-bezier(.6,0,.3,1) infinite}
 @keyframes ambscan{0%,28%{left:.4%;width:32.6%}34%,61%{left:33.8%;width:24.4%}67%,94%{left:58.4%;width:41.2%}100%{left:.4%;width:32.6%}}
@@ -69,14 +69,14 @@ a{color:#22201C}a:hover{color:#B23A26}
 <body>
 <div id="dc-root"></div>
 <template id="dc-template">
-<div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Instrument Sans', sans-serif">
+<div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', sans-serif">
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="index.html" aria-label="Qinglan Shan, home" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 20px"><a class="navlink" href="index.html#about">About Me</a><a class="navlink" href="gallery.html">Gallery</a><a class="navlink" href="xr-lab.html" style="border-bottom-color: #22201C">XR Lab</a><a class="navlink" href="research.html">Research</a></nav>
 </header>
 
 <section style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 32px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 13px; letter-spacing: .12em; color: #5C564C">XR LAB · 3D PLAYGROUND</p>
+<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; color: #5C564C">XR LAB · 3D PLAYGROUND</p>
 
 
 </section>
@@ -84,7 +84,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- SELECTED WORK: one project per row -->
 <section id="work" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 120px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px">
-<h2 style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 45px; letter-spacing: -.01em">Selected <span style="color: #B23A26">interactive</span> work</h2>
+<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 45px; letter-spacing: -.01em">Selected <span style="color: #B23A26">interactive</span> work</h2>
 <p style="margin: 0; font-size: 13px; color: #5C564C">XR · HCI · learning design</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 32px">
@@ -92,36 +92,36 @@ a{color:#22201C}a:hover{color:#B23A26}
 <span class="media"><video data-loop="" src="assets/site/2ed66dd3faa9054cb8c2b788b83a3e51.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="Students interacting with holograms of the photolithography process" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">In progress · fall 2026</span>
-<span style="font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">Embodied MR in the cleanroom</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">Embodied MR in the cleanroom</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">Students reach into holograms of the process and learn it with their hands. More soon.</span>
 <span class="more">read the project <span aria-hidden="true">→</span></span>
 </span>
 </a>
 <a class="row" href="project.html#aiauthor">
 <span class="media"><svg class="ai2" role="img" aria-label="Animated idea: lab documents go into a language model, which drafts a step-by-step flow in a web editor; a teacher checks it, adds media, and publishes it to the HoloLens" viewBox="0 0 800 480" style="display: block; width: 100%; height: 100%">
-<text x="110" y="52" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">1 · upload</text>
-<text x="390" y="52" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">2 · draft</text>
-<text x="635" y="24" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">3 · check</text>
-<text x="635" y="470" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">4 · publish</text>
-<g class="f f1"><path d="M44 104 H122 L140 122 V220 H44 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M122 104 V122 H140" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="56" y="186" width="40" height="20" rx="4" fill="#B23A26"></rect><text x="76" y="201" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">PDF</text><path d="M58 134 H124 M58 150 H116 M58 166 H124" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
-<g class="f f2"><path d="M66 192 H144 L162 210 V308 H66 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M144 192 V210 H162" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="78" y="274" width="40" height="20" rx="4" fill="#5E8C5A"></rect><text x="98" y="289" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">XLS</text><path d="M78 222 H146 M78 238 H112 M118 238 H146 M78 254 H146" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
-<g class="f f3"><path d="M44 280 H122 L140 298 V396 H44 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M122 280 V298 H140" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="56" y="362" width="40" height="20" rx="4" fill="#4B6CB7"></rect><text x="76" y="377" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">DOC</text><path d="M58 310 H124 M58 326 H110 M58 342 H124" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
-<text x="96" y="430" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#5C564C">process flow · run card · manual</text>
+<text x="110" y="52" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">1 · upload</text>
+<text x="390" y="52" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">2 · draft</text>
+<text x="635" y="24" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">3 · check</text>
+<text x="635" y="470" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">4 · publish</text>
+<g class="f f1"><path d="M44 104 H122 L140 122 V220 H44 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M122 104 V122 H140" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="56" y="186" width="40" height="20" rx="4" fill="#B23A26"></rect><text x="76" y="201" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">PDF</text><path d="M58 134 H124 M58 150 H116 M58 166 H124" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
+<g class="f f2"><path d="M66 192 H144 L162 210 V308 H66 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M144 192 V210 H162" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="78" y="274" width="40" height="20" rx="4" fill="#5E8C5A"></rect><text x="98" y="289" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">XLS</text><path d="M78 222 H146 M78 238 H112 M118 238 H146 M78 254 H146" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
+<g class="f f3"><path d="M44 280 H122 L140 298 V396 H44 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M122 280 V298 H140" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="56" y="362" width="40" height="20" rx="4" fill="#4B6CB7"></rect><text x="76" y="377" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">DOC</text><path d="M58 310 H124 M58 326 H110 M58 342 H124" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
+<text x="96" y="430" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#5C564C">process flow · run card · manual</text>
 <path class="w w1" d="M176 250 C 230 222, 270 276, 322 248" fill="none" stroke="#B23A26" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9"></path>
 <g class="llm"><rect x="330" y="186" width="120" height="120" rx="26" fill="#FBF8F1" stroke="#22201C" stroke-width="2.6"></rect>
 <path d="M352 186 V172 M374 186 V172 M396 186 V172 M418 186 V172 M352 306 V320 M374 306 V320 M396 306 V320 M418 306 V320 M330 212 H316 M330 246 H316 M330 280 H316 M450 212 H464 M450 246 H464 M450 280 H464" stroke="#22201C" stroke-width="2.4" stroke-linecap="round"></path>
-<text x="390" y="258" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="29" font-weight="600" fill="#22201C">LLM</text></g>
+<text x="390" y="258" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="29" font-weight="600" fill="#22201C">LLM</text></g>
 <circle class="ring" cx="390" cy="246" r="86" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-dasharray="4 12" stroke-linecap="round"></circle>
 <path class="w w2" d="M466 246 C 486 246, 488 196, 506 196" fill="none" stroke="#B23A26" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9"></path>
-<g class="ed"><rect x="506" y="38" width="262" height="300" rx="14" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4"></rect><path d="M506 64 H768" stroke="#22201C" stroke-width="2"></path><circle cx="522" cy="51" r="4" fill="#B23A26"></circle><circle cx="536" cy="51" r="4" fill="#D8A23A"></circle><circle cx="550" cy="51" r="4" fill="#8A9A6B"></circle><text x="756" y="56" text-anchor="end" font-family="Instrument Sans, sans-serif" font-size="12" fill="#5C564C">web editor</text></g>
+<g class="ed"><rect x="506" y="38" width="262" height="300" rx="14" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4"></rect><path d="M506 64 H768" stroke="#22201C" stroke-width="2"></path><circle cx="522" cy="51" r="4" fill="#B23A26"></circle><circle cx="536" cy="51" r="4" fill="#D8A23A"></circle><circle cx="550" cy="51" r="4" fill="#8A9A6B"></circle><text x="756" y="56" text-anchor="end" font-family="Josefin Sans, sans-serif" font-size="12" fill="#5C564C">web editor</text></g>
 <g class="cn"><path class="ln" d="M548 92 H566 M621 106 V122 M621 148 V160 M621 196 V212 M621 238 V254" fill="none" stroke="#22201C" stroke-width="2"></path></g>
 <circle class="n n0" cx="540" cy="93" r="8" fill="#22201C"></circle>
-<g class="n n1"><rect x="566" y="80" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="98" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#22201C">calibrate</text></g>
-<g class="n n2"><rect x="566" y="122" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="140" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#22201C">dehydrate</text></g>
-<g class="n n3"><path d="M621 160 L657 178 L621 196 L585 178 Z" fill="#FFF4D6" stroke="#22201C" stroke-width="2"></path><text x="621" y="183" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" fill="#22201C">quiz?</text></g>
-<g class="n n4"><rect class="hl" x="566" y="212" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="230" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#22201C">spin coat</text></g>
-<g class="n n5"><rect x="566" y="254" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="272" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#22201C">soft bake</text></g>
-<g class="chip c1"><circle cx="700" cy="225" r="13" fill="#FFFFFF" stroke="#22201C" stroke-width="2"></circle><text x="700" y="230" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="9" font-weight="600" fill="#22201C">3D</text></g>
+<g class="n n1"><rect x="566" y="80" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="98" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#22201C">calibrate</text></g>
+<g class="n n2"><rect x="566" y="122" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="140" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#22201C">dehydrate</text></g>
+<g class="n n3"><path d="M621 160 L657 178 L621 196 L585 178 Z" fill="#FFF4D6" stroke="#22201C" stroke-width="2"></path><text x="621" y="183" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="12" fill="#22201C">quiz?</text></g>
+<g class="n n4"><rect class="hl" x="566" y="212" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="230" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#22201C">spin coat</text></g>
+<g class="n n5"><rect x="566" y="254" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="272" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#22201C">soft bake</text></g>
+<g class="chip c1"><circle cx="700" cy="225" r="13" fill="#FFFFFF" stroke="#22201C" stroke-width="2"></circle><text x="700" y="230" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="9" font-weight="600" fill="#22201C">3D</text></g>
 <g class="chip c2"><circle cx="730" cy="225" r="13" fill="#FFFFFF" stroke="#22201C" stroke-width="2"></circle><path d="M726 219 L736 225 L726 231 Z" fill="#22201C"></path></g>
 <g class="chip c3"><circle cx="700" cy="256" r="13" fill="#B23A26"></circle><path d="M694 256 L699 261 L707 251" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
 <g class="cur"><path d="M660 236 L660 262 L667 255 L672 266 L677 264 L672 253 L682 253 Z" fill="#22201C" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"></path></g>
@@ -130,7 +130,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 </svg></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">In progress</span>
-<span style="font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">AI-assisted MR authoring</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">AI-assisted MR authoring</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">An LLM drafts MR training from the documents labs already have; teachers check and publish.</span>
 <span class="more">read the project <span aria-hidden="true">→</span></span>
 </span>
@@ -139,7 +139,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <span class="media"><video data-loop="" src="assets/site/1337771e73364f03578d50deda5e4f57.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="A student at the spin coater with MR guidance" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">CHI EA 2026</span>
-<span style="font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">MR-assisted cleanroom training</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">MR-assisted cleanroom training</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">Teachers author MR steps once; students work through the cleanroom on their own.</span>
 <span class="more">read the project <span aria-hidden="true">→</span></span>
 </span>
@@ -148,7 +148,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <span class="media"><video data-loop="" src="assets/site/1427da86f6e6fd51697440a522e8ba24.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="First-person view of the MixedLAB checklist during hands-on work" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">SEFI 2024 · ICLS 2025</span>
-<span style="font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">MixedLAB</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">MixedLAB</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">Checklists, molecules and feedback over real equipment, seen through the student’s eyes.</span>
 <span class="more">read the project <span aria-hidden="true">→</span></span>
 </span>
@@ -164,7 +164,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 </span></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">ICVR 2022</span>
-<span style="font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">VR × BCI for amblyopia</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">VR × BCI for amblyopia</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">Each eye gets its own flicker in VR, and EEG shows which one wins.</span>
 <span class="more">read the project <span aria-hidden="true">→</span></span>
 </span>

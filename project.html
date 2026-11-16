@@ -10,19 +10,19 @@
 <style>
 body{margin:0;background:#F3EDE1}
 a{color:#22201C}a:hover{color:#B23A26}
-.navlink{text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
+.navlink{text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
-.lbl{font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#5C564C}
+.lbl{font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#5C564C}
 .shot{position:relative;margin:0;background:#FBF8F1;border:1.5px solid #E6DECF;border-radius:22px;padding:16px}
 .frame{display:block;border-radius:12px;overflow:hidden;background:#FFFFFF}
 .frame img{display:block;width:100%;height:auto}
 .frame.vid{aspect-ratio:16 / 9}
-.tab{background:none;border:0;cursor:pointer;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;color:#5C564C;padding:10px 8px;min-height:44px;position:relative}
+.tab{background:none;border:0;cursor:pointer;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:600;color:#5C564C;padding:10px 8px;min-height:44px;position:relative}
 .tab:hover{color:#B23A26}
 .tab:focus-visible{outline:2px dashed #B23A26;outline-offset:2px}
 .in{animation:in .6s cubic-bezier(.2,.7,.2,1) both}
 @keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.lnk{font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;padding:10px 0}
+.lnk{font-family:'Josefin Sans',sans-serif;font-weight:600;font-size:15px;padding:10px 0}
 .gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:start}
 .gal .wide{grid-column:1 / -1}
 .thread{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:40px;align-items:center;padding:28px;background:#FBF8F1;border:1.5px solid #E6DECF;border-radius:26px}
@@ -68,7 +68,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 .amb .lens{position:absolute;border-radius:50%;box-shadow:0 0 0 3px #B23A26,0 0 18px 4px rgba(178,58,38,.45);animation:ambpulse 1.8s ease-in-out infinite}
 .amb .lens.r{animation-delay:.9s}
 @keyframes ambpulse{0%,100%{opacity:.1}50%{opacity:1}}
-.amb .hz{position:absolute;padding:2px 7px;border-radius:999px;background:#B23A26;color:#FFFFFF;font-family:'Instrument Sans',sans-serif;font-size:clamp(9px,.8vw,12px);font-weight:600;white-space:nowrap;animation:ambpulse 1.8s ease-in-out infinite}
+.amb .hz{position:absolute;padding:2px 7px;border-radius:999px;background:#B23A26;color:#FFFFFF;font-family:'Josefin Sans',sans-serif;font-size:clamp(9px,.8vw,12px);font-weight:600;white-space:nowrap;animation:ambpulse 1.8s ease-in-out infinite}
 .amb .hz.r{animation-delay:.9s}
 .amb .scan{position:absolute;top:1.5%;height:97%;border:3px solid #B23A26;border-radius:14px;box-sizing:border-box;animation:ambscan 9s cubic-bezier(.6,0,.3,1) infinite}
 @keyframes ambscan{0%,28%{left:.4%;width:32.6%}34%,61%{left:33.8%;width:24.4%}67%,94%{left:58.4%;width:41.2%}100%{left:.4%;width:32.6%}}
@@ -80,7 +80,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <body>
 <div id="dc-root"></div>
 <template id="dc-template">
-<div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Instrument Sans', sans-serif">
+<div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', sans-serif">
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="index.html" aria-label="Qinglan Shan, home" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 20px"><a class="navlink" href="index.html#about">About Me</a><a class="navlink" href="gallery.html">Gallery</a><a class="navlink" href="xr-lab.html" style="border-bottom-color: #22201C">XR Lab</a><a class="navlink" href="research.html">Research</a></nav>
@@ -88,7 +88,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 
 <!-- project switcher -->
 <div style="max-width: 1080px; margin: 0 auto; padding: 40px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-<a href="xr-lab.html" style="font-family: 'Instrument Sans', sans-serif; font-size: 18px; text-decoration: none; padding: 10px 0; letter-spacing: -.01em">← all projects</a>
+<a href="xr-lab.html" style="font-family: 'Josefin Sans', sans-serif; font-size: 18px; text-decoration: none; padding: 10px 0; letter-spacing: -.01em">← all projects</a>
 <nav aria-label="Projects" style="display: flex; gap: 4px">
 <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
 <button class="tab" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" aria-label="{{t.title}}" style="color: {{t.color}}">{{t.no}}
@@ -103,7 +103,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- TITLE -->
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 40px 24px 0; display: flex; flex-direction: column; gap: 14px">
 <p class="lbl" style="margin: 0; color: #B23A26">{{p.venue}}</p>
-<h1 style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: clamp(42px, 7vw, 74px); line-height: 1.02; max-width: 18ch; letter-spacing: -.01em">{{p.title}}</h1>
+<h1 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(42px, 7vw, 74px); line-height: 1.02; max-width: 18ch; letter-spacing: -.01em">{{p.title}}</h1>
 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #5C564C; max-width: 72ch">{{p.paper}}</p>
 <p style="margin: 8px 0 0; font-size: 20px; line-height: 1.55; color: #3A3730; max-width: 58ch">{{p.lede}}</p>
 <dl style="margin: 14px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px 32px; border-top: 1.5px dashed #9A9284; padding-top: 20px">
@@ -121,29 +121,29 @@ a{color:#22201C}a:hover{color:#B23A26}
 </sc-if>
 <sc-if value="{{p.diagram}}" hint-placeholder-val="{{ false }}">
 <span class="frame" style="aspect-ratio: 800 / 480"><svg class="ai2" role="img" aria-label="Animated idea: lab documents go into a language model, which drafts a step-by-step flow in a web editor; a teacher checks it, adds media, and publishes it to the HoloLens" viewBox="0 0 800 480" style="display: block; width: 100%; height: 100%">
-<text x="110" y="52" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">1 · upload</text>
-<text x="390" y="52" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">2 · draft</text>
-<text x="635" y="24" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">3 · check</text>
-<text x="635" y="470" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">4 · publish</text>
-<g class="f f1"><path d="M44 104 H122 L140 122 V220 H44 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M122 104 V122 H140" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="56" y="186" width="40" height="20" rx="4" fill="#B23A26"></rect><text x="76" y="201" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">PDF</text><path d="M58 134 H124 M58 150 H116 M58 166 H124" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
-<g class="f f2"><path d="M66 192 H144 L162 210 V308 H66 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M144 192 V210 H162" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="78" y="274" width="40" height="20" rx="4" fill="#5E8C5A"></rect><text x="98" y="289" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">XLS</text><path d="M78 222 H146 M78 238 H112 M118 238 H146 M78 254 H146" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
-<g class="f f3"><path d="M44 280 H122 L140 298 V396 H44 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M122 280 V298 H140" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="56" y="362" width="40" height="20" rx="4" fill="#4B6CB7"></rect><text x="76" y="377" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">DOC</text><path d="M58 310 H124 M58 326 H110 M58 342 H124" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
-<text x="96" y="430" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#5C564C">process flow · run card · manual</text>
+<text x="110" y="52" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">1 · upload</text>
+<text x="390" y="52" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">2 · draft</text>
+<text x="635" y="24" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">3 · check</text>
+<text x="635" y="470" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">4 · publish</text>
+<g class="f f1"><path d="M44 104 H122 L140 122 V220 H44 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M122 104 V122 H140" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="56" y="186" width="40" height="20" rx="4" fill="#B23A26"></rect><text x="76" y="201" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">PDF</text><path d="M58 134 H124 M58 150 H116 M58 166 H124" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
+<g class="f f2"><path d="M66 192 H144 L162 210 V308 H66 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M144 192 V210 H162" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="78" y="274" width="40" height="20" rx="4" fill="#5E8C5A"></rect><text x="98" y="289" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">XLS</text><path d="M78 222 H146 M78 238 H112 M118 238 H146 M78 254 H146" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
+<g class="f f3"><path d="M44 280 H122 L140 298 V396 H44 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path><path d="M122 280 V298 H140" fill="none" stroke="#22201C" stroke-width="2.4"></path><rect x="56" y="362" width="40" height="20" rx="4" fill="#4B6CB7"></rect><text x="76" y="377" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">DOC</text><path d="M58 310 H124 M58 326 H110 M58 342 H124" stroke="#9A9284" stroke-width="2.4" stroke-linecap="round"></path></g>
+<text x="96" y="430" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#5C564C">process flow · run card · manual</text>
 <path class="w w1" d="M176 250 C 230 222, 270 276, 322 248" fill="none" stroke="#B23A26" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9"></path>
 <g class="llm"><rect x="330" y="186" width="120" height="120" rx="26" fill="#FBF8F1" stroke="#22201C" stroke-width="2.6"></rect>
 <path d="M352 186 V172 M374 186 V172 M396 186 V172 M418 186 V172 M352 306 V320 M374 306 V320 M396 306 V320 M418 306 V320 M330 212 H316 M330 246 H316 M330 280 H316 M450 212 H464 M450 246 H464 M450 280 H464" stroke="#22201C" stroke-width="2.4" stroke-linecap="round"></path>
-<text x="390" y="258" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="29" font-weight="600" fill="#22201C">LLM</text></g>
+<text x="390" y="258" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="29" font-weight="600" fill="#22201C">LLM</text></g>
 <circle class="ring" cx="390" cy="246" r="86" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-dasharray="4 12" stroke-linecap="round"></circle>
 <path class="w w2" d="M466 246 C 486 246, 488 196, 506 196" fill="none" stroke="#B23A26" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9"></path>
-<g class="ed"><rect x="506" y="38" width="262" height="300" rx="14" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4"></rect><path d="M506 64 H768" stroke="#22201C" stroke-width="2"></path><circle cx="522" cy="51" r="4" fill="#B23A26"></circle><circle cx="536" cy="51" r="4" fill="#D8A23A"></circle><circle cx="550" cy="51" r="4" fill="#8A9A6B"></circle><text x="756" y="56" text-anchor="end" font-family="Instrument Sans, sans-serif" font-size="12" fill="#5C564C">web editor</text></g>
+<g class="ed"><rect x="506" y="38" width="262" height="300" rx="14" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4"></rect><path d="M506 64 H768" stroke="#22201C" stroke-width="2"></path><circle cx="522" cy="51" r="4" fill="#B23A26"></circle><circle cx="536" cy="51" r="4" fill="#D8A23A"></circle><circle cx="550" cy="51" r="4" fill="#8A9A6B"></circle><text x="756" y="56" text-anchor="end" font-family="Josefin Sans, sans-serif" font-size="12" fill="#5C564C">web editor</text></g>
 <g class="cn"><path class="ln" d="M548 92 H566 M621 106 V122 M621 148 V160 M621 196 V212 M621 238 V254" fill="none" stroke="#22201C" stroke-width="2"></path></g>
 <circle class="n n0" cx="540" cy="93" r="8" fill="#22201C"></circle>
-<g class="n n1"><rect x="566" y="80" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="98" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#22201C">calibrate</text></g>
-<g class="n n2"><rect x="566" y="122" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="140" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#22201C">dehydrate</text></g>
-<g class="n n3"><path d="M621 160 L657 178 L621 196 L585 178 Z" fill="#FFF4D6" stroke="#22201C" stroke-width="2"></path><text x="621" y="183" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12" fill="#22201C">quiz?</text></g>
-<g class="n n4"><rect class="hl" x="566" y="212" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="230" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#22201C">spin coat</text></g>
-<g class="n n5"><rect x="566" y="254" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="272" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" fill="#22201C">soft bake</text></g>
-<g class="chip c1"><circle cx="700" cy="225" r="13" fill="#FFFFFF" stroke="#22201C" stroke-width="2"></circle><text x="700" y="230" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="9" font-weight="600" fill="#22201C">3D</text></g>
+<g class="n n1"><rect x="566" y="80" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="98" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#22201C">calibrate</text></g>
+<g class="n n2"><rect x="566" y="122" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="140" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#22201C">dehydrate</text></g>
+<g class="n n3"><path d="M621 160 L657 178 L621 196 L585 178 Z" fill="#FFF4D6" stroke="#22201C" stroke-width="2"></path><text x="621" y="183" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="12" fill="#22201C">quiz?</text></g>
+<g class="n n4"><rect class="hl" x="566" y="212" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="230" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#22201C">spin coat</text></g>
+<g class="n n5"><rect x="566" y="254" width="110" height="26" rx="7" fill="#FBF8F1" stroke="#22201C" stroke-width="2"></rect><text x="621" y="272" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="13" fill="#22201C">soft bake</text></g>
+<g class="chip c1"><circle cx="700" cy="225" r="13" fill="#FFFFFF" stroke="#22201C" stroke-width="2"></circle><text x="700" y="230" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="9" font-weight="600" fill="#22201C">3D</text></g>
 <g class="chip c2"><circle cx="730" cy="225" r="13" fill="#FFFFFF" stroke="#22201C" stroke-width="2"></circle><path d="M726 219 L736 225 L726 231 Z" fill="#22201C"></path></g>
 <g class="chip c3"><circle cx="700" cy="256" r="13" fill="#B23A26"></circle><path d="M694 256 L699 261 L707 251" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
 <g class="cur"><path d="M660 236 L660 262 L667 255 L672 266 L677 264 L672 253 L682 253 Z" fill="#22201C" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"></path></g>
@@ -170,7 +170,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 56px 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px">
 <sc-for list="{{p.stats}}" as="n" hint-placeholder-count="3">
 <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 3px solid #22201C">
-<span style="font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 42px; line-height: 1.02; color: #B23A26; letter-spacing: -.01em">{{n.v}}</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 42px; line-height: 1.02; color: #B23A26; letter-spacing: -.01em">{{n.v}}</span>
 <span style="font-size: 15px; line-height: 1.4; color: #3A3730">{{n.k}}</span>
 </div>
 </sc-for>
@@ -181,7 +181,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 64px 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 40px 56px">
 <sc-for list="{{p.story}}" as="b" hint-placeholder-count="2">
 <div style="display: flex; flex-direction: column; gap: 10px">
-<h2 style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">{{b.h}}</h2>
+<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">{{b.h}}</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3A3730">{{b.t}}</p>
 </div>
 </sc-for>
@@ -190,31 +190,31 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- THREADS: one paper, two lines of work -->
 <sc-if value="{{p.hasThreads}}" hint-placeholder-val="{{ false }}">
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-direction: column; gap: 28px">
-<h2 style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">two threads in one study</h2>
+<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">two threads in one study</h2>
 <sc-for list="{{p.threads}}" as="th" hint-placeholder-count="2">
 <article class="thread">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<span style="font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 45px; line-height: 1.02; color: #B23A26; letter-spacing: -.01em">{{th.no}}</span>
-<h3 style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 27px; line-height: 1; letter-spacing: -.01em">{{th.h}}</h3>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 45px; line-height: 1.02; color: #B23A26; letter-spacing: -.01em">{{th.no}}</span>
+<h3 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 27px; line-height: 1; letter-spacing: -.01em">{{th.h}}</h3>
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3A3730">{{th.t}}</p>
 <sc-if value="{{th.quote}}" hint-placeholder-val="{{ false }}">
-<p style="margin: 6px 0 0; font-family: 'Instrument Sans', sans-serif; font-size: 21px; line-height: 1.2; letter-spacing: -.01em">“{{th.quote}}” <span class="lbl" style="font-family: 'Instrument Sans', sans-serif">{{th.quoteBy}}</span></p>
+<p style="margin: 6px 0 0; font-family: 'Josefin Sans', sans-serif; font-size: 21px; line-height: 1.2; letter-spacing: -.01em">“{{th.quote}}” <span class="lbl" style="font-family: 'Josefin Sans', sans-serif">{{th.quoteBy}}</span></p>
 </sc-if>
 </div>
 <div class="frame">
 <sc-if value="{{th.flow}}" hint-placeholder-val="{{ true }}"><svg class="wf" role="img" aria-label="Workflow: build the steps in a web editor, pin them to the real equipment, students follow them on the headset" viewBox="0 0 600 300" style="display: block; width: 100%; height: auto; background: #FFFFFF">
 <g><rect x="34" y="78" width="132" height="88" rx="8" fill="#FBF8F1" stroke="#22201C" stroke-width="2.4"></rect><path d="M20 176 H180 L170 188 H30 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4" stroke-linejoin="round"></path>
 <circle cx="56" cy="100" r="5" fill="#22201C"></circle><rect x="70" y="93" width="70" height="14" rx="4" fill="#FFFFFF" stroke="#22201C" stroke-width="1.8"></rect><rect x="70" y="117" width="70" height="14" rx="4" fill="#FFFFFF" stroke="#22201C" stroke-width="1.8"></rect><rect x="70" y="141" width="70" height="14" rx="4" fill="#FFF4D6" stroke="#22201C" stroke-width="1.8"></rect></g>
-<text x="100" y="226" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">write the steps</text>
+<text x="100" y="226" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">write the steps</text>
 <path class="arrow" d="M190 132 C 210 118, 222 146, 242 132" fill="none" stroke="#B23A26" stroke-width="3" stroke-linecap="round"></path>
 <g><rect x="250" y="120" width="104" height="66" rx="8" fill="#FFFFFF" stroke="#22201C" stroke-width="2.4"></rect><ellipse cx="302" cy="132" rx="34" ry="9" fill="#FBF8F1" stroke="#22201C" stroke-width="2.2"></ellipse><rect x="264" y="150" width="22" height="16" rx="3" fill="#FBF8F1" stroke="#22201C" stroke-width="1.8"></rect></g>
 <g class="pin"><path d="M302 104 C 290 104, 284 92, 284 84 C 284 72, 292 64, 302 64 C 312 64, 320 72, 320 84 C 320 92, 314 104, 302 104 Z" fill="#B23A26"></path><circle cx="302" cy="83" r="7" fill="#FFFFFF"></circle></g>
-<text x="302" y="226" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">pin them in place</text>
+<text x="302" y="226" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">pin them in place</text>
 <path class="arrow" d="M362 132 C 382 118, 394 146, 414 132" fill="none" stroke="#B23A26" stroke-width="3" stroke-linecap="round"></path>
 <g><rect x="452" y="62" width="88" height="44" rx="7" fill="#3E4A8C" opacity=".92"></rect><path d="M464 76 H526 M464 86 H514 M464 96 H520" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"></path>
 <path d="M428 136 C 428 118, 568 118, 568 136 L 568 160 C 568 174, 532 176, 518 163 C 509 155, 489 155, 480 163 C 466 176, 428 174, 428 160 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.6" stroke-linejoin="round"></path></g>
-<text x="498" y="226" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">students follow</text>
-<text x="300" y="276" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="14" fill="#5C564C">web editor · on-site or off-site anchoring · HoloLens 2</text>
+<text x="498" y="226" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="19" font-weight="600" fill="#22201C">students follow</text>
+<text x="300" y="276" text-anchor="middle" font-family="Josefin Sans, sans-serif" font-size="14" fill="#5C564C">web editor · on-site or off-site anchoring · HoloLens 2</text>
 </svg></sc-if>
 <sc-if value="{{th.img}}" hint-placeholder-val="{{ false }}"><img src="{{th.img}}" alt="{{th.alt}}"></sc-if>
 </div>
@@ -227,7 +227,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <sc-if value="{{p.quote}}" hint-placeholder-val="{{ false }}">
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 64px 24px 0">
 <figure style="margin: 0; background: #FBF8F1; border: 1.5px solid #E6DECF; border-radius: 22px; padding: 32px 40px 26px; max-width: 760px">
-<blockquote style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: clamp(22px, 3vw, 32px); line-height: 1.15; letter-spacing: -.01em">“{{p.quote}}”</blockquote>
+<blockquote style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: clamp(22px, 3vw, 32px); line-height: 1.15; letter-spacing: -.01em">“{{p.quote}}”</blockquote>
 <figcaption class="lbl" style="padding-top: 12px">{{p.quoteBy}}</figcaption>
 </figure>
 </section>
@@ -261,7 +261,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 </div>
 <button onClick="{{goNext}}" style="background: none; border: 0; cursor: pointer; text-align: right; padding: 10px 0; color: #22201C; display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
 <span class="lbl">Next project</span>
-<span style="font-family: 'Instrument Sans', sans-serif; font-weight: 600; font-size: 29px; line-height: 1; letter-spacing: -.01em">{{nextTitle}} →</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 29px; line-height: 1; letter-spacing: -.01em">{{nextTitle}} →</span>
 </button>
 </section>
 </div>
