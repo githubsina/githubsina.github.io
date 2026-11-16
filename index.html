@@ -35,14 +35,16 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 @keyframes wob{50%{transform:translateY(-4px) rotate(2deg)}}
 .navlink{text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:14px;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
+.lang{background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:inherit;min-height:40px}
 .photo-tag{position:absolute;font-family:'Gaegu',cursive;font-weight:700;font-size:20px;text-decoration:none;color:var(--ink);background:var(--card);padding:4px 12px;box-shadow:2px 3px 0 rgba(34,32,28,.15);white-space:nowrap}
 .photo-tag:hover{color:#B23A26}
 .stk>img{position:relative}
 /* notebook desk + lamp light */
 .notebook{position:absolute;left:-6%;top:3%;width:112%;max-width:none;transform:rotate(-5deg);filter:drop-shadow(4px 10px 14px rgba(34,32,28,.22));pointer-events:none;user-select:none}
-.light{position:absolute;inset:-6% -10% -10% -8%;pointer-events:none;z-index:4;transition:opacity .8s ease, background .8s ease}
-.day .light{background:radial-gradient(circle at 78% 64%, rgba(255,222,160,.42) 0%, rgba(255,214,140,.16) 22%, rgba(255,214,140,0) 46%);mix-blend-mode:soft-light}
-.night .light{background:radial-gradient(circle at 78% 64%, rgba(255,206,130,.30) 0%, rgba(255,190,110,.12) 18%, rgba(23,21,19,.2) 34%, rgba(23,21,19,.66) 60%, rgba(23,21,19,.82) 100%)}
+.light{position:absolute;pointer-events:none;z-index:4;transition:opacity .6s ease}
+.lday{background:radial-gradient(circle at 78% 64%, rgba(255,222,160,.42) 0%, rgba(255,214,140,.16) 22%, rgba(255,214,140,0) 46%);mix-blend-mode:soft-light}
+.lnight{background:radial-gradient(circle at 78% 64%, rgba(255,206,130,.30) 0%, rgba(255,190,110,.12) 18%, rgba(23,21,19,.2) 34%, rgba(23,21,19,.66) 60%, rgba(23,21,19,.82) 100%);-webkit-mask-image:radial-gradient(closest-side, #000 62%, transparent 100%);mask-image:radial-gradient(closest-side, #000 62%, transparent 100%)}
+.day .lnight,.night .lday{opacity:0}
 .stk:hover,.stk:focus-visible{z-index:6}
 /* cassette reels */
 .tape>img.hub{position:absolute;width:10.842%;height:auto;filter:none;pointer-events:none}
@@ -95,8 +97,8 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 
 <!-- NAV -->
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="index.html" aria-label="Qinglan Shan, home" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 20px"><a class="navlink" href="#about">About Me</a><a class="navlink" href="gallery.html">Gallery</a><a class="navlink" href="xr-lab.html">XR Lab</a><a class="navlink" href="research.html">Research</a></nav>
+<a href="index.html" aria-label="{{t.nav.home}}" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px"><a class="navlink" href="#about">{{t.nav.about}}</a><a class="navlink" href="gallery.html">{{t.nav.gallery}}</a><a class="navlink" href="xr-lab.html">{{t.nav.xrlab}}</a><a class="navlink" href="research.html">{{t.nav.research}}</a><button class="navlink lang" onClick="{{toggleLang}}" aria-label="{{t.nav.langLabel}}">{{t.nav.lang}}</button></nav>
 </header>
 
 <!-- HERO -->
@@ -108,14 +110,14 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <button aria-label="Close awards" onClick="{{closePrize}}" style="position: absolute; inset: 0; border: 0; background: var(--veil); cursor: pointer"></button>
 <div class="sheet paper" role="dialog" aria-label="Prize collection">
 <div style="position: relative; flex: 1; display: flex; flex-direction: column; gap: clamp(10px, 1.2vw, 18px)">
-<p style="margin: 0; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">prize collection</p>
-<h2 style="margin: 0; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-weight: 400; font-size: clamp(26px, 2.2vw, 34px); line-height: 1.1">获奖经历</h2>
+<p style="margin: 0; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.prize.kicker}}</p>
+<h2 style="margin: 0; font-family: 'Josefin Sans', 'DengXian', '等线', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-weight: 400; font-size: clamp(26px, 2.2vw, 34px); line-height: 1.1">{{t.prize.title}}</h2>
 <ul class="awards">
 <sc-for list="{{awards}}" as="w" hint-placeholder-count="3">
-<li><span style="flex: 0 0 auto; font-size: clamp(13px, 1vw, 15px); font-weight: 600; color: #5C564C">{{w.year}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-size: clamp(16px, 1.25vw, 20px); font-weight: 400; color: #22201C">{{w.name}}</span><span style="font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-size: clamp(13px, 1vw, 15px); font-weight: 300; color: #5C564C">{{w.org}}</span></span></li>
+<li><span style="flex: 0 0 auto; font-size: clamp(13px, 1vw, 15px); font-weight: 600; color: #5C564C">{{w.year}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Josefin Sans', 'DengXian', '等线', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-size: clamp(16px, 1.25vw, 20px); font-weight: 400; color: #22201C">{{w.name}}</span><span style="font-family: 'Josefin Sans', 'DengXian', '等线', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-size: clamp(13px, 1vw, 15px); font-weight: 300; color: #5C564C">{{w.org}}</span></span></li>
 </sc-for>
 </ul>
-<button onClick="{{closePrize}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">put it away</button>
+<button onClick="{{closePrize}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">{{t.prize.close}}</button>
 </div>
 </div>
 </div>
@@ -128,7 +130,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <div class="sheet paper" role="dialog" aria-label="{{active.title}}">
 <div style="position: relative; flex: 1; display: flex; flex-direction: column; gap: clamp(8px, 1.2vw, 18px)">
 <p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{active.tag}}</p>
-<h2 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 700; font-size: clamp(30px, 2.6vw, 44px); line-height: 1; text-wrap: balance">{{active.title}} <span style="white-space: nowrap; display: inline-block; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-size: clamp(20px, 1.6vw, 26px); font-weight: 400; color: #5C564C">{{active.zh}}</span></h2>
+<h2 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 700; font-size: clamp(30px, 2.6vw, 44px); line-height: 1; text-wrap: balance">{{active.title}} <span style="white-space: nowrap; display: inline-block; font-family: 'Josefin Sans', 'DengXian', '等线', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-size: clamp(20px, 1.6vw, 26px); font-weight: 400; color: #5C564C">{{active.sub}}</span></h2>
 <p style="margin: 0; font-family: 'Gaegu', cursive; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.35; text-wrap: pretty">{{active.note}}</p>
 <sc-if value="{{active.note2}}" hint-placeholder-val="{{ false }}">
 <p style="margin: 0; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.5">{{active.note2}}</p>
@@ -136,7 +138,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <sc-if value="{{active.link}}" hint-placeholder-val="{{ false }}">
 <a href="{{active.link}}" style="align-self: flex-start; font-family: 'Josefin Sans', sans-serif; font-size: 14px; padding: 10px 0">{{active.linkLabel}} →</a>
 </sc-if>
-<button onClick="{{close}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">crumple it back</button>
+<button onClick="{{close}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">{{t.note.close}}</button>
 </div>
 </div>
 </div>
@@ -153,23 +155,23 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 
 <!-- ABOUT / FOOTER -->
 <section style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; position: relative">
-<button class="phone" aria-label="Pick up the phone" onMouseEnter="{{sfx.phone}}">
+<button class="phone" aria-label="{{t.note.me.tag}}" onMouseEnter="{{sfx.phone}}">
 <span class="drop"><span class="spring">
 <svg class="cord" aria-hidden="true" viewBox="0 0 22 960" preserveAspectRatio="xMidYMax meet"><path d="M11 0 C 23 2, 23 5, 11 6 C -1 7, -1 10, 11 12 C 23 14, 23 17, 11 18 C -1 19, -1 22, 11 24 C 23 26, 23 29, 11 30 C -1 31, -1 34, 11 36 C 23 38, 23 41, 11 42 C -1 43, -1 46, 11 48 C 23 50, 23 53, 11 54 C -1 55, -1 58, 11 60 C 23 62, 23 65, 11 66 C -1 67, -1 70, 11 72 C 23 74, 23 77, 11 78 C -1 79, -1 82, 11 84 C 23 86, 23 89, 11 90 C -1 91, -1 94, 11 96 C 23 98, 23 101, 11 102 C -1 103, -1 106, 11 108 C 23 110, 23 113, 11 114 C -1 115, -1 118, 11 120 C 23 122, 23 125, 11 126 C -1 127, -1 130, 11 132 C 23 134, 23 137, 11 138 C -1 139, -1 142, 11 144 C 23 146, 23 149, 11 150 C -1 151, -1 154, 11 156 C 23 158, 23 161, 11 162 C -1 163, -1 166, 11 168 C 23 170, 23 173, 11 174 C -1 175, -1 178, 11 180 C 23 182, 23 185, 11 186 C -1 187, -1 190, 11 192 C 23 194, 23 197, 11 198 C -1 199, -1 202, 11 204 C 23 206, 23 209, 11 210 C -1 211, -1 214, 11 216 C 23 218, 23 221, 11 222 C -1 223, -1 226, 11 228 C 23 230, 23 233, 11 234 C -1 235, -1 238, 11 240 C 23 242, 23 245, 11 246 C -1 247, -1 250, 11 252 C 23 254, 23 257, 11 258 C -1 259, -1 262, 11 264 C 23 266, 23 269, 11 270 C -1 271, -1 274, 11 276 C 23 278, 23 281, 11 282 C -1 283, -1 286, 11 288 C 23 290, 23 293, 11 294 C -1 295, -1 298, 11 300 C 23 302, 23 305, 11 306 C -1 307, -1 310, 11 312 C 23 314, 23 317, 11 318 C -1 319, -1 322, 11 324 C 23 326, 23 329, 11 330 C -1 331, -1 334, 11 336 C 23 338, 23 341, 11 342 C -1 343, -1 346, 11 348 C 23 350, 23 353, 11 354 C -1 355, -1 358, 11 360 C 23 362, 23 365, 11 366 C -1 367, -1 370, 11 372 C 23 374, 23 377, 11 378 C -1 379, -1 382, 11 384 C 23 386, 23 389, 11 390 C -1 391, -1 394, 11 396 C 23 398, 23 401, 11 402 C -1 403, -1 406, 11 408 C 23 410, 23 413, 11 414 C -1 415, -1 418, 11 420 C 23 422, 23 425, 11 426 C -1 427, -1 430, 11 432 C 23 434, 23 437, 11 438 C -1 439, -1 442, 11 444 C 23 446, 23 449, 11 450 C -1 451, -1 454, 11 456 C 23 458, 23 461, 11 462 C -1 463, -1 466, 11 468 C 23 470, 23 473, 11 474 C -1 475, -1 478, 11 480 C 23 482, 23 485, 11 486 C -1 487, -1 490, 11 492 C 23 494, 23 497, 11 498 C -1 499, -1 502, 11 504 C 23 506, 23 509, 11 510 C -1 511, -1 514, 11 516 C 23 518, 23 521, 11 522 C -1 523, -1 526, 11 528 C 23 530, 23 533, 11 534 C -1 535, -1 538, 11 540 C 23 542, 23 545, 11 546 C -1 547, -1 550, 11 552 C 23 554, 23 557, 11 558 C -1 559, -1 562, 11 564 C 23 566, 23 569, 11 570 C -1 571, -1 574, 11 576 C 23 578, 23 581, 11 582 C -1 583, -1 586, 11 588 C 23 590, 23 593, 11 594 C -1 595, -1 598, 11 600 C 23 602, 23 605, 11 606 C -1 607, -1 610, 11 612 C 23 614, 23 617, 11 618 C -1 619, -1 622, 11 624 C 23 626, 23 629, 11 630 C -1 631, -1 634, 11 636 C 23 638, 23 641, 11 642 C -1 643, -1 646, 11 648 C 23 650, 23 653, 11 654 C -1 655, -1 658, 11 660 C 23 662, 23 665, 11 666 C -1 667, -1 670, 11 672 C 23 674, 23 677, 11 678 C -1 679, -1 682, 11 684 C 23 686, 23 689, 11 690 C -1 691, -1 694, 11 696 C 23 698, 23 701, 11 702 C -1 703, -1 706, 11 708 C 23 710, 23 713, 11 714 C -1 715, -1 718, 11 720 C 23 722, 23 725, 11 726 C -1 727, -1 730, 11 732 C 23 734, 23 737, 11 738 C -1 739, -1 742, 11 744 C 23 746, 23 749, 11 750 C -1 751, -1 754, 11 756 C 23 758, 23 761, 11 762 C -1 763, -1 766, 11 768 C 23 770, 23 773, 11 774 C -1 775, -1 778, 11 780 C 23 782, 23 785, 11 786 C -1 787, -1 790, 11 792 C 23 794, 23 797, 11 798 C -1 799, -1 802, 11 804 C 23 806, 23 809, 11 810 C -1 811, -1 814, 11 816 C 23 818, 23 821, 11 822 C -1 823, -1 826, 11 828 C 23 830, 23 833, 11 834 C -1 835, -1 838, 11 840 C 23 842, 23 845, 11 846 C -1 847, -1 850, 11 852 C 23 854, 23 857, 11 858 C -1 859, -1 862, 11 864 C 23 866, 23 869, 11 870 C -1 871, -1 874, 11 876 C 23 878, 23 881, 11 882 C -1 883, -1 886, 11 888 C 23 890, 23 893, 11 894 C -1 895, -1 898, 11 900 C 23 902, 23 905, 11 906 C -1 907, -1 910, 11 912 C 23 914, 23 917, 11 918 C -1 919, -1 922, 11 924 C 23 926, 23 929, 11 930 C -1 931, -1 934, 11 936 C 23 938, 23 941, 11 942 C -1 943, -1 946, 11 948 C 23 950, 23 953, 11 954 C -1 955, -1 958, 11 960" fill="none" stroke="#1C1918" stroke-width="2.2" stroke-linecap="round" transform="translate(0 0)"></path></svg>
 <span class="hand"><img src="assets/site/7f19540b829cda6ef87442fe79459c7d.webp" alt=""></span>
 <svg class="waves" aria-hidden="true" viewBox="0 0 30 50" style="position: absolute; left: 62px; top: 44px; width: 26px; height: 44px; overflow: visible"><path d="M4 16 C 9 21, 9 29, 4 34" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path><path d="M11 10 C 19 18, 19 32, 11 40" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path><path d="M18 4 C 29 15, 29 35, 18 46" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path></svg>
 </span></span>
 </button><div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">XR DESIGNER · LEARNING SCIENCES RESEARCHER</p>
+<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">{{t.hero.kicker}}</p>
 <div style="display: flex; align-items: flex-start; gap: 22px">
 
-<h1 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 400; font-size: clamp(56px, 7vw, 96px); line-height: .95; letter-spacing: -.01em">Hi, I'm&nbsp;<br>Qinglan.</h1>
+<h1 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 400; font-size: clamp(56px, 7vw, 96px); line-height: .95; letter-spacing: -.01em">{{t.hero.hi}}&nbsp;<br>{{t.hero.name}}</h1>
 </div>
 
-<p style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 30ch">I design mixed-reality spaces and embodied interactions, and study how people learn in them.</p>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 30ch">{{t.hero.text}}</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="xr-lab.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--ink); color: var(--paper); border-radius: 999px; font-weight: 500">See the work</a>
-<a href="research.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 999px; font-weight: 500">Publications</a>
+<a href="xr-lab.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--ink); color: var(--paper); border-radius: 999px; font-weight: 500">{{t.hero.work}}</a>
+<a href="research.html" style="text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 999px; font-weight: 500">{{t.hero.papers}}</a>
 </div>
 </div>
 
@@ -188,7 +190,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 
 
 <!-- me: portrait sticker beside the camera -->
-<button class="stk" onClick="{{open.me}}" aria-label="That's me: open a note" style="--r: 6deg; left: 200px; top: 150px; width: 92px; position: absolute">
+<button class="stk" onClick="{{open.me}}" aria-label="That's me: open a note" style="--r: 6deg; left: 190px; top: 138px; width: 116px; position: absolute">
 <img src="assets/site/ced15c3f356a90feb8d8dadcf3bf4e2b.webp" alt="">
 </button>
 
@@ -249,22 +251,22 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <button class="stk" aria-label="{{lampLabel}}" aria-pressed="{{lampPressed}}" onClick="{{toggleNight}}" style="--r: 3deg; left: 598px; top: 372px; width: 150px; position: absolute; z-index: 5">
 <img src="{{lampSrc}}" alt="">
 </button>
-<p class="poke"><svg aria-hidden="true" viewBox="0 0 44 56" style="width: 34px; height: 44px; margin-top: -30px"><path d="M30 52 C 12 44, 8 26, 18 6 M8 16 L18 5 L27 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>poke the things on my desk</span></p>
+<p class="poke"><svg aria-hidden="true" viewBox="0 0 44 56" style="width: 34px; height: 44px; margin-top: -30px"><path d="M30 52 C 12 44, 8 26, 18 6 M8 16 L18 5 L27 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>{{t.desk.poke}}</span></p>
 <span style="position: absolute; left: 600px; top: 642px; z-index: 5; transform: rotate(-3deg); font-family: 'Gaegu', cursive; font-size: 18px; color: var(--muted); white-space: nowrap">{{lampHint}}</span>
 </div>
 </div>
-<div class="light" aria-hidden="true" style="width: 903px; height: 675px; left: 581px; top: 6px; position: absolute"></div></section><footer id="about" style="max-width: 1240px; margin: 0 auto; padding: 120px 24px 64px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; position: relative">
+<div class="light lday" aria-hidden="true" style="width: 903px; height: 675px; left: 581px; top: 6px; position: absolute"></div><div class="light lnight" aria-hidden="true" style="width: 903px; height: 675px; left: 581px; top: 6px; position: absolute"></div></section><footer id="about" style="max-width: 1240px; margin: 0 auto; padding: 120px 24px 64px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; position: relative">
 <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px; max-width: 620px">
-<p style="margin: 0; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">About me</p>
-<p style="margin: 0; font-size: 18px; line-height: 1.65">A PhD candidate at the Microsystems Laboratory, EPFL, jointly with ETH Zürich. I connect extended reality and microengineering to how students learn, using design-based research grounded in embodied learning.</p>
-<p style="margin: 0; font-family: 'Gaegu', cursive; font-size: 22px; color: var(--muted)">Off-hours: photography, snowboarding, badminton, tennis, and cooking with too much chili.</p>
+<p style="margin: 0; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">{{t.about.label}}</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.65">{{t.about.text}}</p>
+<p style="margin: 0; font-family: 'Gaegu', cursive; font-size: 22px; color: var(--muted)">{{t.about.off}}</p>
 </div>
 <div style="flex: 0 1 320px; display: flex; flex-direction: column; gap: 10px; font-family: 'Josefin Sans', sans-serif; font-size: 14px">
-<p style="margin: 0; color: var(--muted)">SAY HELLO</p>
+<p style="margin: 0; color: var(--muted); text-transform: uppercase">{{t.contact.label}}</p>
 <a href="mailto:qinglan.shan@epfl.ch" style="padding: 6px 0">qinglan.shan@epfl.ch</a>
 <a href="https://www.linkedin.com/in/qinglan-shan" style="padding: 6px 0">LinkedIn</a>
-<a href="https://people.epfl.ch/qinglan.shan" style="padding: 6px 0">EPFL profile</a>
-<p style="margin: 24px 0 0; color: var(--muted)">© 2026 Qinglan Shan</p>
+<a href="https://people.epfl.ch/qinglan.shan" style="padding: 6px 0">{{t.contact.epfl}}</a>
+<p style="margin: 24px 0 0; color: var(--muted)">{{t.contact.copy}}</p>
 </div>
 </footer>
 </div>
@@ -273,11 +275,37 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { active: null, night: false, flash: false, prize: false };
+    this.state = { active: null, night: false, flash: false, prize: false, lang: this.qsLang() };
   }
+  // Text in both languages comes from content/*.md (filled in by _tools/content.py).
+  i18n() { return /*I18N*/{"en":{"nav":{"about":"About Me","gallery":"Gallery","xrlab":"XR Lab","research":"Research","lang":"中文","langLabel":"切换到中文","home":"Qinglan Shan, home"},"proj":{"all":"← all projects","threads":"two threads in one study","next":"Next project","more":"read the project"},"page":{"title":"Qinglan Shan"},"hero":{"kicker":"XR designer · learning sciences researcher","hi":"Hi, I'm","name":"Qinglan.","text":"I design mixed-reality spaces and embodied interactions, and study how people learn in them.","work":"See the work","papers":"Publications"},"desk":{"poke":"poke the things on my desk"},"lamp":{"toNight":"click for night","toDay":"click for daylight"},"note":{"close":"crumple it back","me":{"tag":"say hello","title":"Hi, that’s me","text":"Thank you for being interested in me! Don’t forget to reach out!","link":"Contact: qinglan.shan@epfl.ch"},"tea":{"tag":"ritual","title":"Vine tea","text":"In my hometown, Zhangjiajie, there is a tea called meicha (vine tea), and it is my favourite. It isn’t a true tea but a herb, stir-fried from a climbing vine. The brew is bitter first, then sweet, with a long, rich aftertaste. Isn’t that a little like life?"},"cat":{"tag":"family","title":"Mafia","text":"A Siamese who keeps getting darker. Super good-tempered, and goes a little wild whenever people come over."},"book":{"tag":"reading this month","title":"Sleep","text":"Haruki Murakami. [Why this story stays with you.]"},"badminton":{"tag":"sport","title":"Badminton","text":"I played badminton at LUC (Lausanne University Club) and won women’s doubles and mixed matches for the club against the Rudi Team from Lausanne."},"tennis":{"tag":"sport","title":"Tennis","text":"After I injured my shoulder, I switched from badminton to tennis."},"snowboard":{"tag":"sport","title":"Snowboarding","text":"Five years of snowboarding, free-riding on all mountain pistes."},"chili":{"tag":"kitchen","title":"Chili","text":"A Hunan kid never cooks without it."},"rnb":{"tag":"music","title":"R&B","text":"[Three songs on repeat.]"}},"prize":{"kicker":"prize collection","title":"Awards","close":"put it away"},"award":{"1":"2021 | Guo Mingqiu Award, Tsinghua (“12·9” counsellor award) | About 40 graduate students a year, for excellence in both study and student work","2":"2021 | Outstanding Student Leader, Tsinghua | Top 0.5% of the university","3":"2019–2022 | Second-class School Scholarship, Tsinghua | MSc, Computer Science and Technology","4":"2019–2022 | Outstanding Graduate Class, Tsinghua | As class president of the Sino-French master’s programme, I led the class to the award","5":"2019 | Outstanding Graduate of Sichuan Province | Provincial level","6":"2018 | National Scholarship | About 0.2% of undergraduates nationwide","7":"2015–2019 | Highest Scholarship, Chengdu University of Technology | Three years in a row"},"about":{"label":"About me","text":"A PhD candidate at the Microsystems Laboratory, EPFL, jointly with ETH Zürich. I connect extended reality and microengineering to how students learn, using design-based research grounded in embodied learning.","off":"Off-hours: photography, snowboarding, badminton, tennis, and cooking with too much chili."},"contact":{"label":"Say hello","epfl":"EPFL profile","copy":"© 2026 Qinglan Shan"}},"zh":{"nav":{"about":"关于我","gallery":"摄影","xrlab":"XR 实验室","research":"研究","lang":"EN","langLabel":"Switch to English","home":"单晴岚，回到首页"},"proj":{"all":"← 全部项目","threads":"一项研究，两条线索","next":"下一个项目","more":"查看项目"},"page":{"title":"单晴岚"},"hero":{"kicker":"XR 设计师 · 学习科学研究者","hi":"你好，我是","name":"单晴岚。","text":"我设计混合现实空间与具身交互，并研究人们如何在其中学习。","work":"看看作品","papers":"论文发表"},"desk":{"poke":"戳戳我桌上的小东西"},"lamp":{"toNight":"点一下，天黑了","toDay":"点一下，天亮了"},"note":{"close":"揉回去","me":{"tag":"打个招呼","title":"嗨，这就是我","text":"谢谢你对我感兴趣！请和我联络吧！","link":"联系我：qinglan.shan@epfl.ch"},"tea":{"tag":"日常","title":"莓茶","text":"在我的家乡张家界有一种茶叫莓茶，是我最喜欢的茶。它不是普通的茶类，而是由植物藤炒制而成的草本植物。可它的茶汤先苦后甜，浓郁的回甘，又何尝不是一种人生写照呢？"},"cat":{"tag":"家人","title":"黑包","text":"会黑化的暹罗猫，脾气超级好，“人来疯”。"},"book":{"tag":"这个月在读","title":"《眠》","text":"村上春树。[这个故事为什么让你念念不忘。]"},"badminton":{"tag":"运动","title":"羽毛球","text":"我在洛桑大学俱乐部（LUC）打羽毛球，代表俱乐部对阵洛桑 Rudi 队，赢下了女双和混双。"},"tennis":{"tag":"运动","title":"网球","text":"肩膀受伤之后，我从羽毛球改打网球了。"},"snowboard":{"tag":"运动","title":"单板滑雪","text":"五年单板经验，全山雪道自由滑。"},"chili":{"tag":"厨房","title":"辣椒","text":"湖南人做饭，哪能少了辣椒。"},"rnb":{"tag":"音乐","title":"节奏布鲁斯","text":"[三首单曲循环的歌。]"}},"prize":{"kicker":"奖项收藏","title":"获奖经历","close":"收起来"},"award":{"1":"2021 | 清华大学“一二·九”辅导员郭明秋奖 | 学业与学生工作兼顾，每年全体研究生中评选约 40 人","2":"2021 | 清华大学优秀学生干部 | 全校前 0.5%","3":"2019–2022 | 清华大学校级二等奖学金 | 清华大学 · 计算机科学与技术 硕士","4":"2019–2022 | 清华大学先进研究生集体 | 担任中法硕士项目班班长，带领班级获评","5":"2019 | 四川省优秀毕业生 | 省级","6":"2018 | 国家奖学金 | 全国本专科生获奖比例约 0.2%","7":"2015–2019 | 成都理工大学最高奖学金 | 连续三年"},"about":{"label":"关于我","text":"我是洛桑联邦理工学院（EPFL）微系统实验室的博士生，与苏黎世联邦理工学院（ETH Zürich）联合培养。我把扩展现实、微纳工程和学生的学习连在一起，以具身学习为理论基础，用基于设计的研究方法开展工作。","off":"工作之外：摄影、单板滑雪、羽毛球、网球，还有做饭放太多辣椒。"},"contact":{"label":"打个招呼","epfl":"EPFL 个人主页","copy":"© 2026 单晴岚"}}}/*/I18N*/; }
+  qsLang() {
+    try {
+      const q = new URLSearchParams(window.location.search).get('lang');
+      if (q === 'zh' || q === 'en') { window.localStorage.setItem('qs-lang', q); return q; }
+      const s = window.localStorage.getItem('qs-lang');
+      if (s === 'zh' || s === 'en') return s;
+      return /^zh/i.test(window.navigator.language || '') ? 'zh' : 'en';
+    } catch (e) { return 'en'; }
+  }
+  toggleLang() {
+    const lang = this.state.lang === 'zh' ? 'en' : 'zh';
+    try {
+      window.localStorage.setItem('qs-lang', lang);
+      if (/[?&]lang=/.test(window.location.search)) window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+    } catch (e) {}
+    this.setState({ lang });
+  }
+  applyLang(title) {
+    try { document.documentElement.lang = this.state.lang === 'zh' ? 'zh-CN' : 'en'; if (title) document.title = title; } catch (e) {}
+  }
+  rows(o) { return Object.keys(o || {}).filter((k) => /^\d+$/.test(k)).sort((a, b) => a - b).map((k) => String(o[k]).split(/\s*\|\s*/)); }
+
   componentDidMount() {
     try { if (window.localStorage.getItem('qs-theme') === 'night') this.setState({ night: true }); } catch (e) {}
+    this.applyLang(this.i18n()[this.state.lang].page.title);
   }
+  componentDidUpdate() { this.applyLang(this.i18n()[this.state.lang].page.title); }
   componentWillUnmount() {
     this.stopMusic(true);
   }
@@ -374,41 +402,32 @@ class Component extends DCLogic {
   }
   renderVals() {
     const CUP = 'assets/site/224fedc880c0aabea1948ad07c97bdd9.webp';
-    const notes = {
-      cat: { tag: 'family · 家人', title: 'Mafia', zh: '黑包', note: 'Also known as Mafia. [Age, habits, favourite spot in the flat.]' },
-      book: { tag: 'reading this month', title: 'Sleep', zh: '《眠》', note: 'Haruki Murakami. [Why this story stays with you.]' },
-      home: { tag: 'hometown · 家乡', title: 'Zhangjiajie', zh: '张家界', note: 'Where I grew up: the stone pillars that inspired the floating mountains in Avatar.' },
-      badminton: { tag: 'sport', title: 'Badminton', zh: '羽毛球', note: 'I played badminton at LUC (Lausanne University Club) and won women’s doubles and mixed matches for the club against the Rudi Team from Lausanne.' },
-      snowboard: { tag: 'sport', title: 'Snowboarding', zh: '单板滑雪', note: 'Five years of snowboarding, free-riding on all mountain pistes.' },
-      chili: { tag: 'kitchen', title: 'Chili', zh: '辣椒', note: 'A Hunan kid never cooks without it.' },
-      rnb: { tag: 'music', title: 'R&B', zh: '节奏布鲁斯', note: '[Three songs on repeat.]' },
-      tennis: { tag: 'sport', title: 'Tennis', zh: '网球', note: 'After I injured my shoulder, I switched from badminton to tennis.' },
-      me: { tag: 'say hello', title: 'Hi, that’s me', zh: '', note: 'Thank you for being interested in me! Don’t forget to reach out!', note2: '谢谢你对我感兴趣！请和我联络吧！', link: 'mailto:qinglan.shan@epfl.ch', linkLabel: 'Contact: qinglan.shan@epfl.ch' },
-      tea: { tag: 'ritual', title: 'Tea', zh: '茶', note: '[Which tea, and how you brew it.]' },
-      coffee: { tag: 'ritual', title: 'Coffee', zh: '咖啡', note: '[How you take it.]' }
-    };
+    const L = this.state.lang === 'zh' ? 'zh' : 'en';
+    const t = this.i18n()[L] || {};
+    const other = this.i18n()[L === 'zh' ? 'en' : 'zh'] || {};
+    const tn = t.note || {}; const on = other.note || {};
+    const notes = {};
+    ['cat', 'book', 'badminton', 'snowboard', 'chili', 'rnb', 'tennis', 'me', 'tea'].forEach((k) => {
+      const n = tn[k] || {}; const o = on[k] || {};
+      notes[k] = { tag: n.tag || '', title: n.title || '', sub: k === 'me' ? '' : (o.title || ''), note: n.text || '',
+        note2: k === 'me' && L === 'en' ? (o.text || '') : '', link: k === 'me' ? 'mailto:qinglan.shan@epfl.ch' : '', linkLabel: n.link || '' };
+    });
     const open = {};
     Object.keys(notes).forEach((k) => { open[k] = () => this.setState({ active: k }); });
-    const active = this.state.active ? notes[this.state.active] : { tag: '', title: '', zh: '', note: '', note2: '' };
+    const active = this.state.active ? notes[this.state.active] : { tag: '', title: '', sub: '', note: '', note2: '', link: '', linkLabel: '' };
     const night = this.state.night;
     const fonts = { 'Caprasimo': "'Caprasimo', serif", 'Gochi Hand': "'Gochi Hand', cursive", 'Bagel Fat One': "'Bagel Fat One', sans-serif", 'Fraunces': "'Fraunces', serif" };
     return {
+      t,
+      toggleLang: () => this.toggleLang(),
       nameFont: fonts[this.props.nameFont ?? 'Caprasimo'] || fonts['Caprasimo'],
       open,
       active,
       prizeOpen: this.state.prize,
       openPrize: () => this.setState({ prize: true }),
       closePrize: () => this.setState({ prize: false }),
-      // 获奖经历: from the CV. Add rows as { year, name, org }.
-      awards: [
-        { year: '2021', name: '清华大学“一二·九”辅导员郭明秋奖', org: '学业与学生工作兼顾，每年全体研究生中评选约 40 人' },
-        { year: '2021', name: '清华大学优秀学生干部', org: '全校前 0.5%' },
-        { year: '2019–2022', name: '清华大学校级二等奖学金', org: '清华大学 · 计算机科学与技术 硕士' },
-        { year: '2019–2022', name: '清华大学先进研究生集体', org: '担任中法硕士项目班班长，带领班级获评' },
-        { year: '2019', name: '四川省优秀毕业生', org: '省级' },
-        { year: '2018', name: '国家奖学金', org: '全国本专科生获奖比例约 0.2%' },
-        { year: '2015–2019', name: '成都理工大学最高奖学金', org: '连续三年' }
-      ],
+      // awards: content/home.md (award.1, award.2 ...)
+      awards: this.rows(t.award).map(([year, name, org]) => ({ year, name, org: org || '' })),
       hasActive: !!this.state.active,
       close: () => this.setState({ active: null }),
       theme: night ? 'night' : 'day',
@@ -417,7 +436,7 @@ class Component extends DCLogic {
       glowClass: night ? 'glow' : '',
       lampPressed: night ? 'true' : 'false',
       lampLabel: night ? 'Turn the lamp off — day mode' : 'Turn the lamp on — night mode',
-      lampHint: night ? 'click for daylight' : 'click for night',
+      lampHint: night ? (t.lamp || {}).toDay : (t.lamp || {}).toNight,
       shoot: () => this.shoot(),
       sfx: { tennis: () => this.sfx('tennis'), badminton: () => this.sfx('badminton'), book: () => this.sfx('book'), tea: () => this.sfx('tea'), snow: () => this.sfx('snow'), phone: () => this.sfx('phone') },
       cupSrc: CUP,

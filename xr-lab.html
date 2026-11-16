@@ -12,6 +12,7 @@ body{margin:0;background:#F3EDE1}
 a{color:#22201C}a:hover{color:#B23A26}
 .navlink{text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:14px;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
+.lang{background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:inherit;min-height:40px}
 .row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:center;padding:24px;background:#FBF8F1;border:1.5px solid #E6DECF;border-radius:28px;text-decoration:none;color:#22201C;transition:transform .25s ease,box-shadow .25s ease}
 .row:hover{transform:translateY(-4px);box-shadow:0 10px 0 rgba(34,32,28,.06);color:#22201C}
 .row:focus-visible{outline:2px dashed #B23A26;outline-offset:4px}
@@ -71,12 +72,12 @@ a{color:#22201C}a:hover{color:#B23A26}
 <template id="dc-template">
 <div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', sans-serif">
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="index.html" aria-label="Qinglan Shan, home" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 20px"><a class="navlink" href="index.html#about">About Me</a><a class="navlink" href="gallery.html">Gallery</a><a class="navlink" href="xr-lab.html" style="border-bottom-color: #22201C">XR Lab</a><a class="navlink" href="research.html">Research</a></nav>
+<a href="index.html" aria-label="{{t.nav.home}}" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px"><a class="navlink" href="index.html#about">{{t.nav.about}}</a><a class="navlink" href="gallery.html">{{t.nav.gallery}}</a><a class="navlink" href="xr-lab.html" style="border-bottom-color: #22201C">{{t.nav.xrlab}}</a><a class="navlink" href="research.html">{{t.nav.research}}</a><button class="navlink lang" onClick="{{toggleLang}}" aria-label="{{t.nav.langLabel}}">{{t.nav.lang}}</button></nav>
 </header>
 
 <section style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 32px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; color: #5C564C">XR LAB · 3D PLAYGROUND</p>
+<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; color: #5C564C; text-transform: uppercase">{{t.kicker}}</p>
 
 
 </section>
@@ -84,17 +85,17 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- SELECTED WORK: one project per row -->
 <section id="work" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 120px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px">
-<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 45px; letter-spacing: -.01em">Selected <span style="color: #B23A26">interactive</span> work</h2>
-<p style="margin: 0; font-size: 13px; color: #5C564C">XR · HCI · learning design</p>
+<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 45px; letter-spacing: -.01em">{{t.title.a}}{{sp}}<span style="color: #B23A26">{{t.title.b}}</span>{{sp}}{{t.title.c}}</h2>
+<p style="margin: 0; font-size: 13px; color: #5C564C">{{t.tagline}}</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 32px">
 <a class="row" href="project.html#embodied">
 <span class="media"><video data-loop="" src="assets/site/2ed66dd3faa9054cb8c2b788b83a3e51.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="Students interacting with holograms of the photolithography process" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">In progress · fall 2026</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">Embodied MR in the cleanroom</span>
-<span style="font-size: 16px; line-height: 1.5; color: #3A3730">Students reach into holograms of the process and learn it with their hands. More soon.</span>
-<span class="more">read the project <span aria-hidden="true">→</span></span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.embodied.venue}}</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.embodied.title}}</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.embodied.short}}</span>
+<span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
 </a>
 <a class="row" href="project.html#aiauthor">
@@ -129,28 +130,28 @@ a{color:#22201C}a:hover{color:#B23A26}
 <g class="hmd"><path d="M560 410 C 560 392, 710 392, 710 410 L 710 434 C 710 448, 672 450, 656 437 C 646 428, 624 428, 614 437 C 598 450, 560 448, 560 434 Z" fill="#FFFFFF" stroke="#22201C" stroke-width="2.6" stroke-linejoin="round"></path><path d="M572 412 C 600 404, 670 404, 698 412" fill="none" stroke="#9A9284" stroke-width="2" stroke-linecap="round"></path></g>
 </svg></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">In progress</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">AI-assisted MR authoring</span>
-<span style="font-size: 16px; line-height: 1.5; color: #3A3730">An LLM drafts MR training from the documents labs already have; teachers check and publish.</span>
-<span class="more">read the project <span aria-hidden="true">→</span></span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.aiauthor.venue}}</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.aiauthor.title}}</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.aiauthor.short}}</span>
+<span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
 </a>
 <a class="row" href="project.html#cleanroom">
 <span class="media"><video data-loop="" src="assets/site/1337771e73364f03578d50deda5e4f57.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="A student at the spin coater with MR guidance" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">CHI EA 2026</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">MR-assisted cleanroom training</span>
-<span style="font-size: 16px; line-height: 1.5; color: #3A3730">Teachers author MR steps once; students work through the cleanroom on their own.</span>
-<span class="more">read the project <span aria-hidden="true">→</span></span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.cleanroom.venue}}</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.cleanroom.title}}</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.cleanroom.short}}</span>
+<span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
 </a>
 <a class="row" href="project.html#mixedlab">
 <span class="media"><video data-loop="" src="assets/site/1427da86f6e6fd51697440a522e8ba24.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="First-person view of the MixedLAB checklist during hands-on work" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">SEFI 2024 · ICLS 2025</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">MixedLAB</span>
-<span style="font-size: 16px; line-height: 1.5; color: #3A3730">Checklists, molecules and feedback over real equipment, seen through the student’s eyes.</span>
-<span class="more">read the project <span aria-hidden="true">→</span></span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.mixedlab.venue}}</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.mixedlab.title}}</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.mixedlab.short}}</span>
+<span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
 </a>
 <a class="row" href="project.html#amblyopia">
@@ -163,10 +164,10 @@ a{color:#22201C}a:hover{color:#B23A26}
 <span class="scan"></span>
 </span></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">ICVR 2022</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">VR × BCI for amblyopia</span>
-<span style="font-size: 16px; line-height: 1.5; color: #3A3730">Each eye gets its own flicker in VR, and EEG shows which one wins.</span>
-<span class="more">read the project <span aria-hidden="true">→</span></span>
+<span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.amblyopia.venue}}</span>
+<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.amblyopia.title}}</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.amblyopia.short}}</span>
+<span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
 </a>
 </div>
@@ -177,11 +178,42 @@ a{color:#22201C}a:hover{color:#B23A26}
 </template>
 <script type="text/x-dc" id="dc-logic">
 class Component extends DCLogic {
-  componentDidMount() { this.playLoops(); }
+  constructor(props) {
+    super(props);
+    this.state = { lang: this.qsLang() };
+  }
+  // Text in both languages comes from content/*.md (filled in by _tools/content.py).
+  i18n() { return /*I18N*/{"en":{"nav":{"about":"About Me","gallery":"Gallery","xrlab":"XR Lab","research":"Research","lang":"中文","langLabel":"切换到中文","home":"Qinglan Shan, home"},"proj":{"all":"← all projects","threads":"two threads in one study","next":"Next project","more":"read the project"},"page":{"title":"XR Lab · Qinglan Shan"},"kicker":"XR Lab · 3D playground","title":{"a":"Selected","b":"interactive","c":"work"},"tagline":"XR · HCI · learning design","projects":{"embodied":{"title":"Embodied MR in the cleanroom","venue":"In progress · fall 2026","paper":"A new study, running this semester. Details will follow once it is published.","short":"Students reach into holograms of the process and learn it with their hands. More soon.","lede":"Students reach into holograms of the photolithography process, from the wafer to the mask to the light, and learn it with their hands.","caption":"Real footage from the fall 2026 sessions, seen through the headset.","meta":{"1":"Year | 2026 – now","2":"Role | Lead · design, development, study","3":"Tools | HoloLens 2 · Unity · embodied interaction","4":"Setting | EPFL cleanroom (CMi)"},"story":{"1":"coming soon | The study is still running, so most of it stays under wraps for now. The question: does learning with your body, not just your eyes, help students understand what happens on the wafer?"}},"aiauthor":{"title":"AI-assisted MR authoring","venue":"In progress · 2025 –","paper":"Ongoing research. Early user study done; details to follow once published.","short":"An LLM drafts MR training from the documents labs already have; teachers check and publish.","lede":"Writing MR training by hand takes time most teachers don’t have. I’m exploring how a large language model can turn the documents labs already keep into draft MR training, with the teacher staying in charge.","caption":"The idea: lab documents go in, an LLM drafts the steps, a teacher checks them and adds media, and the training opens on the headset.","meta":{"1":"Year | 2025 – now","2":"Role | Lead · tool design, development, user study","3":"Tools | LLM pipeline · web editor · HoloLens 2 · Unity","4":"Status | Early validation with teaching staff done"},"story":{"1":"the idea | Cleanrooms already have process flows, run cards and machine manuals. Instead of rebuilding them as MR content by hand, the tool reads them and drafts step-by-step training. The teacher reviews it in a web editor and publishes it to the headset in one go.","2":"why it matters | It sits where AI meets engineering education: authoring cost is one of the main reasons MR stays in pilots. If AI handles the first draft and people keep the judgment, more courses can use hands-on MR training."}},"cleanroom":{"title":"MR-assisted cleanroom training","venue":"CHI EA 2026 · Barcelona","paper":"From Apprenticeship to Autonomy: Mixed Reality-Assisted Training in a Cleanroom by a Hybrid Authoring Workflow","short":"Teachers author MR steps once; students work through the cleanroom on their own.","lede":"Cleanroom training still runs on one instructor, one student, one machine. This system lets instructors author MR training once, so novices can work through photolithography on their own.","caption":"A student works the spin coater with MR guidance, in a real microfabrication course.","meta":{"1":"Year | 2024 – 2026","2":"Role | First author · system design, study, analysis","3":"Tools | HoloLens 2 · MRTK · Unity · web authoring tool","4":"Team | Qinglan Shan, Manu Kapur, Jürgen Brugger"},"stat":{"1":"15 | participants across two semesters","2":"78.6 | SUS: “good” to “excellent” usability","3":"2 | modules written by instructors, no code"},"story":{"1":"the problem | Training in semiconductor cleanrooms relies on one-to-one “master–apprentice” teaching that is hard to scale, and building MR content usually needs programming skills most educators don’t have."},"thread":{"1":"the workflow | Instructors build the training in a web editor, without code: steps, 3D models, videos, quizzes. Then they pin each step to the real equipment, in the office or on site, and students follow it on HoloLens 2.","2":"the invisible bubble | Students stopped imitating the teacher and worked on their own, but each one ended up inside a bubble of focus, talking less to peers. We suggest ways to step out of it when collaboration matters."},"link":{"1":"Paper (ACM DOI)"}},"mixedlab":{"title":"MixedLAB","venue":"SEFI 2024 · ICLS 2025","paper":"MixedLAB: Mixed Reality to Teach Students Experimental Knowledge in Microfabrication · Mixed-reality training in a cleanroom to bridge intentional learning and actual learning","short":"Checklists, molecules and feedback over real equipment, seen through the student’s eyes.","lede":"Microfabrication happens at a scale nobody can see. MixedLAB lays molecules, checklists and feedback over the real equipment, so students can see why a step works while their hands are busy.","caption":"First-person view: a student ticks off the spin-coating checklist while working at the bench.","meta":{"1":"Year | 2023 – 2025","2":"Role | First author · co-design, development, studies","3":"Tools | HoloLens 2 · MRTK · Unity · Blender","4":"Team | Qinglan Shan, Julia Chatain, Fan Wang, Arnaud Bertsch, Manu Kapur, Jürgen Brugger"},"stat":{"1":"8 / 12 | course students took part","2":"21 | days until the delayed hands-on test","3":"4 | learning-science design principles"},"story":{"1":"the problem | Automated equipment leaves little hands-on engagement, and students get buried in procedural steps, so the concepts teachers design for get lost.","2":"what I built | Co-designed with teachers and students: scan a QR code at a station and the matching module opens, with 3D molecules, step checklists, instant feedback and small rewards. Teachers edit it without Unity.","3":"what we learned | Students found it natural and fun, and liked learning at their own pace. MR’s extra questions pulled their attention back to the concepts behind each step."},"quote":"The best thing for me is I can learn on my own pace.","quoteBy":"Participant P4, SEFI 2024 interviews","gallery":{"1":"Hands on the wafer box, seen through the headset","2":"Inside MixedLAB: molecules, checklists, feedback, graphics with text"},"link":{"1":"SEFI 2024 paper","2":"ICLS 2025 paper"}},"amblyopia":{"title":"VR × BCI for amblyopia","venue":"ICVR 2022","paper":"Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR","short":"Each eye gets its own flicker in VR, and EEG shows which one wins.","lede":"When the two eyes see different patterns, they compete. We used a VR headset as two separate screens and read the brain’s answer with SSVEP to measure that rivalry.","caption":"The system: each eye gets its own flicker frequency (7 Hz and 12.5 Hz) inside the headset, while EEG picks up which eye wins.","meta":{"1":"Year | 2021 – 2022","2":"Role | First author · VR system, experiment","3":"Tools | VR headset · Unity · EEG / SSVEP","4":"Team | Qinglan Shan, Kaiying Mao, Yu Cheng, Yuhan Dong, et al."},"stat":{"1":"16 | participants","2":"5 | stimulation conditions","3":"70 s | per stimulation epoch"},"story":{"1":"the problem | Glasses and stereoscopes struggle to show each eye its own image, or to change it dynamically, so binocular rivalry is hard to measure.","2":"what we built | SSVEP stimuli built into virtual scenes (trees, a lawn, a river) and shown separately to each eye, with live EEG processing and a rehabilitation game on top."},"gallery":{"1":"Six scenes, A to F, each eye seeing its own version"},"link":{"1":"IEEE paper"}}}},"zh":{"nav":{"about":"关于我","gallery":"摄影","xrlab":"XR 实验室","research":"研究","lang":"EN","langLabel":"Switch to English","home":"单晴岚，回到首页"},"proj":{"all":"← 全部项目","threads":"一项研究，两条线索","next":"下一个项目","more":"查看项目"},"page":{"title":"XR 实验室 · 单晴岚"},"kicker":"XR 实验室 · 三维游乐场","title":{"a":"精选","b":"交互","c":"作品"},"tagline":"XR · 人机交互 · 学习设计","projects":{"embodied":{"title":"洁净室里的具身混合现实","venue":"进行中 · 2026 年秋","paper":"一项本学期正在进行的新研究，发表后再公开细节。","short":"学生把手伸进工艺流程的全息影像，用双手去学。更多内容即将公开。","lede":"学生把手伸进光刻工艺的全息影像里，从晶圆、掩膜到光，用双手去学习它。","caption":"2026 年秋季课程的真实画面，透过头显拍摄。","meta":{"1":"时间 | 2026 年至今","2":"角色 | 负责人 · 设计、开发、研究","3":"工具 | HoloLens 2 · Unity · 具身交互","4":"场地 | EPFL 洁净室（CMi）"},"story":{"1":"敬请期待 | 研究仍在进行，大部分内容暂时保密。我们关心的问题是：用身体而不只是用眼睛去学，能否帮助学生理解晶圆上究竟发生了什么？"}},"aiauthor":{"title":"AI 辅助的混合现实内容制作","venue":"进行中 · 2025 年起","paper":"研究进行中，已完成早期用户研究，发表后再公开细节。","short":"大语言模型根据实验室已有的文档起草 MR 培训，老师审核后发布。","lede":"手工制作混合现实培训很耗时，大多数老师没有这样的时间。我在探索如何让大语言模型把实验室现有的文档变成 MR 培训的初稿，同时由老师把握最终内容。","caption":"构想：放入实验室文档，大语言模型起草步骤，老师审核并补充媒体，培训随即在头显中打开。","meta":{"1":"时间 | 2025 年至今","2":"角色 | 负责人 · 工具设计、开发、用户研究","3":"工具 | 大语言模型流程 · 网页编辑器 · HoloLens 2 · Unity","4":"进展 | 已与教学人员完成早期验证"},"story":{"1":"构想 | 洁净室本来就有工艺流程、流程卡和设备手册。与其手工把它们重做成 MR 内容，不如让工具读取这些文档，起草分步培训。老师在网页编辑器里审核，一键发布到头显。","2":"为什么重要 | 这项工作位于 AI 与工程教育的交叉点：制作成本是 MR 一直停留在试点阶段的主要原因之一。如果 AI 负责初稿、由人来把关，就会有更多课程用上动手实践的 MR 培训。"}},"cleanroom":{"title":"混合现实辅助的洁净室培训","venue":"CHI EA 2026 · 巴塞罗那","paper":"From Apprenticeship to Autonomy: Mixed Reality-Assisted Training in a Cleanroom by a Hybrid Authoring Workflow","short":"老师只需制作一次 MR 步骤，学生就能在洁净室里独立完成操作。","lede":"洁净室培训至今仍是一位老师、一名学生、一台设备。这个系统让老师一次制作 MR 培训，新手就能独立完成光刻操作。","caption":"真实的微加工课程中，学生在 MR 引导下操作匀胶机。","meta":{"1":"时间 | 2024 – 2026","2":"角色 | 第一作者 · 系统设计、研究、分析","3":"工具 | HoloLens 2 · MRTK · Unity · 网页制作工具","4":"团队 | Qinglan Shan, Manu Kapur, Jürgen Brugger"},"stat":{"1":"15 | 名参与者，跨两个学期","2":"78.6 | SUS 可用性评分，介于“良好”与“优秀”之间","3":"2 | 个由老师零代码制作的模块"},"story":{"1":"问题 | 半导体洁净室的培训依赖一对一的“师傅带徒弟”，难以规模化；而制作 MR 内容通常需要编程能力，大多数教育者并不具备。"},"thread":{"1":"制作流程 | 老师在网页编辑器里零代码搭建培训：步骤、3D 模型、视频和小测验。再在办公室或现场把每一步锚定到真实设备上，学生戴上 HoloLens 2 跟着做。","2":"看不见的气泡 | 学生不再模仿老师，而是独立操作；但每个人都进入了一个专注的“气泡”，和同伴的交流变少了。我们提出了在需要协作时走出气泡的办法。"},"link":{"1":"论文（ACM DOI）"}},"mixedlab":{"title":"MixedLAB","venue":"SEFI 2024 · ICLS 2025","paper":"MixedLAB: Mixed Reality to Teach Students Experimental Knowledge in Microfabrication · Mixed-reality training in a cleanroom to bridge intentional learning and actual learning","short":"检查清单、分子模型和即时反馈叠加在真实设备上，以学生的第一视角呈现。","lede":"微加工发生在肉眼看不见的尺度。MixedLAB 把分子、检查清单和反馈叠加在真实设备上，让学生在动手的同时，看懂每一步为什么这样做。","caption":"第一视角：学生在操作台前一边操作，一边勾选匀胶步骤清单。","meta":{"1":"时间 | 2023 – 2025","2":"角色 | 第一作者 · 共同设计、开发、研究","3":"工具 | HoloLens 2 · MRTK · Unity · Blender","4":"团队 | Qinglan Shan, Julia Chatain, Fan Wang, Arnaud Bertsch, Manu Kapur, Jürgen Brugger"},"stat":{"1":"8 / 12 | 名课程学生参与","2":"21 | 天后进行延迟实操测试","3":"4 | 条学习科学设计原则"},"story":{"1":"问题 | 自动化设备让学生动手的机会很少，学生又容易淹没在繁琐的步骤里，老师想传达的概念因此被忽略。","2":"我做了什么 | 与老师和学生共同设计：在工位扫一下二维码，对应模块就会打开，里面有 3D 分子、步骤清单、即时反馈和小奖励。老师不用 Unity 也能编辑。","3":"我们的发现 | 学生觉得它自然又有趣，喜欢按自己的节奏学习。MR 里额外的提问把他们的注意力拉回到每一步背后的概念上。"},"quote":"对我来说最好的一点是，我可以按自己的节奏学习。","quoteBy":"参与者 P4，SEFI 2024 访谈","gallery":{"1":"透过头显看到的双手和晶圆盒","2":"MixedLAB 界面：分子、清单、反馈与图文说明"},"link":{"1":"SEFI 2024 论文","2":"ICLS 2025 论文"}},"amblyopia":{"title":"面向弱视的 VR × 脑机接口","venue":"ICVR 2022","paper":"Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR","short":"在 VR 里给每只眼睛各自的闪烁，用脑电看出哪只眼睛占上风。","lede":"两只眼睛看到不同的图案时，会相互竞争。我们把 VR 头显当作两块独立的屏幕，用 SSVEP 读取大脑的“答案”，来测量这种双眼竞争。","caption":"系统示意：头显里每只眼睛有各自的闪烁频率（7 Hz 和 12.5 Hz），脑电记录哪只眼睛胜出。","meta":{"1":"时间 | 2021 – 2022","2":"角色 | 第一作者 · VR 系统、实验","3":"工具 | VR 头显 · Unity · 脑电 / SSVEP","4":"团队 | Qinglan Shan, Kaiying Mao, Yu Cheng, Yuhan Dong 等"},"stat":{"1":"16 | 名参与者","2":"5 | 种刺激条件","3":"70 秒 | 每段刺激时长"},"story":{"1":"问题 | 眼镜和立体镜很难给每只眼睛单独显示图像，也难以动态变化，所以双眼竞争很难测量。","2":"我们做了什么 | 把 SSVEP 刺激嵌进虚拟场景（树、草地、河流），分别呈现给两只眼睛，实时处理脑电，并在此基础上做了一个康复小游戏。"},"gallery":{"1":"六个场景（A–F），两只眼睛各自看到不同的版本"},"link":{"1":"IEEE 论文"}}}}}/*/I18N*/; }
+  qsLang() {
+    try {
+      const q = new URLSearchParams(window.location.search).get('lang');
+      if (q === 'zh' || q === 'en') { window.localStorage.setItem('qs-lang', q); return q; }
+      const s = window.localStorage.getItem('qs-lang');
+      if (s === 'zh' || s === 'en') return s;
+      return /^zh/i.test(window.navigator.language || '') ? 'zh' : 'en';
+    } catch (e) { return 'en'; }
+  }
+  toggleLang() {
+    const lang = this.state.lang === 'zh' ? 'en' : 'zh';
+    try {
+      window.localStorage.setItem('qs-lang', lang);
+      if (/[?&]lang=/.test(window.location.search)) window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+    } catch (e) {}
+    this.setState({ lang });
+  }
+  applyLang(title) {
+    try { document.documentElement.lang = this.state.lang === 'zh' ? 'zh-CN' : 'en'; if (title) document.title = title; } catch (e) {}
+  }
+  rows(o) { return Object.keys(o || {}).filter((k) => /^\d+$/.test(k)).sort((a, b) => a - b).map((k) => String(o[k]).split(/\s*\|\s*/)); }
+  componentDidMount() { this.playLoops(); this.applyLang(this.i18n()[this.state.lang].page.title); }
+  componentDidUpdate() { this.applyLang(this.i18n()[this.state.lang].page.title); }
   playLoops() {
     try { document.querySelectorAll('video[data-loop]').forEach((v) => { v.muted = true; const p = window.__lazyPlay ? window.__lazyPlay(v) : v.play(); if (p && p.catch) p.catch(() => {}); }); } catch (e) {}
   }
-  renderVals() { return {}; }
+  renderVals() {
+    const zh = this.state.lang === 'zh';
+    return { t: this.i18n()[zh ? 'zh' : 'en'] || {}, sp: zh ? '' : ' ', toggleLang: () => this.toggleLang() };
+  }
 }
 </script>
 <script src="assets/site/site.js"></script>

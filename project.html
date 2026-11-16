@@ -12,6 +12,7 @@ body{margin:0;background:#F3EDE1}
 a{color:#22201C}a:hover{color:#B23A26}
 .navlink{text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
+.lang{background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:inherit;min-height:40px}
 .lbl{font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#5C564C}
 .shot{position:relative;margin:0;background:#FBF8F1;border:1.5px solid #E6DECF;border-radius:22px;padding:16px}
 .frame{display:block;border-radius:12px;overflow:hidden;background:#FFFFFF}
@@ -82,13 +83,13 @@ a{color:#22201C}a:hover{color:#B23A26}
 <template id="dc-template">
 <div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', sans-serif">
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="index.html" aria-label="Qinglan Shan, home" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 20px"><a class="navlink" href="index.html#about">About Me</a><a class="navlink" href="gallery.html">Gallery</a><a class="navlink" href="xr-lab.html" style="border-bottom-color: #22201C">XR Lab</a><a class="navlink" href="research.html">Research</a></nav>
+<a href="index.html" aria-label="{{t.nav.home}}" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px"><a class="navlink" href="index.html#about">{{t.nav.about}}</a><a class="navlink" href="gallery.html">{{t.nav.gallery}}</a><a class="navlink" href="xr-lab.html" style="border-bottom-color: #22201C">{{t.nav.xrlab}}</a><a class="navlink" href="research.html">{{t.nav.research}}</a><button class="navlink lang" onClick="{{toggleLang}}" aria-label="{{t.nav.langLabel}}">{{t.nav.lang}}</button></nav>
 </header>
 
 <!-- project switcher -->
 <div style="max-width: 1080px; margin: 0 auto; padding: 40px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-<a href="xr-lab.html" style="font-family: 'Josefin Sans', sans-serif; font-size: 18px; text-decoration: none; padding: 10px 0; letter-spacing: -.01em">← all projects</a>
+<a href="xr-lab.html" style="font-family: 'Josefin Sans', sans-serif; font-size: 18px; text-decoration: none; padding: 10px 0; letter-spacing: -.01em">{{t.proj.all}}</a>
 <nav aria-label="Projects" style="display: flex; gap: 4px">
 <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
 <button class="tab" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" aria-label="{{t.title}}" style="color: {{t.color}}">{{t.no}}
@@ -190,7 +191,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- THREADS: one paper, two lines of work -->
 <sc-if value="{{p.hasThreads}}" hint-placeholder-val="{{ false }}">
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-direction: column; gap: 28px">
-<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">two threads in one study</h2>
+<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">{{t.proj.threads}}</h2>
 <sc-for list="{{p.threads}}" as="th" hint-placeholder-count="2">
 <article class="thread">
 <div style="display: flex; flex-direction: column; gap: 12px">
@@ -260,7 +261,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 </sc-for>
 </div>
 <button onClick="{{goNext}}" style="background: none; border: 0; cursor: pointer; text-align: right; padding: 10px 0; color: #22201C; display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
-<span class="lbl">Next project</span>
+<span class="lbl">{{t.proj.next}}</span>
 <span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 29px; line-height: 1; letter-spacing: -.01em">{{nextTitle}} →</span>
 </button>
 </section>
@@ -270,8 +271,32 @@ a{color:#22201C}a:hover{color:#B23A26}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { p: 0 };
+    this.state = { p: 0, lang: this.qsLang() };
   }
+  // Text in both languages comes from content/*.md (filled in by _tools/content.py).
+  i18n() { return /*I18N*/{"en":{"nav":{"about":"About Me","gallery":"Gallery","xrlab":"XR Lab","research":"Research","lang":"中文","langLabel":"切换到中文","home":"Qinglan Shan, home"},"proj":{"all":"← all projects","threads":"two threads in one study","next":"Next project","more":"read the project"},"projects":{"embodied":{"title":"Embodied MR in the cleanroom","venue":"In progress · fall 2026","paper":"A new study, running this semester. Details will follow once it is published.","short":"Students reach into holograms of the process and learn it with their hands. More soon.","lede":"Students reach into holograms of the photolithography process, from the wafer to the mask to the light, and learn it with their hands.","caption":"Real footage from the fall 2026 sessions, seen through the headset.","meta":{"1":"Year | 2026 – now","2":"Role | Lead · design, development, study","3":"Tools | HoloLens 2 · Unity · embodied interaction","4":"Setting | EPFL cleanroom (CMi)"},"story":{"1":"coming soon | The study is still running, so most of it stays under wraps for now. The question: does learning with your body, not just your eyes, help students understand what happens on the wafer?"}},"aiauthor":{"title":"AI-assisted MR authoring","venue":"In progress · 2025 –","paper":"Ongoing research. Early user study done; details to follow once published.","short":"An LLM drafts MR training from the documents labs already have; teachers check and publish.","lede":"Writing MR training by hand takes time most teachers don’t have. I’m exploring how a large language model can turn the documents labs already keep into draft MR training, with the teacher staying in charge.","caption":"The idea: lab documents go in, an LLM drafts the steps, a teacher checks them and adds media, and the training opens on the headset.","meta":{"1":"Year | 2025 – now","2":"Role | Lead · tool design, development, user study","3":"Tools | LLM pipeline · web editor · HoloLens 2 · Unity","4":"Status | Early validation with teaching staff done"},"story":{"1":"the idea | Cleanrooms already have process flows, run cards and machine manuals. Instead of rebuilding them as MR content by hand, the tool reads them and drafts step-by-step training. The teacher reviews it in a web editor and publishes it to the headset in one go.","2":"why it matters | It sits where AI meets engineering education: authoring cost is one of the main reasons MR stays in pilots. If AI handles the first draft and people keep the judgment, more courses can use hands-on MR training."}},"cleanroom":{"title":"MR-assisted cleanroom training","venue":"CHI EA 2026 · Barcelona","paper":"From Apprenticeship to Autonomy: Mixed Reality-Assisted Training in a Cleanroom by a Hybrid Authoring Workflow","short":"Teachers author MR steps once; students work through the cleanroom on their own.","lede":"Cleanroom training still runs on one instructor, one student, one machine. This system lets instructors author MR training once, so novices can work through photolithography on their own.","caption":"A student works the spin coater with MR guidance, in a real microfabrication course.","meta":{"1":"Year | 2024 – 2026","2":"Role | First author · system design, study, analysis","3":"Tools | HoloLens 2 · MRTK · Unity · web authoring tool","4":"Team | Qinglan Shan, Manu Kapur, Jürgen Brugger"},"stat":{"1":"15 | participants across two semesters","2":"78.6 | SUS: “good” to “excellent” usability","3":"2 | modules written by instructors, no code"},"story":{"1":"the problem | Training in semiconductor cleanrooms relies on one-to-one “master–apprentice” teaching that is hard to scale, and building MR content usually needs programming skills most educators don’t have."},"thread":{"1":"the workflow | Instructors build the training in a web editor, without code: steps, 3D models, videos, quizzes. Then they pin each step to the real equipment, in the office or on site, and students follow it on HoloLens 2.","2":"the invisible bubble | Students stopped imitating the teacher and worked on their own, but each one ended up inside a bubble of focus, talking less to peers. We suggest ways to step out of it when collaboration matters."},"link":{"1":"Paper (ACM DOI)"}},"mixedlab":{"title":"MixedLAB","venue":"SEFI 2024 · ICLS 2025","paper":"MixedLAB: Mixed Reality to Teach Students Experimental Knowledge in Microfabrication · Mixed-reality training in a cleanroom to bridge intentional learning and actual learning","short":"Checklists, molecules and feedback over real equipment, seen through the student’s eyes.","lede":"Microfabrication happens at a scale nobody can see. MixedLAB lays molecules, checklists and feedback over the real equipment, so students can see why a step works while their hands are busy.","caption":"First-person view: a student ticks off the spin-coating checklist while working at the bench.","meta":{"1":"Year | 2023 – 2025","2":"Role | First author · co-design, development, studies","3":"Tools | HoloLens 2 · MRTK · Unity · Blender","4":"Team | Qinglan Shan, Julia Chatain, Fan Wang, Arnaud Bertsch, Manu Kapur, Jürgen Brugger"},"stat":{"1":"8 / 12 | course students took part","2":"21 | days until the delayed hands-on test","3":"4 | learning-science design principles"},"story":{"1":"the problem | Automated equipment leaves little hands-on engagement, and students get buried in procedural steps, so the concepts teachers design for get lost.","2":"what I built | Co-designed with teachers and students: scan a QR code at a station and the matching module opens, with 3D molecules, step checklists, instant feedback and small rewards. Teachers edit it without Unity.","3":"what we learned | Students found it natural and fun, and liked learning at their own pace. MR’s extra questions pulled their attention back to the concepts behind each step."},"quote":"The best thing for me is I can learn on my own pace.","quoteBy":"Participant P4, SEFI 2024 interviews","gallery":{"1":"Hands on the wafer box, seen through the headset","2":"Inside MixedLAB: molecules, checklists, feedback, graphics with text"},"link":{"1":"SEFI 2024 paper","2":"ICLS 2025 paper"}},"amblyopia":{"title":"VR × BCI for amblyopia","venue":"ICVR 2022","paper":"Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR","short":"Each eye gets its own flicker in VR, and EEG shows which one wins.","lede":"When the two eyes see different patterns, they compete. We used a VR headset as two separate screens and read the brain’s answer with SSVEP to measure that rivalry.","caption":"The system: each eye gets its own flicker frequency (7 Hz and 12.5 Hz) inside the headset, while EEG picks up which eye wins.","meta":{"1":"Year | 2021 – 2022","2":"Role | First author · VR system, experiment","3":"Tools | VR headset · Unity · EEG / SSVEP","4":"Team | Qinglan Shan, Kaiying Mao, Yu Cheng, Yuhan Dong, et al."},"stat":{"1":"16 | participants","2":"5 | stimulation conditions","3":"70 s | per stimulation epoch"},"story":{"1":"the problem | Glasses and stereoscopes struggle to show each eye its own image, or to change it dynamically, so binocular rivalry is hard to measure.","2":"what we built | SSVEP stimuli built into virtual scenes (trees, a lawn, a river) and shown separately to each eye, with live EEG processing and a rehabilitation game on top."},"gallery":{"1":"Six scenes, A to F, each eye seeing its own version"},"link":{"1":"IEEE paper"}}}},"zh":{"nav":{"about":"关于我","gallery":"摄影","xrlab":"XR 实验室","research":"研究","lang":"EN","langLabel":"Switch to English","home":"单晴岚，回到首页"},"proj":{"all":"← 全部项目","threads":"一项研究，两条线索","next":"下一个项目","more":"查看项目"},"projects":{"embodied":{"title":"洁净室里的具身混合现实","venue":"进行中 · 2026 年秋","paper":"一项本学期正在进行的新研究，发表后再公开细节。","short":"学生把手伸进工艺流程的全息影像，用双手去学。更多内容即将公开。","lede":"学生把手伸进光刻工艺的全息影像里，从晶圆、掩膜到光，用双手去学习它。","caption":"2026 年秋季课程的真实画面，透过头显拍摄。","meta":{"1":"时间 | 2026 年至今","2":"角色 | 负责人 · 设计、开发、研究","3":"工具 | HoloLens 2 · Unity · 具身交互","4":"场地 | EPFL 洁净室（CMi）"},"story":{"1":"敬请期待 | 研究仍在进行，大部分内容暂时保密。我们关心的问题是：用身体而不只是用眼睛去学，能否帮助学生理解晶圆上究竟发生了什么？"}},"aiauthor":{"title":"AI 辅助的混合现实内容制作","venue":"进行中 · 2025 年起","paper":"研究进行中，已完成早期用户研究，发表后再公开细节。","short":"大语言模型根据实验室已有的文档起草 MR 培训，老师审核后发布。","lede":"手工制作混合现实培训很耗时，大多数老师没有这样的时间。我在探索如何让大语言模型把实验室现有的文档变成 MR 培训的初稿，同时由老师把握最终内容。","caption":"构想：放入实验室文档，大语言模型起草步骤，老师审核并补充媒体，培训随即在头显中打开。","meta":{"1":"时间 | 2025 年至今","2":"角色 | 负责人 · 工具设计、开发、用户研究","3":"工具 | 大语言模型流程 · 网页编辑器 · HoloLens 2 · Unity","4":"进展 | 已与教学人员完成早期验证"},"story":{"1":"构想 | 洁净室本来就有工艺流程、流程卡和设备手册。与其手工把它们重做成 MR 内容，不如让工具读取这些文档，起草分步培训。老师在网页编辑器里审核，一键发布到头显。","2":"为什么重要 | 这项工作位于 AI 与工程教育的交叉点：制作成本是 MR 一直停留在试点阶段的主要原因之一。如果 AI 负责初稿、由人来把关，就会有更多课程用上动手实践的 MR 培训。"}},"cleanroom":{"title":"混合现实辅助的洁净室培训","venue":"CHI EA 2026 · 巴塞罗那","paper":"From Apprenticeship to Autonomy: Mixed Reality-Assisted Training in a Cleanroom by a Hybrid Authoring Workflow","short":"老师只需制作一次 MR 步骤，学生就能在洁净室里独立完成操作。","lede":"洁净室培训至今仍是一位老师、一名学生、一台设备。这个系统让老师一次制作 MR 培训，新手就能独立完成光刻操作。","caption":"真实的微加工课程中，学生在 MR 引导下操作匀胶机。","meta":{"1":"时间 | 2024 – 2026","2":"角色 | 第一作者 · 系统设计、研究、分析","3":"工具 | HoloLens 2 · MRTK · Unity · 网页制作工具","4":"团队 | Qinglan Shan, Manu Kapur, Jürgen Brugger"},"stat":{"1":"15 | 名参与者，跨两个学期","2":"78.6 | SUS 可用性评分，介于“良好”与“优秀”之间","3":"2 | 个由老师零代码制作的模块"},"story":{"1":"问题 | 半导体洁净室的培训依赖一对一的“师傅带徒弟”，难以规模化；而制作 MR 内容通常需要编程能力，大多数教育者并不具备。"},"thread":{"1":"制作流程 | 老师在网页编辑器里零代码搭建培训：步骤、3D 模型、视频和小测验。再在办公室或现场把每一步锚定到真实设备上，学生戴上 HoloLens 2 跟着做。","2":"看不见的气泡 | 学生不再模仿老师，而是独立操作；但每个人都进入了一个专注的“气泡”，和同伴的交流变少了。我们提出了在需要协作时走出气泡的办法。"},"link":{"1":"论文（ACM DOI）"}},"mixedlab":{"title":"MixedLAB","venue":"SEFI 2024 · ICLS 2025","paper":"MixedLAB: Mixed Reality to Teach Students Experimental Knowledge in Microfabrication · Mixed-reality training in a cleanroom to bridge intentional learning and actual learning","short":"检查清单、分子模型和即时反馈叠加在真实设备上，以学生的第一视角呈现。","lede":"微加工发生在肉眼看不见的尺度。MixedLAB 把分子、检查清单和反馈叠加在真实设备上，让学生在动手的同时，看懂每一步为什么这样做。","caption":"第一视角：学生在操作台前一边操作，一边勾选匀胶步骤清单。","meta":{"1":"时间 | 2023 – 2025","2":"角色 | 第一作者 · 共同设计、开发、研究","3":"工具 | HoloLens 2 · MRTK · Unity · Blender","4":"团队 | Qinglan Shan, Julia Chatain, Fan Wang, Arnaud Bertsch, Manu Kapur, Jürgen Brugger"},"stat":{"1":"8 / 12 | 名课程学生参与","2":"21 | 天后进行延迟实操测试","3":"4 | 条学习科学设计原则"},"story":{"1":"问题 | 自动化设备让学生动手的机会很少，学生又容易淹没在繁琐的步骤里，老师想传达的概念因此被忽略。","2":"我做了什么 | 与老师和学生共同设计：在工位扫一下二维码，对应模块就会打开，里面有 3D 分子、步骤清单、即时反馈和小奖励。老师不用 Unity 也能编辑。","3":"我们的发现 | 学生觉得它自然又有趣，喜欢按自己的节奏学习。MR 里额外的提问把他们的注意力拉回到每一步背后的概念上。"},"quote":"对我来说最好的一点是，我可以按自己的节奏学习。","quoteBy":"参与者 P4，SEFI 2024 访谈","gallery":{"1":"透过头显看到的双手和晶圆盒","2":"MixedLAB 界面：分子、清单、反馈与图文说明"},"link":{"1":"SEFI 2024 论文","2":"ICLS 2025 论文"}},"amblyopia":{"title":"面向弱视的 VR × 脑机接口","venue":"ICVR 2022","paper":"Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR","short":"在 VR 里给每只眼睛各自的闪烁，用脑电看出哪只眼睛占上风。","lede":"两只眼睛看到不同的图案时，会相互竞争。我们把 VR 头显当作两块独立的屏幕，用 SSVEP 读取大脑的“答案”，来测量这种双眼竞争。","caption":"系统示意：头显里每只眼睛有各自的闪烁频率（7 Hz 和 12.5 Hz），脑电记录哪只眼睛胜出。","meta":{"1":"时间 | 2021 – 2022","2":"角色 | 第一作者 · VR 系统、实验","3":"工具 | VR 头显 · Unity · 脑电 / SSVEP","4":"团队 | Qinglan Shan, Kaiying Mao, Yu Cheng, Yuhan Dong 等"},"stat":{"1":"16 | 名参与者","2":"5 | 种刺激条件","3":"70 秒 | 每段刺激时长"},"story":{"1":"问题 | 眼镜和立体镜很难给每只眼睛单独显示图像，也难以动态变化，所以双眼竞争很难测量。","2":"我们做了什么 | 把 SSVEP 刺激嵌进虚拟场景（树、草地、河流），分别呈现给两只眼睛，实时处理脑电，并在此基础上做了一个康复小游戏。"},"gallery":{"1":"六个场景（A–F），两只眼睛各自看到不同的版本"},"link":{"1":"IEEE 论文"}}}}}/*/I18N*/; }
+  qsLang() {
+    try {
+      const q = new URLSearchParams(window.location.search).get('lang');
+      if (q === 'zh' || q === 'en') { window.localStorage.setItem('qs-lang', q); return q; }
+      const s = window.localStorage.getItem('qs-lang');
+      if (s === 'zh' || s === 'en') return s;
+      return /^zh/i.test(window.navigator.language || '') ? 'zh' : 'en';
+    } catch (e) { return 'en'; }
+  }
+  toggleLang() {
+    const lang = this.state.lang === 'zh' ? 'en' : 'zh';
+    try {
+      window.localStorage.setItem('qs-lang', lang);
+      if (/[?&]lang=/.test(window.location.search)) window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+    } catch (e) {}
+    this.setState({ lang });
+  }
+  applyLang(title) {
+    try { document.documentElement.lang = this.state.lang === 'zh' ? 'zh-CN' : 'en'; if (title) document.title = title; } catch (e) {}
+  }
+  rows(o) { return Object.keys(o || {}).filter((k) => /^\d+$/.test(k)).sort((a, b) => a - b).map((k) => String(o[k]).split(/\s*\|\s*/)); }
+
   componentDidMount() {
     // XR Lab cards link here as project.html#mixedlab etc.
     try {
@@ -280,96 +305,58 @@ class Component extends DCLogic {
       if (i >= 0) this.setState({ p: i });
     } catch (e) {}
     this.playLoops();
+    this.applyLang(this.docTitle);
   }
-  componentDidUpdate() { this.playLoops(); }
+  componentDidUpdate() { this.playLoops(); this.applyLang(this.docTitle); }
   playLoops() {
     try { document.querySelectorAll('video[data-loop]').forEach((v) => { v.muted = true; const p = window.__lazyPlay ? window.__lazyPlay(v) : v.play(); if (p && p.catch) p.catch(() => {}); }); } catch (e) {}
   }
   renderVals() {
     const B = 'assets/site/';
-    // hero: video blob, 'diagram' (AI loop) or 'amb' (animated figure). gallery: [caption, blob, wide?, isVideo?]
+    // Words live in content/projects/*.md; here only the pictures and links.
+    // hero: video blob, 'diagram' (AI loop) or 'amb' (animated figure). gallery: [blob, wide?, isVideo?]
     const projects = [
-      { key: 'embodied', venue: 'In progress · fall 2026', title: 'Embodied MR in the cleanroom',
-        paper: 'A new study, running this semester. Details will follow once it is published.',
-        lede: 'Students reach into holograms of the photolithography process, from the wafer to the mask to the light, and learn it with their hands.',
-        meta: [['Year', '2026 – now'], ['Role', 'Lead · design, development, study'], ['Tools', 'HoloLens 2 · Unity · embodied interaction'], ['Setting', 'EPFL cleanroom (CMi)']],
-        hero: { video: '2ed66dd3faa9054cb8c2b788b83a3e51.mp4' }, heroCap: 'Real footage from the fall 2026 sessions, seen through the headset.',
-        stats: [],
-        story: [['coming soon', 'The study is still running, so most of it stays under wraps for now. The question: does learning with your body, not just your eyes, help students understand what happens on the wafer?']],
-        threads: [], quote: '', quoteBy: '', gallery: [], links: [] },
-      { key: 'aiauthor', venue: 'In progress · 2025 –', title: 'AI-assisted MR authoring',
-        paper: 'Ongoing research. Early user study done; details to follow once published.',
-        lede: 'Writing MR training by hand takes time most teachers don’t have. I’m exploring how a large language model can turn the documents labs already keep into draft MR training, with the teacher staying in charge.',
-        meta: [['Year', '2025 – now'], ['Role', 'Lead · tool design, development, user study'], ['Tools', 'LLM pipeline · web editor · HoloLens 2 · Unity'], ['Status', 'Early validation with teaching staff done']],
-        hero: { diagram: true }, heroCap: 'The idea: lab documents go in, an LLM drafts the steps, a teacher checks them and adds media, and the training opens on the headset.',
-        stats: [],
-        story: [
-          ['the idea', 'Cleanrooms already have process flows, run cards and machine manuals. Instead of rebuilding them as MR content by hand, the tool reads them and drafts step-by-step training. The teacher reviews it in a web editor and publishes it to the headset in one go.'],
-          ['why it matters', 'It sits where AI meets engineering education: authoring cost is one of the main reasons MR stays in pilots. If AI handles the first draft and people keep the judgment, more courses can use hands-on MR training.']
-        ],
-        threads: [], quote: '', quoteBy: '', gallery: [], links: [] },
-      { key: 'cleanroom', venue: 'CHI EA 2026 · Barcelona', title: 'MR-assisted cleanroom training',
-        paper: 'From Apprenticeship to Autonomy: Mixed Reality-Assisted Training in a Cleanroom by a Hybrid Authoring Workflow',
-        lede: 'Cleanroom training still runs on one instructor, one student, one machine. This system lets instructors author MR training once, so novices can work through photolithography on their own.',
-        meta: [['Year', '2024 – 2026'], ['Role', 'First author · system design, study, analysis'], ['Tools', 'HoloLens 2 · MRTK · Unity · web authoring tool'], ['Team', 'Qinglan Shan, Manu Kapur, Jürgen Brugger']],
-        hero: { video: '1337771e73364f03578d50deda5e4f57.mp4' }, heroCap: 'A student works the spin coater with MR guidance, in a real microfabrication course.',
-        stats: [['15', 'participants across two semesters'], ['78.6', 'SUS: “good” to “excellent” usability'], ['2', 'modules written by instructors, no code']],
-        story: [['the problem', 'Training in semiconductor cleanrooms relies on one-to-one “master–apprentice” teaching that is hard to scale, and building MR content usually needs programming skills most educators don’t have.']],
-        threads: [
-          { no: '01', h: 'the workflow', t: 'Instructors build the training in a web editor, without code: steps, 3D models, videos, quizzes. Then they pin each step to the real equipment, in the office or on site, and students follow it on HoloLens 2.', flow: true },
-          { no: '02', h: 'the invisible bubble', t: 'Students stopped imitating the teacher and worked on their own, but each one ended up inside a bubble of focus, talking less to peers. We suggest ways to step out of it when collaboration matters.', img: '0c91e6106534b47dc4c778e4932a9f9d.webp', alt: 'Five interaction patterns around the invisible bubble', quote: 'We are all in our own world.', quoteBy: 'P1' }
-        ],
-        quote: '', quoteBy: '', gallery: [],
-        links: [['Paper (ACM DOI)', 'https://doi.org/10.1145/3772363.3798988']] },
-      { key: 'mixedlab', venue: 'SEFI 2024 · ICLS 2025', title: 'MixedLAB',
-        paper: 'MixedLAB: Mixed Reality to Teach Students Experimental Knowledge in Microfabrication · Mixed-reality training in a cleanroom to bridge intentional learning and actual learning',
-        lede: 'Microfabrication happens at a scale nobody can see. MixedLAB lays molecules, checklists and feedback over the real equipment, so students can see why a step works while their hands are busy.',
-        meta: [['Year', '2023 – 2025'], ['Role', 'First author · co-design, development, studies'], ['Tools', 'HoloLens 2 · MRTK · Unity · Blender'], ['Team', 'Qinglan Shan, Julia Chatain, Fan Wang, Arnaud Bertsch, Manu Kapur, Jürgen Brugger']],
-        hero: { video: '1427da86f6e6fd51697440a522e8ba24.mp4' }, heroCap: 'First-person view: a student ticks off the spin-coating checklist while working at the bench.',
-        stats: [['8 / 12', 'course students took part'], ['21', 'days until the delayed hands-on test'], ['4', 'learning-science design principles']],
-        story: [
-          ['the problem', 'Automated equipment leaves little hands-on engagement, and students get buried in procedural steps, so the concepts teachers design for get lost.'],
-          ['what I built', 'Co-designed with teachers and students: scan a QR code at a station and the matching module opens, with 3D molecules, step checklists, instant feedback and small rewards. Teachers edit it without Unity.'],
-          ['what we learned', 'Students found it natural and fun, and liked learning at their own pace. MR’s extra questions pulled their attention back to the concepts behind each step.']
-        ],
-        threads: [], quote: 'The best thing for me is I can learn on my own pace.', quoteBy: 'Participant P4, SEFI 2024 interviews',
-        gallery: [['Hands on the wafer box, seen through the headset', '29c26de86dba08a00df6c6457f19780b.mp4', false, true], ['Inside MixedLAB: molecules, checklists, feedback, graphics with text', '8d20ac742f80501725507c8477bb8e66.webp', false, false]],
-        links: [['SEFI 2024 paper', 'https://zenodo.org/records/14256909'], ['ICLS 2025 paper', 'https://doi.org/10.22318/icls2025.114782']] },
-      { key: 'amblyopia', venue: 'ICVR 2022', title: 'VR × BCI for amblyopia',
-        paper: 'Interactive Brain-Computer System for Assessing Binocular Rivalry and Amblyopia Based on VR',
-        lede: 'When the two eyes see different patterns, they compete. We used a VR headset as two separate screens and read the brain’s answer with SSVEP to measure that rivalry.',
-        meta: [['Year', '2021 – 2022'], ['Role', 'First author · VR system, experiment'], ['Tools', 'VR headset · Unity · EEG / SSVEP'], ['Team', 'Qinglan Shan, Kaiying Mao, Yu Cheng, Yuhan Dong, et al.']],
-        hero: { amb: true }, heroCap: 'The system: each eye gets its own flicker frequency (7 Hz and 12.5 Hz) inside the headset, while EEG picks up which eye wins.',
-        stats: [['16', 'participants'], ['5', 'stimulation conditions'], ['70 s', 'per stimulation epoch']],
-        story: [
-          ['the problem', 'Glasses and stereoscopes struggle to show each eye its own image, or to change it dynamically, so binocular rivalry is hard to measure.'],
-          ['what we built', 'SSVEP stimuli built into virtual scenes (trees, a lawn, a river) and shown separately to each eye, with live EEG processing and a rehabilitation game on top.']
-        ],
-        threads: [], quote: '', quoteBy: '',
-        gallery: [['Six scenes, A to F, each eye seeing its own version', 'a270e6139fe86b425fba8ec6e0771018.webp', false, false]],
-        links: [['IEEE paper', 'https://ieeexplore.ieee.org/abstract/document/9847922']] }
+      { key: 'embodied', hero: { video: '2ed66dd3faa9054cb8c2b788b83a3e51.mp4' }, threads: [], gallery: [], links: [] },
+      { key: 'aiauthor', hero: { diagram: true }, threads: [], gallery: [], links: [] },
+      { key: 'cleanroom', hero: { video: '1337771e73364f03578d50deda5e4f57.mp4' },
+        threads: [{ flow: true }, { img: '0c91e6106534b47dc4c778e4932a9f9d.webp', alt: 'Five interaction patterns around the invisible bubble' }],
+        gallery: [], links: ['https://doi.org/10.1145/3772363.3798988'] },
+      { key: 'mixedlab', hero: { video: '1427da86f6e6fd51697440a522e8ba24.mp4' }, threads: [],
+        gallery: [['29c26de86dba08a00df6c6457f19780b.mp4', false, true], ['8d20ac742f80501725507c8477bb8e66.webp', false, false]],
+        links: ['https://zenodo.org/records/14256909', 'https://doi.org/10.22318/icls2025.114782'] },
+      { key: 'amblyopia', hero: { amb: true }, threads: [],
+        gallery: [['a270e6139fe86b425fba8ec6e0771018.webp', false, false]],
+        links: ['https://ieeexplore.ieee.org/abstract/document/9847922'] }
     ];
+    const L = this.state.lang === 'zh' ? 'zh' : 'en';
+    const t = this.i18n()[L] || {};
+    const words = (k) => (t.projects || {})[k] || {};
     this.keys = projects.map((x) => x.key);
     const i = Math.min(Math.max(this.state.p, 0), projects.length - 1);
     const x = projects[i];
+    const w = words(x.key);
+    const two = (r) => [r[0] || '', r.slice(1).join(' | ')];
+    this.docTitle = (w.title || '') + (L === 'zh' ? ' · 单晴岚' : ' · Qinglan Shan');
     const pad = (n) => String(n).padStart(2, '0');
     const go = (k) => { this.setState({ p: k }); try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {} };
     return {
-      tabs: projects.map((y, k) => ({ no: pad(k + 1), title: y.title, on: k === i, pressed: k === i ? 'true' : 'false', color: k === i ? '#22201C' : '#5C564C', pick: () => go(k) })),
+      t,
+      toggleLang: () => this.toggleLang(),
+      tabs: projects.map((y, k) => ({ no: pad(k + 1), title: words(y.key).title || '', on: k === i, pressed: k === i ? 'true' : 'false', color: k === i ? '#22201C' : '#5C564C', pick: () => go(k) })),
       p: {
-        venue: x.venue, title: x.title, paper: x.paper, lede: x.lede,
-        heroVideo: x.hero.video ? B + x.hero.video : '', diagram: !!x.hero.diagram, amb: !!x.hero.amb, heroCap: x.heroCap,
-        meta: x.meta.map(([k, v]) => ({ k, v })),
-        stats: x.stats.map(([v, k]) => ({ v, k })), hasStats: x.stats.length > 0,
-        story: x.story.map(([h, t]) => ({ h, t })),
-        threads: x.threads.map((t) => ({ no: t.no, h: t.h, t: t.t, flow: !!t.flow, img: t.img ? B + t.img : '', alt: t.alt || '', quote: t.quote || '', quoteBy: t.quoteBy || '' })),
-        hasThreads: x.threads.length > 0,
-        quote: x.quote, quoteBy: x.quoteBy,
-        gallery: x.gallery.map(([cap, id, wide, isVideo]) => ({ cap, cls: wide ? 'wide' : '', video: isVideo ? B + id : '', src: isVideo ? '' : B + id })),
+        venue: w.venue || '', title: w.title || '', paper: w.paper || '', lede: w.lede || '',
+        heroVideo: x.hero.video ? B + x.hero.video : '', diagram: !!x.hero.diagram, amb: !!x.hero.amb, heroCap: w.caption || '',
+        meta: this.rows(w.meta).map((r) => { const [k, v] = two(r); return { k, v }; }),
+        stats: this.rows(w.stat).map((r) => { const [v, k] = two(r); return { v, k }; }), hasStats: this.rows(w.stat).length > 0,
+        story: this.rows(w.story).map((r) => { const [h, tx] = two(r); return { h, t: tx }; }),
+        threads: this.rows(w.thread).map((r, k) => { const [h, tx] = two(r); const m = x.threads[k] || {}; return { no: pad(k + 1), h, t: tx, flow: !!m.flow, img: m.img ? B + m.img : '', alt: m.alt || '', quote: '', quoteBy: '' }; }),
+        hasThreads: this.rows(w.thread).length > 0,
+        quote: w.quote || '', quoteBy: w.quoteBy || '',
+        gallery: x.gallery.map(([id, wide, isVideo], k) => ({ cap: this.rows(w.gallery)[k] ? this.rows(w.gallery)[k].join(' | ') : '', cls: wide ? 'wide' : '', video: isVideo ? B + id : '', src: isVideo ? '' : B + id })),
         hasGallery: x.gallery.length > 0,
-        links: x.links.map(([label, href]) => ({ label, href }))
+        links: x.links.map((href, k) => ({ label: this.rows(w.link)[k] ? this.rows(w.link)[k].join(' | ') : href, href }))
       },
-      nextTitle: projects[(i + 1) % projects.length].title,
+      nextTitle: words(projects[(i + 1) % projects.length].key).title || '',
       goNext: () => go((i + 1) % projects.length)
     };
   }

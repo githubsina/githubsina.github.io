@@ -12,6 +12,7 @@ body{margin:0;background-color:#22201C}
 a{color:#FBF8F1}a:hover{color:#E8775C}
 .navlink{text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:14px;padding:10px 4px;border-bottom:2px solid transparent;color:#FBF8F1;text-shadow:0 1px 8px rgba(0,0,0,.35)}
 .navlink:hover{border-bottom-color:#E8775C;color:#FBF8F1}
+.lang{background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:inherit;min-height:40px}
 /* hero: slow drift, and the albums slide up over it like a curtain */
 .kb{animation:kb 22s ease-out both}
 @keyframes kb{from{transform:scale(1.14) translateY(1.5%)}to{transform:scale(1.02)}}
@@ -61,14 +62,14 @@ a{color:#FBF8F1}a:hover{color:#E8775C}
 <img class="kb" src="assets/site/a7478165d4f23c0b986f5f51c820ecb1.webp" alt="Clouds over a hillside village" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,18,16,.45), rgba(20,18,16,0) 30%, rgba(20,18,16,0) 60%, rgba(20,18,16,.55))"></div>
 <header style="position: absolute; left: 0; right: 0; top: 0; max-width: 1240px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="index.html" aria-label="Qinglan Shan, home" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto; filter: brightness(0) invert(1) drop-shadow(0 1px 8px rgba(0,0,0,.35))"></a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 20px"><a class="navlink" href="index.html#about">About Me</a><a class="navlink" href="gallery.html" style="border-bottom-color: #FBF8F1">Gallery</a><a class="navlink" href="xr-lab.html">XR Lab</a><a class="navlink" href="research.html">Research</a></nav>
+<a href="index.html" aria-label="{{t.nav.home}}" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto; filter: brightness(0) invert(1) drop-shadow(0 1px 8px rgba(0,0,0,.35))"></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px"><a class="navlink" href="index.html#about">{{t.nav.about}}</a><a class="navlink" href="gallery.html" style="border-bottom-color: #FBF8F1">{{t.nav.gallery}}</a><a class="navlink" href="xr-lab.html">{{t.nav.xrlab}}</a><a class="navlink" href="research.html">{{t.nav.research}}</a><button class="navlink lang" onClick="{{toggleLang}}" aria-label="{{t.nav.langLabel}}">{{t.nav.lang}}</button></nav>
 </header>
 <div class="intro" style="position: absolute; left: 24px; right: 24px; top: 40%; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; text-shadow: 0 2px 18px rgba(0,0,0,.35)">
-<h1 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(51px, 10vw, 106px); line-height: 1.02; letter-spacing: -.01em">Photographs</h1>
-<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .28em; text-transform: uppercase">Landscapes, streets &amp; travels · Sony A7C</p>
+<h1 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(51px, 10vw, 106px); line-height: 1.02; letter-spacing: -.01em">{{t.hero.title}}</h1>
+<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .28em; text-transform: uppercase">{{t.hero.sub}}</p>
 </div>
-<p class="cue" style="position: absolute; left: 0; right: 0; bottom: 28px; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; font-family: 'Josefin Sans', sans-serif; font-size: 18px; letter-spacing: -.01em">More albums
+<p class="cue" style="position: absolute; left: 0; right: 0; bottom: 28px; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; font-family: 'Josefin Sans', sans-serif; font-size: 18px; letter-spacing: -.01em">{{t.hero.cue}}
 <svg aria-hidden="true" viewBox="0 0 30 40" style="width: 22px; height: 30px"><path d="M15 3 C 13 14, 17 24, 15 35 M7 27 L15 36 L23 27" fill="none" stroke="#FBF8F1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></p>
 </section>
 
@@ -76,8 +77,8 @@ a{color:#FBF8F1}a:hover{color:#E8775C}
 <section style="position: relative; z-index: 1; background: #22201C; box-shadow: 0 -24px 48px rgba(0,0,0,.35)">
 <div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px 160px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 72px">
-<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 38px; line-height: 1; letter-spacing: -.01em">albums</h2>
-<a href="https://neo-prod.500px.com/user/vScIjlqit8h" style="font-family: 'Josefin Sans', sans-serif; font-size: 18px; padding: 10px 0; letter-spacing: -.01em">more on 500px ↗</a>
+<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 38px; line-height: 1; letter-spacing: -.01em">{{t.albums.title}}</h2>
+<a href="https://neo-prod.500px.com/user/vScIjlqit8h" style="font-family: 'Josefin Sans', sans-serif; font-size: 18px; padding: 10px 0; letter-spacing: -.01em">{{t.albums.more}}</a>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); column-gap: 88px; row-gap: 96px; align-items: start">
 <sc-for list="{{albums}}" as="a" hint-placeholder-count="4">
@@ -109,7 +110,7 @@ a{color:#FBF8F1}a:hover{color:#E8775C}
 <div class="iris" role="dialog" aria-label="{{cur.label}}" style="position: fixed; inset: 0; z-index: 40; background: #1B1917; overflow-y: auto">
 <div style="max-width: 1320px; margin: 0 auto; padding: 24px 24px 120px">
 <div style="position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 0; background: #1B1917">
-<button class="txt" onClick="{{closeAlbum}}">← albums</button>
+<button class="txt" onClick="{{closeAlbum}}">{{t.albums.back}}</button>
 <span style="font-family: 'Josefin Sans', sans-serif; font-size: 12px; letter-spacing: .14em; color: #B3AA98">{{cur.no}} / 04</span>
 </div>
 <div class="drift" style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 48px 0 56px">
@@ -127,7 +128,7 @@ a{color:#FBF8F1}a:hover{color:#E8775C}
 </div>
 <sc-if value="{{cur.empty}}" hint-placeholder-val="{{ false }}">
 <div style="max-width: 760px; margin: 0 auto; aspect-ratio: 3 / 2; border: 2px dashed #5C564C; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px">
-<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 24px; color: #B3AA98; letter-spacing: -.01em">still in the darkroom</p>
+<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 24px; color: #B3AA98; letter-spacing: -.01em">{{t.albums.empty}}</p>
 <p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 12px; color: #B3AA98">[{{cur.label}} — photos coming soon]</p>
 </div>
 </sc-if>
@@ -140,10 +141,10 @@ a{color:#FBF8F1}a:hover{color:#E8775C}
 <div style="position: fixed; inset: 0; z-index: 60; background: rgba(18,16,14,.97); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 24px">
 <img class="fade" src="{{shot.src}}" alt="{{shot.alt}}" style="display: block; max-width: 100%; max-height: 82vh; width: auto; height: auto">
 <div style="display: flex; align-items: center; gap: 20px">
-<button class="txt" onClick="{{prev}}">← prev</button>
+<button class="txt" onClick="{{prev}}">{{t.photo.prev}}</button>
 <span style="font-family: 'Josefin Sans', sans-serif; font-size: 12px; color: #B3AA98">{{shot.n}} / {{shot.total}}</span>
-<button class="txt" onClick="{{next}}">next →</button>
-<button class="txt" onClick="{{closeBig}}">close</button>
+<button class="txt" onClick="{{next}}">{{t.photo.next}}</button>
+<button class="txt" onClick="{{closeBig}}">{{t.photo.close}}</button>
 </div>
 </div>
 </sc-if>
@@ -153,10 +154,39 @@ a{color:#FBF8F1}a:hover{color:#E8775C}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { album: -1, shot: -1 };
+    this.state = { album: -1, shot: -1, lang: this.qsLang() };
   }
+  // Text in both languages comes from content/*.md (filled in by _tools/content.py).
+  i18n() { return /*I18N*/{"en":{"nav":{"about":"About Me","gallery":"Gallery","xrlab":"XR Lab","research":"Research","lang":"中文","langLabel":"切换到中文","home":"Qinglan Shan, home"},"proj":{"all":"← all projects","threads":"two threads in one study","next":"Next project","more":"read the project"},"page":{"title":"Gallery · Qinglan Shan"},"hero":{"title":"Photographs","sub":"Landscapes, streets & travels · Sony A7C","cue":"More albums"},"albums":{"title":"albums","more":"more on 500px ↗","count":"{n} photos","see":"see more","back":"← albums","empty":"still in the darkroom"},"album":{"1":"St. Moritz | Engadin · autumn 2026","2":"Travel | on the road","3":"Landscape | hills, lakes & cows","4":"Street | city corners"},"photo":{"prev":"← prev","next":"next →","close":"close"}},"zh":{"nav":{"about":"关于我","gallery":"摄影","xrlab":"XR 实验室","research":"研究","lang":"EN","langLabel":"Switch to English","home":"单晴岚，回到首页"},"proj":{"all":"← 全部项目","threads":"一项研究，两条线索","next":"下一个项目","more":"查看项目"},"page":{"title":"摄影 · 单晴岚"},"hero":{"title":"摄影作品","sub":"风景、街头与旅行 · Sony A7C","cue":"更多相册"},"albums":{"title":"相册","more":"在 500px 上看更多 ↗","count":"{n} 张照片","see":"查看更多","back":"← 返回相册","empty":"还在暗房里冲洗"},"album":{"1":"圣莫里茨 | 恩加丁 · 2026 年秋","2":"旅行 | 在路上","3":"风景 | 山丘、湖泊和奶牛","4":"街头 | 城市角落"},"photo":{"prev":"← 上一张","next":"下一张 →","close":"关闭"}}}/*/I18N*/; }
+  qsLang() {
+    try {
+      const q = new URLSearchParams(window.location.search).get('lang');
+      if (q === 'zh' || q === 'en') { window.localStorage.setItem('qs-lang', q); return q; }
+      const s = window.localStorage.getItem('qs-lang');
+      if (s === 'zh' || s === 'en') return s;
+      return /^zh/i.test(window.navigator.language || '') ? 'zh' : 'en';
+    } catch (e) { return 'en'; }
+  }
+  toggleLang() {
+    const lang = this.state.lang === 'zh' ? 'en' : 'zh';
+    try {
+      window.localStorage.setItem('qs-lang', lang);
+      if (/[?&]lang=/.test(window.location.search)) window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+    } catch (e) {}
+    this.setState({ lang });
+  }
+  applyLang(title) {
+    try { document.documentElement.lang = this.state.lang === 'zh' ? 'zh-CN' : 'en'; if (title) document.title = title; } catch (e) {}
+  }
+  rows(o) { return Object.keys(o || {}).filter((k) => /^\d+$/.test(k)).sort((a, b) => a - b).map((k) => String(o[k]).split(/\s*\|\s*/)); }
+  componentDidMount() { this.applyLang(this.i18n()[this.state.lang].page.title); }
+  componentDidUpdate() { this.applyLang(this.i18n()[this.state.lang].page.title); }
+
   renderVals() {
     const B = 'assets/site/';
+    const t = this.i18n()[this.state.lang === 'zh' ? 'zh' : 'en'] || {};
+    const names = this.rows(t.album);
+    const count = (n) => String((t.albums || {}).count || '{n} photos').replace('{n}', n);
     const L = 2000 / 1333; const T = 1333 / 2000;
     const P = (alt, id, r) => ({ alt, src: B + id, r });
     const albums = [
@@ -209,6 +239,7 @@ class Component extends DCLogic {
       ] }
     ];
     const ai = this.state.album;
+    albums.forEach((x, k) => { if (names[k]) { x.label = names[k][0]; x.meta = names[k][1] || x.meta; } });
     const a = albums[ai];
     const photos = a ? a.photos.map((p, k) => ({
       ...p, n: k + 1, ar: p.r.toFixed(4), grow: Math.round(p.r * 100), basis: Math.round(p.r * 520) + 'px',
@@ -218,14 +249,16 @@ class Component extends DCLogic {
     const s = this.state.shot; const len = photos.length;
     const pad = (n) => String(n).padStart(2, '0');
     return {
+      t,
+      toggleLang: () => this.toggleLang(),
       albums: albums.map((x, i) => ({
         label: x.label, no: pad(i + 1), cover: x.cover, noCover: !x.cover, ar: x.ar,
-        meta: x.photos.length ? x.photos.length + ' photos · see more' : x.meta,
+        meta: x.photos.length ? count(x.photos.length) + ' · ' + ((t.albums || {}).see || '') : x.meta,
         offset: i % 2 ? '160px' : '0px',
         open: () => this.setState({ album: i, shot: -1 })
       })),
       hasAlbum: !!a,
-      cur: a ? { label: a.label, no: pad(ai + 1), meta: a.photos.length ? a.meta + ' · ' + a.photos.length + ' photos' : a.meta, photos, empty: len === 0 } : { label: '', no: '', meta: '', photos: [], empty: false },
+      cur: a ? { label: a.label, no: pad(ai + 1), meta: a.photos.length ? a.meta + ' · ' + count(a.photos.length) : a.meta, photos, empty: len === 0 } : { label: '', no: '', meta: '', photos: [], empty: false },
       closeAlbum: () => this.setState({ album: -1, shot: -1 }),
       big: s >= 0 && s < len,
       shot: s >= 0 && s < len ? { ...photos[s], total: len } : { src: '', alt: '', n: 0, total: 0 },

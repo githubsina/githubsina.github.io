@@ -7,15 +7,18 @@ Original media live in _media_src/<asset id>.<ext> (not published). Each export 
 light versions to assets/site/: photos and stickers as WebP, videos re-encoded to
 640x480 (macOS avconvert), audio copied. Fonts are self-hosted (assets/site/fonts.css),
 so nothing loads from Google (slow or blocked in mainland China).
-Re-run after changing the canvas.
+Re-run after changing the canvas or the text in content/ (it also writes that text into the\ncanvas copies in <folder>, so they can be published back to the canvas).
 """
 import os, re, shutil, subprocess, sys, pathlib
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import content
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
 SRC = pathlib.Path(sys.argv[1])
 MEDIA = [REPO / '_media_src'] + [pathlib.Path(p) for p in sys.argv[2:]]
 OUT = REPO / 'assets' / 'site'
 OUT.mkdir(parents=True, exist_ok=True)
+content.sync(SRC)  # words in both languages come from content/*.md
 
 PAGES = {
     'Main.dc.html': ('index.html', 'Qinglan Shan', 'Qinglan Shan: mixed reality, embodied learning and HCI. Portfolio, projects, research and photographs.'),

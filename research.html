@@ -12,6 +12,7 @@ body{margin:0;background:#F3EDE1}
 a{color:#22201C}a:hover{color:#B23A26}
 .navlink{text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:14px;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
+.lang{background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:inherit;min-height:40px}
 .idx{transition:transform .2s ease}
 .idx:hover{transform:translateX(4px)}
 .pill{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border:1.5px solid #22201C;border-radius:999px;font-family: 'Josefin Sans', sans-serif;font-size:12px}
@@ -24,29 +25,26 @@ a{color:#22201C}a:hover{color:#B23A26}
 <template id="dc-template">
 <div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', sans-serif">
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="index.html" aria-label="Qinglan Shan, home" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 20px"><a class="navlink" href="index.html#about">About Me</a><a class="navlink" href="gallery.html">Gallery</a><a class="navlink" href="xr-lab.html">XR Lab</a><a class="navlink" href="research.html" style="border-bottom-color: #22201C">Research</a></nav>
+<a href="index.html" aria-label="{{t.nav.home}}" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px"><a class="navlink" href="index.html#about">{{t.nav.about}}</a><a class="navlink" href="gallery.html">{{t.nav.gallery}}</a><a class="navlink" href="xr-lab.html">{{t.nav.xrlab}}</a><a class="navlink" href="research.html" style="border-bottom-color: #22201C">{{t.nav.research}}</a><button class="navlink lang" onClick="{{toggleLang}}" aria-label="{{t.nav.langLabel}}">{{t.nav.lang}}</button></nav>
 </header>
 
 <section style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 40px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-end">
 <div style="flex: 2 1 480px; display: flex; flex-direction: column; gap: 16px">
-<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; color: #5C564C">RESEARCH · PUBLICATIONS</p>
-<h1 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 500; font-size: clamp(42px, 6vw, 67px); line-height: 1.02; letter-spacing: -.01em">How do you&nbsp;<span style="color: #B23A26">learn</span> in mixed reality?</h1>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3A3730; max-width: 60ch">I study what happens to attention, cognitive load and skill when hands-on learning moves into mixed reality. I build the systems myself, then test them in real courses with controlled studies, questionnaires, eye-tracking and interaction logs, EEG and video coding, and turn the results into design principles. Supervised by Prof. Jürgen Brugger (EPFL) and Prof. Manu Kapur (ETH Zürich).</p>
+<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; color: #5C564C; text-transform: uppercase">{{t.kicker}}</p>
+<h1 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 500; font-size: clamp(42px, 6vw, 67px); line-height: 1.02; letter-spacing: -.01em">{{t.title.a}}{{sp}}<span style="color: #B23A26">{{t.title.b}}</span>{{sp}}{{t.title.c}}</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3A3730; max-width: 60ch">{{t.intro}}</p>
 </div>
 <div style="flex: 1 1 280px; display: flex; flex-wrap: wrap; gap: 8px">
-<span class="pill">Embodied learning</span>
-<span class="pill">Mixed reality</span>
-<span class="pill">Cleanroom training</span>
-<span class="pill">Design-based research</span>
-<span class="pill">HCI</span>
-<span class="pill">VR + EEG</span>
+<sc-for list="{{tags}}" as="g" hint-placeholder-count="6">
+<span class="pill">{{g.label}}</span>
+</sc-for>
 </div>
 </section>
 
 <!-- PUBLICATIONS -->
 <section style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 64px; display: flex; flex-direction: column; gap: 0">
-<h2 style="margin: 0 0 16px; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -.01em">Publications</h2>
+<h2 style="margin: 0 0 16px; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -.01em">{{t.pubs.title}}</h2>
 
 <article class="idx" style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 16px 0; border-top: 1px dashed #CFC6B5">
 <div style="flex: 0 0 120px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600; line-height: 1.4">2026</span><span style="font-family: 'Josefin Sans', sans-serif; font-size: 12px; color: #B23A26">CHI EA</span></div>
@@ -114,24 +112,62 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- EDUCATION + TEACHING -->
 <section style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 96px; display: flex; flex-wrap: wrap; gap: 48px">
 <div style="flex: 2 1 480px; display: flex; flex-direction: column; gap: 20px">
-<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 400; font-size: 40px">Education</h2>
-<div style="display: flex; gap: 20px; align-items: baseline; border-bottom: 1.5px dashed #5C564C; padding-bottom: 16px"><span style="flex: 0 0 120px; font-family: 'Josefin Sans', sans-serif; font-size: 13px">2022 – 2026</span><div><p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 19px; letter-spacing: -.01em">PhD Learning Science</p><p style="margin: 4px 0 0; font-size: 15px; color: #3A3730">EPFL × ETH Zürich · MRTK, Unity, Blender, C#</p></div></div>
-<div style="display: flex; gap: 20px; align-items: baseline; border-bottom: 1.5px dashed #5C564C; padding-bottom: 16px"><span style="flex: 0 0 120px; font-family: 'Josefin Sans', sans-serif; font-size: 13px">2019 – 2022</span><div><p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 19px; letter-spacing: -.01em">MSc Computer Science</p><p style="margin: 4px 0 0; font-size: 15px; color: #3A3730">Tsinghua University · VR and brain–computer interfaces · second-class school scholarship</p></div></div>
-<div style="display: flex; gap: 20px; align-items: baseline; border-bottom: 1.5px dashed #5C564C; padding-bottom: 16px"><span style="flex: 0 0 120px; font-family: 'Josefin Sans', sans-serif; font-size: 13px">2015 – 2019</span><div><p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 19px; letter-spacing: -.01em">BSc Industrial Design</p><p style="margin: 4px 0 0; font-size: 15px; color: #3A3730">Chengdu University of Technology · national scholarship</p></div></div>
+<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 400; font-size: 40px">{{t.edu.title}}</h2>
+<sc-for list="{{edu}}" as="e" hint-placeholder-count="3">
+<div style="display: flex; gap: 20px; align-items: baseline; border-bottom: 1.5px dashed #5C564C; padding-bottom: 16px"><span style="flex: 0 0 120px; font-family: 'Josefin Sans', sans-serif; font-size: 13px">{{e.when}}</span><div><p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 19px; letter-spacing: -.01em">{{e.what}}</p><p style="margin: 4px 0 0; font-size: 15px; color: #3A3730">{{e.where}}</p></div></div>
+</sc-for>
 </div>
 <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px; background: #FBF8F1; padding: 28px; border-radius: 20px; transform: rotate(1.5deg); box-shadow: 2px 4px 0 rgba(34,32,28,.08); align-self: flex-start">
-<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 24px; letter-spacing: -.01em">teaching</h2>
-<p style="margin: 0; font-size: 15px; line-height: 1.6">Microfabrication technologies, EPFL · 2023–24</p>
-<p style="margin: 0; font-size: 15px; line-height: 1.6">MEMS Practicals, EPFL · 2023–24</p>
-<p style="margin: 0; font-size: 15px; line-height: 1.6">Social Innovation Design, Tsinghua · 2021–22</p>
-<a href="#" style="font-family: 'Josefin Sans', sans-serif; font-size: 13px; padding: 8px 0">download CV →</a>
+<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 24px; letter-spacing: -.01em">{{t.teach.title}}</h2>
+<sc-for list="{{teach}}" as="c" hint-placeholder-count="3">
+<p style="margin: 0; font-size: 15px; line-height: 1.6">{{c.label}}</p>
+</sc-for>
+<a href="#" style="font-family: 'Josefin Sans', sans-serif; font-size: 13px; padding: 8px 0">{{t.cv}}</a>
 </div>
 </section>
 </div>
 </template>
 <script type="text/x-dc" id="dc-logic">
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) {
+    super(props);
+    this.state = { lang: this.qsLang() };
+  }
+  // Text in both languages comes from content/*.md (filled in by _tools/content.py).
+  i18n() { return /*I18N*/{"en":{"nav":{"about":"About Me","gallery":"Gallery","xrlab":"XR Lab","research":"Research","lang":"中文","langLabel":"切换到中文","home":"Qinglan Shan, home"},"proj":{"all":"← all projects","threads":"two threads in one study","next":"Next project","more":"read the project"},"page":{"title":"Research · Qinglan Shan"},"kicker":"Research · publications","title":{"a":"How do you","b":"learn","c":"in mixed reality?"},"intro":"I study what happens to attention, cognitive load and skill when hands-on learning moves into mixed reality. I build the systems myself, then test them in real courses with controlled studies, questionnaires, eye-tracking and interaction logs, EEG and video coding, and turn the results into design principles. Supervised by Prof. Jürgen Brugger (EPFL) and Prof. Manu Kapur (ETH Zürich).","tag":{"1":"Embodied learning","2":"Mixed reality","3":"Cleanroom training","4":"Design-based research","5":"HCI","6":"VR + EEG"},"pubs":{"title":"Publications"},"edu":{"title":"Education","1":"2022 – 2026 | PhD Learning Science | EPFL × ETH Zürich · MRTK, Unity, Blender, C#","2":"2019 – 2022 | MSc Computer Science | Tsinghua University · VR and brain–computer interfaces · second-class school scholarship","3":"2015 – 2019 | BSc Industrial Design | Chengdu University of Technology · national scholarship"},"teach":{"title":"teaching","1":"Microfabrication technologies, EPFL · 2023–24","2":"MEMS Practicals, EPFL · 2023–24","3":"Social Innovation Design, Tsinghua · 2021–22"},"cv":"download CV →"},"zh":{"nav":{"about":"关于我","gallery":"摄影","xrlab":"XR 实验室","research":"研究","lang":"EN","langLabel":"Switch to English","home":"单晴岚，回到首页"},"proj":{"all":"← 全部项目","threads":"一项研究，两条线索","next":"下一个项目","more":"查看项目"},"page":{"title":"研究 · 单晴岚"},"kicker":"研究 · 论文发表","title":{"a":"我们如何在混合现实中","b":"学习","c":"？"},"intro":"我研究动手学习搬进混合现实之后，注意力、认知负荷和技能会发生什么变化。系统由我自己搭建，再放到真实课程中检验：对照实验、问卷、眼动与交互日志、脑电和视频编码，最后把结果凝练成设计原则。导师为 Jürgen Brugger 教授（EPFL）和 Manu Kapur 教授（ETH Zürich）。","tag":{"1":"具身学习","2":"混合现实","3":"洁净室培训","4":"基于设计的研究","5":"人机交互","6":"VR + 脑电"},"pubs":{"title":"论文发表"},"edu":{"title":"教育经历","1":"2022 – 2026 | 学习科学 博士 | 洛桑联邦理工学院 × 苏黎世联邦理工学院 · MRTK、Unity、Blender、C#","2":"2019 – 2022 | 计算机科学与技术 硕士 | 清华大学 · VR 与脑机接口 · 校级二等奖学金","3":"2015 – 2019 | 工业设计 学士 | 成都理工大学 · 国家奖学金"},"teach":{"title":"教学","1":"微加工技术，EPFL · 2023–24","2":"MEMS 实验课，EPFL · 2023–24","3":"社会创新设计，清华大学 · 2021–22"},"cv":"下载简历 →"}}/*/I18N*/; }
+  qsLang() {
+    try {
+      const q = new URLSearchParams(window.location.search).get('lang');
+      if (q === 'zh' || q === 'en') { window.localStorage.setItem('qs-lang', q); return q; }
+      const s = window.localStorage.getItem('qs-lang');
+      if (s === 'zh' || s === 'en') return s;
+      return /^zh/i.test(window.navigator.language || '') ? 'zh' : 'en';
+    } catch (e) { return 'en'; }
+  }
+  toggleLang() {
+    const lang = this.state.lang === 'zh' ? 'en' : 'zh';
+    try {
+      window.localStorage.setItem('qs-lang', lang);
+      if (/[?&]lang=/.test(window.location.search)) window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+    } catch (e) {}
+    this.setState({ lang });
+  }
+  applyLang(title) {
+    try { document.documentElement.lang = this.state.lang === 'zh' ? 'zh-CN' : 'en'; if (title) document.title = title; } catch (e) {}
+  }
+  rows(o) { return Object.keys(o || {}).filter((k) => /^\d+$/.test(k)).sort((a, b) => a - b).map((k) => String(o[k]).split(/\s*\|\s*/)); }
+  componentDidMount() { this.applyLang(this.i18n()[this.state.lang].page.title); }
+  componentDidUpdate() { this.applyLang(this.i18n()[this.state.lang].page.title); }
+  renderVals() {
+    const zh = this.state.lang === 'zh';
+    const t = this.i18n()[zh ? 'zh' : 'en'] || {};
+    return {
+      t, sp: zh ? '' : ' ', toggleLang: () => this.toggleLang(),
+      tags: this.rows(t.tag).map(([label]) => ({ label })),
+      edu: this.rows(t.edu).filter((r) => r.length > 1).map(([when, what, where]) => ({ when, what: what || '', where: where || '' })),
+      teach: this.rows(t.teach).map((r) => ({ label: r.join(' | ') }))
+    };
+  }
 }
 </script>
 <script src="assets/site/site.js"></script>
