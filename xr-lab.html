@@ -10,7 +10,7 @@
 <style>
 body{margin:0;background:#F3EDE1}
 a{color:#22201C}a:hover{color:#B23A26}
-.navlink{text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:14px;padding:10px 4px;border-bottom:2px solid transparent}
+.navlink{text-decoration:none;font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif;font-size:14px;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
 .lang{background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:inherit;min-height:40px}
 .row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:center;padding:24px;background:#FBF8F1;border:1.5px solid #E6DECF;border-radius:28px;text-decoration:none;color:#22201C;transition:transform .25s ease,box-shadow .25s ease}
@@ -55,7 +55,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 .amb .lens{position:absolute;border-radius:50%;box-shadow:0 0 0 3px #B23A26,0 0 18px 4px rgba(178,58,38,.45);animation:ambpulse 1.8s ease-in-out infinite}
 .amb .lens.r{animation-delay:.9s}
 @keyframes ambpulse{0%,100%{opacity:.1}50%{opacity:1}}
-.amb .hz{position:absolute;padding:2px 7px;border-radius:999px;background:#B23A26;color:#FFFFFF;font-family:'Josefin Sans',sans-serif;font-size:clamp(9px,.8vw,12px);font-weight:600;white-space:nowrap;animation:ambpulse 1.8s ease-in-out infinite}
+.amb .hz{position:absolute;padding:2px 7px;border-radius:999px;background:#B23A26;color:#FFFFFF;font-family:'Josefin Sans','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',sans-serif;font-size:clamp(9px,.8vw,12px);font-weight:600;white-space:nowrap;animation:ambpulse 1.8s ease-in-out infinite}
 .amb .hz.r{animation-delay:.9s}
 .amb .scan{position:absolute;top:1.5%;height:97%;border:3px solid #B23A26;border-radius:14px;box-sizing:border-box;animation:ambscan 9s cubic-bezier(.6,0,.3,1) infinite}
 @keyframes ambscan{0%,28%{left:.4%;width:32.6%}34%,61%{left:33.8%;width:24.4%}67%,94%{left:58.4%;width:41.2%}100%{left:.4%;width:32.6%}}
@@ -70,14 +70,14 @@ a{color:#22201C}a:hover{color:#B23A26}
 <body>
 <div id="dc-root"></div>
 <template id="dc-template">
-<div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', sans-serif">
+<div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif">
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="index.html" aria-label="{{t.nav.home}}" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px"><a class="navlink" href="index.html#about">{{t.nav.about}}</a><a class="navlink" href="gallery.html">{{t.nav.gallery}}</a><a class="navlink" href="xr-lab.html" style="border-bottom-color: #22201C">{{t.nav.xrlab}}</a><a class="navlink" href="research.html">{{t.nav.research}}</a><button class="navlink lang" onClick="{{toggleLang}}" aria-label="{{t.nav.langLabel}}">{{t.nav.lang}}</button></nav>
 </header>
 
 <section style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 32px; display: flex; flex-direction: column; gap: 12px">
-<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; color: #5C564C; text-transform: uppercase">{{t.kicker}}</p>
+<p style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: 13px; letter-spacing: .12em; color: #5C564C; text-transform: uppercase">{{t.kicker}}</p>
 
 
 </section>
@@ -85,7 +85,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- SELECTED WORK: one project per row -->
 <section id="work" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 120px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px">
-<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 45px; letter-spacing: -.01em">{{t.title.a}}{{sp}}<span style="color: #B23A26">{{t.title.b}}</span>{{sp}}{{t.title.c}}</h2>
+<h2 style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: 45px; letter-spacing: -.01em">{{t.title.a}}{{sp}}<span style="color: #B23A26">{{t.title.b}}</span>{{sp}}{{t.title.c}}</h2>
 <p style="margin: 0; font-size: 13px; color: #5C564C">{{t.tagline}}</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 32px">
@@ -93,7 +93,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <span class="media"><video data-loop="" src="assets/site/2ed66dd3faa9054cb8c2b788b83a3e51.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="Students interacting with holograms of the photolithography process" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.embodied.venue}}</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.embodied.title}}</span>
+<span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.embodied.title}}</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.embodied.short}}</span>
 <span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
@@ -131,7 +131,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 </svg></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.aiauthor.venue}}</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.aiauthor.title}}</span>
+<span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.aiauthor.title}}</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.aiauthor.short}}</span>
 <span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
@@ -140,7 +140,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <span class="media"><video data-loop="" src="assets/site/1337771e73364f03578d50deda5e4f57.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="A student at the spin coater with MR guidance" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.cleanroom.venue}}</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.cleanroom.title}}</span>
+<span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.cleanroom.title}}</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.cleanroom.short}}</span>
 <span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
@@ -149,7 +149,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <span class="media"><video data-loop="" src="assets/site/1427da86f6e6fd51697440a522e8ba24.mp4" autoplay="" muted="" loop="" playsinline="" preload="none" aria-label="First-person view of the MixedLAB checklist during hands-on work" style="display: block; width: 100%; height: 100%; object-fit: cover; background: #22201C"></video></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.mixedlab.venue}}</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.mixedlab.title}}</span>
+<span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.mixedlab.title}}</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.mixedlab.short}}</span>
 <span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
@@ -165,7 +165,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 </span></span>
 <span style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.projects.amblyopia.venue}}</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.amblyopia.title}}</span>
+<span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: clamp(27px, 3.2vw, 37px); line-height: 1; letter-spacing: -.01em">{{t.projects.amblyopia.title}}</span>
 <span style="font-size: 16px; line-height: 1.5; color: #3A3730">{{t.projects.amblyopia.short}}</span>
 <span class="more">{{t.proj.more}} <span aria-hidden="true">→</span></span>
 </span>
@@ -190,7 +190,7 @@ class Component extends DCLogic {
       if (q === 'zh' || q === 'en') { window.localStorage.setItem('qs-lang', q); return q; }
       const s = window.localStorage.getItem('qs-lang');
       if (s === 'zh' || s === 'en') return s;
-      return /^zh/i.test(window.navigator.language || '') ? 'zh' : 'en';
+      return 'en'; // English unless the visitor picks 中文
     } catch (e) { return 'en'; }
   }
   toggleLang() {

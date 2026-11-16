@@ -33,10 +33,10 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 @keyframes unfold{0%{transform:scale(.12) rotate(-60deg);opacity:.4}70%{transform:scale(1.03) rotate(2deg);opacity:1}100%{transform:scale(1) rotate(-1.5deg)}}
 .wob{animation:wob 3s ease-in-out infinite}
 @keyframes wob{50%{transform:translateY(-4px) rotate(2deg)}}
-.navlink{text-decoration:none;font-family: 'Josefin Sans', sans-serif;font-size:14px;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
+.navlink{text-decoration:none;font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif;font-size:14px;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
 .lang{background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:inherit;min-height:40px}
-.photo-tag{position:absolute;font-family:'Gaegu',cursive;font-weight:700;font-size:20px;text-decoration:none;color:var(--ink);background:var(--card);padding:4px 12px;box-shadow:2px 3px 0 rgba(34,32,28,.15);white-space:nowrap}
+.photo-tag{position:absolute;font-family:'Gaegu','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',cursive;font-weight:700;font-size:20px;text-decoration:none;color:var(--ink);background:var(--card);padding:4px 12px;box-shadow:2px 3px 0 rgba(34,32,28,.15);white-space:nowrap}
 .photo-tag:hover{color:#B23A26}
 .stk>img{position:relative}
 /* notebook desk + lamp light */
@@ -75,7 +75,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 .prize:focus-visible{outline:2px dashed #B23A26;outline-offset:6px}
 .awards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(6px,.7vw,10px)}
 .awards li{display:grid;grid-template-columns:5.5em 1fr;gap:14px;align-items:baseline;border-bottom:1.5px dashed rgba(34,32,28,.3);padding-bottom:6px}
-.poke{position:absolute;left:96px;top:626px;z-index:5;margin:0;display:flex;align-items:flex-start;gap:6px;font-family:'Gaegu',cursive;font-size:22px;font-weight:700;color:var(--muted);transform:rotate(-2deg);white-space:nowrap}
+.poke{position:absolute;left:96px;top:626px;z-index:5;margin:0;display:flex;align-items:flex-start;gap:6px;font-family:'Gaegu','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',cursive;font-size:22px;font-weight:700;color:var(--muted);transform:rotate(-2deg);white-space:nowrap}
 @media (prefers-reduced-motion: reduce){.prize{transition:none}}
 @media (prefers-reduced-motion: reduce){.phone .drop,.phone .spring,.phone .hand,.phone .waves path,.tape>img.hub{animation:none!important}.phone .waves path{opacity:.6}}
 .tape .reel{position:absolute;left:0;top:0;width:100%;height:auto;overflow:visible;pointer-events:none;filter:none}
@@ -84,7 +84,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 .tape:hover .reel path:nth-child(2),.tape:focus-visible .reel path:nth-child(2){transition-delay:.25s}
 .tape:hover .reel,.tape:focus-visible .reel{animation:sway 2.6s ease-in-out infinite alternate}
 @keyframes sway{from{transform:rotate(-1.5deg)}to{transform:rotate(2deg) translateY(2px)}}
-.tape .np{position:absolute;left:58%;top:-26px;font-family:'Gaegu',cursive;font-size:18px;color:var(--muted);white-space:nowrap;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.tape .np{position:absolute;left:58%;top:-26px;font-family:'Gaegu','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',cursive;font-size:18px;color:var(--muted);white-space:nowrap;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
 .tape:hover .np,.tape:focus-visible .np{opacity:1;transform:none;animation:bob 1.6s ease-in-out .3s infinite}
 @keyframes bob{50%{transform:translateY(-3px) rotate(-4deg)}}
 </style>
@@ -93,7 +93,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <body>
 <div id="dc-root"></div>
 <template id="dc-template">
-<div class="{{theme}}" style="min-height: 100vh; background: var(--paper); color: var(--ink); font-family: 'Josefin Sans', sans-serif; transition: background .6s ease, color .6s ease; position: relative">
+<div class="{{theme}}" style="min-height: 100vh; background: var(--paper); color: var(--ink); font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; transition: background .6s ease, color .6s ease; position: relative">
 
 <!-- NAV -->
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
@@ -111,13 +111,13 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <div class="sheet paper" role="dialog" aria-label="Prize collection">
 <div style="position: relative; flex: 1; display: flex; flex-direction: column; gap: clamp(10px, 1.2vw, 18px)">
 <p style="margin: 0; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{t.prize.kicker}}</p>
-<h2 style="margin: 0; font-family: 'Josefin Sans', 'DengXian', '等线', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-weight: 400; font-size: clamp(26px, 2.2vw, 34px); line-height: 1.1">{{t.prize.title}}</h2>
+<h2 style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 400; font-size: clamp(26px, 2.2vw, 34px); line-height: 1.1">{{t.prize.title}}</h2>
 <ul class="awards">
 <sc-for list="{{awards}}" as="w" hint-placeholder-count="3">
-<li><span style="flex: 0 0 auto; font-size: clamp(13px, 1vw, 15px); font-weight: 600; color: #5C564C">{{w.year}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Josefin Sans', 'DengXian', '等线', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-size: clamp(16px, 1.25vw, 20px); font-weight: 400; color: #22201C">{{w.name}}</span><span style="font-family: 'Josefin Sans', 'DengXian', '等线', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-size: clamp(13px, 1vw, 15px); font-weight: 300; color: #5C564C">{{w.org}}</span></span></li>
+<li><span style="flex: 0 0 auto; font-size: clamp(13px, 1vw, 15px); font-weight: 600; color: #5C564C">{{w.year}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: clamp(16px, 1.25vw, 20px); font-weight: 400; color: #22201C">{{w.name}}</span><span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: clamp(13px, 1vw, 15px); font-weight: 300; color: #5C564C">{{w.org}}</span></span></li>
 </sc-for>
 </ul>
-<button onClick="{{closePrize}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">{{t.prize.close}}</button>
+<button onClick="{{closePrize}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', cursive; font-size: 20px; cursor: pointer">{{t.prize.close}}</button>
 </div>
 </div>
 </div>
@@ -129,16 +129,16 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <button aria-label="Close note" onClick="{{close}}" style="position: absolute; inset: 0; border: 0; background: var(--veil); cursor: pointer"></button>
 <div class="sheet paper" role="dialog" aria-label="{{active.title}}">
 <div style="position: relative; flex: 1; display: flex; flex-direction: column; gap: clamp(8px, 1.2vw, 18px)">
-<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{active.tag}}</p>
-<h2 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 700; font-size: clamp(30px, 2.6vw, 44px); line-height: 1; text-wrap: balance">{{active.title}} <span style="white-space: nowrap; display: inline-block; font-family: 'Josefin Sans', 'DengXian', '等线', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; font-size: clamp(20px, 1.6vw, 26px); font-weight: 400; color: #5C564C">{{active.sub}}</span></h2>
-<p style="margin: 0; font-family: 'Gaegu', cursive; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.35; text-wrap: pretty">{{active.note}}</p>
+<p style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: clamp(12px, 1vw, 15px); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #B23A26">{{active.tag}}</p>
+<h2 style="margin: 0; font-family: 'Gaegu', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', cursive; font-weight: 700; font-size: clamp(30px, 2.6vw, 44px); line-height: 1; text-wrap: balance">{{active.title}} <span style="white-space: nowrap; display: inline-block; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: clamp(20px, 1.6vw, 26px); font-weight: 400; color: #5C564C">{{active.sub}}</span></h2>
+<p style="margin: 0; font-family: 'Gaegu', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', cursive; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.35; text-wrap: pretty">{{active.note}}</p>
 <sc-if value="{{active.note2}}" hint-placeholder-val="{{ false }}">
-<p style="margin: 0; font-family: 'DengXian', '等线', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.5">{{active.note2}}</p>
+<p style="margin: 0; font-family: 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.5">{{active.note2}}</p>
 </sc-if>
 <sc-if value="{{active.link}}" hint-placeholder-val="{{ false }}">
-<a href="{{active.link}}" style="align-self: flex-start; font-family: 'Josefin Sans', sans-serif; font-size: 14px; padding: 10px 0">{{active.linkLabel}} →</a>
+<a href="{{active.link}}" style="align-self: flex-start; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: 14px; padding: 10px 0">{{active.linkLabel}} →</a>
 </sc-if>
-<button onClick="{{close}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', cursive; font-size: 20px; cursor: pointer">{{t.note.close}}</button>
+<button onClick="{{close}}" style="align-self: flex-end; margin-top: auto; min-height: 44px; padding: 0 18px; border: 2px solid #22201C; color: #22201C; background: transparent; border-radius: 999px; font-family: 'Gaegu', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', cursive; font-size: 20px; cursor: pointer">{{t.note.close}}</button>
 </div>
 </div>
 </div>
@@ -162,10 +162,10 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <svg class="waves" aria-hidden="true" viewBox="0 0 30 50" style="position: absolute; left: 62px; top: 44px; width: 26px; height: 44px; overflow: visible"><path d="M4 16 C 9 21, 9 29, 4 34" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path><path d="M11 10 C 19 18, 19 32, 11 40" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path><path d="M18 4 C 29 15, 29 35, 18 46" fill="none" stroke="#B23A26" stroke-width="2.4" stroke-linecap="round"></path></svg>
 </span></span>
 </button><div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">{{t.hero.kicker}}</p>
+<p style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">{{t.hero.kicker}}</p>
 <div style="display: flex; align-items: flex-start; gap: 22px">
 
-<h1 style="margin: 0; font-family: 'Gaegu', cursive; font-weight: 400; font-size: clamp(56px, 7vw, 96px); line-height: .95; letter-spacing: -.01em">{{t.hero.hi}}&nbsp;<br>{{t.hero.name}}</h1>
+<h1 style="margin: 0; font-family: 'Gaegu', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', cursive; font-weight: 400; font-size: {{heroSize}}; line-height: .95; letter-spacing: -.01em">{{t.hero.hi}}&nbsp;<br>{{t.hero.name}}</h1>
 </div>
 
 <p style="margin: 0; font-size: 20px; line-height: 1.5; max-width: 30ch">{{t.hero.text}}</p>
@@ -242,7 +242,7 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 
 
 <!-- cat: Mafia / 黑包 -->
-<button class="stk" aria-label="Mafia the cat — open note" onClick="{{open.cat}}" style="--r: 4deg; left: 296px; top: 291px; width: 23%; position: absolute">
+<button class="stk" aria-label="Mafia the cat — open note" onClick="{{open.cat}}" onMouseEnter="{{purr}}" onFocus="{{purr}}" style="--r: 4deg; left: 296px; top: 291px; width: 23%; position: absolute">
 <img src="assets/site/bfab9230a8835f257b5d153b1b608902.webp" alt="">
 </button>
 
@@ -252,16 +252,16 @@ a{color:var(--ink)}a:hover{color:var(--accent)}
 <img src="{{lampSrc}}" alt="">
 </button>
 <p class="poke"><svg aria-hidden="true" viewBox="0 0 44 56" style="width: 34px; height: 44px; margin-top: -30px"><path d="M30 52 C 12 44, 8 26, 18 6 M8 16 L18 5 L27 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>{{t.desk.poke}}</span></p>
-<span style="position: absolute; left: 600px; top: 642px; z-index: 5; transform: rotate(-3deg); font-family: 'Gaegu', cursive; font-size: 18px; color: var(--muted); white-space: nowrap">{{lampHint}}</span>
+<span style="position: absolute; left: 600px; top: 642px; z-index: 5; transform: rotate(-3deg); font-family: 'Gaegu', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', cursive; font-size: 18px; color: var(--muted); white-space: nowrap">{{lampHint}}</span>
 </div>
 </div>
 <div class="light lday" aria-hidden="true" style="width: 903px; height: 675px; left: 581px; top: 6px; position: absolute"></div><div class="light lnight" aria-hidden="true" style="width: 903px; height: 675px; left: 581px; top: 6px; position: absolute"></div></section><footer id="about" style="max-width: 1240px; margin: 0 auto; padding: 120px 24px 64px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; position: relative">
 <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px; max-width: 620px">
 <p style="margin: 0; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted)">{{t.about.label}}</p>
 <p style="margin: 0; font-size: 18px; line-height: 1.65">{{t.about.text}}</p>
-<p style="margin: 0; font-family: 'Gaegu', cursive; font-size: 22px; color: var(--muted)">{{t.about.off}}</p>
+<p style="margin: 0; font-family: 'Gaegu', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', cursive; font-size: 22px; color: var(--muted)">{{t.about.off}}</p>
 </div>
-<div style="flex: 0 1 320px; display: flex; flex-direction: column; gap: 10px; font-family: 'Josefin Sans', sans-serif; font-size: 14px">
+<div style="flex: 0 1 320px; display: flex; flex-direction: column; gap: 10px; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: 14px">
 <p style="margin: 0; color: var(--muted); text-transform: uppercase">{{t.contact.label}}</p>
 <a href="mailto:qinglan.shan@epfl.ch" style="padding: 6px 0">qinglan.shan@epfl.ch</a>
 <a href="https://www.linkedin.com/in/qinglan-shan" style="padding: 6px 0">LinkedIn</a>
@@ -278,14 +278,14 @@ class Component extends DCLogic {
     this.state = { active: null, night: false, flash: false, prize: false, lang: this.qsLang() };
   }
   // Text in both languages comes from content/*.md (filled in by _tools/content.py).
-  i18n() { return /*I18N*/{"en":{"nav":{"about":"About Me","gallery":"Gallery","xrlab":"XR Lab","research":"Research","lang":"中文","langLabel":"切换到中文","home":"Qinglan Shan, home"},"proj":{"all":"← all projects","threads":"two threads in one study","next":"Next project","more":"read the project"},"page":{"title":"Qinglan Shan"},"hero":{"kicker":"XR designer · learning sciences researcher","hi":"Hi, I'm","name":"Qinglan.","text":"I design mixed-reality spaces and embodied interactions, and study how people learn in them.","work":"See the work","papers":"Publications"},"desk":{"poke":"poke the things on my desk"},"lamp":{"toNight":"click for night","toDay":"click for daylight"},"note":{"close":"crumple it back","me":{"tag":"say hello","title":"Hi, that’s me","text":"Thank you for being interested in me! Don’t forget to reach out!","link":"Contact: qinglan.shan@epfl.ch"},"tea":{"tag":"ritual","title":"Vine tea","text":"In my hometown, Zhangjiajie, there is a tea called meicha (vine tea), and it is my favourite. It isn’t a true tea but a herb, stir-fried from a climbing vine. The brew is bitter first, then sweet, with a long, rich aftertaste. Isn’t that a little like life?"},"cat":{"tag":"family","title":"Mafia","text":"A Siamese who keeps getting darker. Super good-tempered, and goes a little wild whenever people come over."},"book":{"tag":"reading this month","title":"Sleep","text":"Haruki Murakami. [Why this story stays with you.]"},"badminton":{"tag":"sport","title":"Badminton","text":"I played badminton at LUC (Lausanne University Club) and won women’s doubles and mixed matches for the club against the Rudi Team from Lausanne."},"tennis":{"tag":"sport","title":"Tennis","text":"After I injured my shoulder, I switched from badminton to tennis."},"snowboard":{"tag":"sport","title":"Snowboarding","text":"Five years of snowboarding, free-riding on all mountain pistes."},"chili":{"tag":"kitchen","title":"Chili","text":"A Hunan kid never cooks without it."},"rnb":{"tag":"music","title":"R&B","text":"[Three songs on repeat.]"}},"prize":{"kicker":"prize collection","title":"Awards","close":"put it away"},"award":{"1":"2021 | Guo Mingqiu Award, Tsinghua (“12·9” counsellor award) | About 40 graduate students a year, for excellence in both study and student work","2":"2021 | Outstanding Student Leader, Tsinghua | Top 0.5% of the university","3":"2019–2022 | Second-class School Scholarship, Tsinghua | MSc, Computer Science and Technology","4":"2019–2022 | Outstanding Graduate Class, Tsinghua | As class president of the Sino-French master’s programme, I led the class to the award","5":"2019 | Outstanding Graduate of Sichuan Province | Provincial level","6":"2018 | National Scholarship | About 0.2% of undergraduates nationwide","7":"2015–2019 | Highest Scholarship, Chengdu University of Technology | Three years in a row"},"about":{"label":"About me","text":"A PhD candidate at the Microsystems Laboratory, EPFL, jointly with ETH Zürich. I connect extended reality and microengineering to how students learn, using design-based research grounded in embodied learning.","off":"Off-hours: photography, snowboarding, badminton, tennis, and cooking with too much chili."},"contact":{"label":"Say hello","epfl":"EPFL profile","copy":"© 2026 Qinglan Shan"}},"zh":{"nav":{"about":"关于我","gallery":"摄影","xrlab":"XR 实验室","research":"研究","lang":"EN","langLabel":"Switch to English","home":"单晴岚，回到首页"},"proj":{"all":"← 全部项目","threads":"一项研究，两条线索","next":"下一个项目","more":"查看项目"},"page":{"title":"单晴岚"},"hero":{"kicker":"XR 设计师 · 学习科学研究者","hi":"你好，我是","name":"单晴岚。","text":"我设计混合现实空间与具身交互，并研究人们如何在其中学习。","work":"看看作品","papers":"论文发表"},"desk":{"poke":"戳戳我桌上的小东西"},"lamp":{"toNight":"点一下，天黑了","toDay":"点一下，天亮了"},"note":{"close":"揉回去","me":{"tag":"打个招呼","title":"嗨，这就是我","text":"谢谢你对我感兴趣！请和我联络吧！","link":"联系我：qinglan.shan@epfl.ch"},"tea":{"tag":"日常","title":"莓茶","text":"在我的家乡张家界有一种茶叫莓茶，是我最喜欢的茶。它不是普通的茶类，而是由植物藤炒制而成的草本植物。可它的茶汤先苦后甜，浓郁的回甘，又何尝不是一种人生写照呢？"},"cat":{"tag":"家人","title":"黑包","text":"会黑化的暹罗猫，脾气超级好，“人来疯”。"},"book":{"tag":"这个月在读","title":"《眠》","text":"村上春树。[这个故事为什么让你念念不忘。]"},"badminton":{"tag":"运动","title":"羽毛球","text":"我在洛桑大学俱乐部（LUC）打羽毛球，代表俱乐部对阵洛桑 Rudi 队，赢下了女双和混双。"},"tennis":{"tag":"运动","title":"网球","text":"肩膀受伤之后，我从羽毛球改打网球了。"},"snowboard":{"tag":"运动","title":"单板滑雪","text":"五年单板经验，全山雪道自由滑。"},"chili":{"tag":"厨房","title":"辣椒","text":"湖南人做饭，哪能少了辣椒。"},"rnb":{"tag":"音乐","title":"节奏布鲁斯","text":"[三首单曲循环的歌。]"}},"prize":{"kicker":"奖项收藏","title":"获奖经历","close":"收起来"},"award":{"1":"2021 | 清华大学“一二·九”辅导员郭明秋奖 | 学业与学生工作兼顾，每年全体研究生中评选约 40 人","2":"2021 | 清华大学优秀学生干部 | 全校前 0.5%","3":"2019–2022 | 清华大学校级二等奖学金 | 清华大学 · 计算机科学与技术 硕士","4":"2019–2022 | 清华大学先进研究生集体 | 担任中法硕士项目班班长，带领班级获评","5":"2019 | 四川省优秀毕业生 | 省级","6":"2018 | 国家奖学金 | 全国本专科生获奖比例约 0.2%","7":"2015–2019 | 成都理工大学最高奖学金 | 连续三年"},"about":{"label":"关于我","text":"我是洛桑联邦理工学院（EPFL）微系统实验室的博士生，与苏黎世联邦理工学院（ETH Zürich）联合培养。我把扩展现实、微纳工程和学生的学习连在一起，以具身学习为理论基础，用基于设计的研究方法开展工作。","off":"工作之外：摄影、单板滑雪、羽毛球、网球，还有做饭放太多辣椒。"},"contact":{"label":"打个招呼","epfl":"EPFL 个人主页","copy":"© 2026 单晴岚"}}}/*/I18N*/; }
+  i18n() { return /*I18N*/{"en":{"nav":{"about":"About Me","gallery":"Gallery","xrlab":"XR Lab","research":"Research","lang":"中文","langLabel":"切换到中文","home":"Qinglan Shan, home"},"proj":{"all":"← all projects","threads":"two threads in one study","next":"Next project","more":"read the project"},"page":{"title":"Qinglan Shan"},"hero":{"kicker":"XR designer · learning sciences researcher","hi":"Hi, I'm","name":"Qinglan.","text":"I design mixed-reality spaces and embodied interactions, and study how people learn in them.","work":"See the work","papers":"Publications"},"desk":{"poke":"poke the things on my desk"},"lamp":{"toNight":"click for night","toDay":"click for daylight"},"note":{"close":"crumple it back","me":{"tag":"say hello","title":"Hi, that’s me","text":"Thank you for being interested in me! Don’t forget to reach out!","link":"Contact: qinglan.shan@epfl.ch"},"tea":{"tag":"ritual","title":"Vine tea","text":"In my hometown, Zhangjiajie, there is a tea called meicha (vine tea), and it is my favourite. It isn’t a true tea but a herb, stir-fried from a climbing vine. The brew is bitter first, then sweet, with a long, rich aftertaste. Isn’t that a little like life?"},"cat":{"tag":"family","title":"Mafia","text":"A Siamese who keeps getting darker. Super good-tempered, and goes a little wild whenever people come over."},"book":{"tag":"reading this month","title":"Sleep","text":"Haruki Murakami. [Why this story stays with you.]"},"badminton":{"tag":"sport","title":"Badminton","text":"I played badminton at LUC (Lausanne University Club) and won women’s doubles and mixed matches for the club against the Rudi Team from Lausanne."},"tennis":{"tag":"sport","title":"Tennis","text":"After I injured my shoulder, I switched from badminton to tennis."},"snowboard":{"tag":"sport","title":"Snowboarding","text":"Five years of snowboarding, free-riding on all mountain pistes."},"chili":{"tag":"kitchen","title":"Chili","text":"A Hunan kid never cooks without it."},"rnb":{"tag":"music","title":"R&B","text":"[Three songs on repeat.]"}},"prize":{"kicker":"prize collection","title":"Awards","close":"put it away"},"award":{"1":"2021 | Guo Mingqiu Award, Tsinghua (“12·9” counsellor award) | About 40 graduate students a year, for excellence in both study and student work","2":"2021 | Outstanding Student Leader, Tsinghua | Top 0.5% of the university","3":"2019–2022 | Second-class School Scholarship, Tsinghua | MSc, Computer Science and Technology","4":"2019–2022 | Outstanding Graduate Class, Tsinghua | As class president of the Sino-French master’s programme, I led the class to the award","5":"2019 | Outstanding Graduate of Sichuan Province | Provincial level","6":"2018 | National Scholarship | About 0.2% of undergraduates nationwide","7":"2015–2019 | Highest Scholarship, Chengdu University of Technology | Three years in a row"},"about":{"label":"About me","text":"A PhD candidate at the Microsystems Laboratory, EPFL, jointly with ETH Zürich. I connect extended reality and microengineering to how students learn, using design-based research grounded in embodied learning.","off":"Off-hours: photography, snowboarding, badminton, tennis, and cooking with too much chili."},"contact":{"label":"Say hello","epfl":"EPFL profile","copy":"© 2026 Qinglan Shan"}},"zh":{"nav":{"about":"关于我","gallery":"摄影","xrlab":"XR 实验室","research":"研究","lang":"EN","langLabel":"Switch to English","home":"单晴岚，回到首页"},"proj":{"all":"← 全部项目","threads":"一项研究，两条线索","next":"下一个项目","more":"查看项目"},"page":{"title":"单晴岚"},"hero":{"kicker":"XR 设计师 · 学习科学研究者","hi":"嗨，我是岚子。","name":"","text":"我设计混合现实空间与具身交互，并研究人们如何在其中学习。","work":"看看作品","papers":"论文发表"},"desk":{"poke":"戳戳我桌上的小东西"},"lamp":{"toNight":"点一下，天黑了","toDay":"点一下，天亮了"},"note":{"close":"揉回去","me":{"tag":"打个招呼","title":"嗨，这就是我","text":"谢谢你对我感兴趣！请和我联络吧！","link":"联系我：qinglan.shan@epfl.ch"},"tea":{"tag":"日常","title":"莓茶","text":"在我的家乡张家界有一种茶叫莓茶，是我最喜欢的茶。它不是普通的茶类，而是由植物藤炒制而成的草本植物。可它的茶汤先苦后甜，浓郁的回甘，又何尝不是一种人生写照呢？"},"cat":{"tag":"家人","title":"黑包","text":"会黑化的暹罗猫，脾气超级好，“人来疯”。"},"book":{"tag":"这个月在读","title":"《眠》","text":"村上春树。[这个故事为什么让你念念不忘。]"},"badminton":{"tag":"运动","title":"羽毛球","text":"我在洛桑大学俱乐部（LUC）打羽毛球，代表俱乐部对阵洛桑 Rudi 队，赢下了女双和混双。"},"tennis":{"tag":"运动","title":"网球","text":"肩膀受伤之后，我从羽毛球改打网球了。"},"snowboard":{"tag":"运动","title":"单板滑雪","text":"五年单板经验，全山雪道自由滑。"},"chili":{"tag":"厨房","title":"辣椒","text":"湖南人做饭，哪能少了辣椒。"},"rnb":{"tag":"音乐","title":"节奏布鲁斯","text":"[三首单曲循环的歌。]"}},"prize":{"kicker":"奖项收藏","title":"获奖经历","close":"收起来"},"award":{"1":"2021 | 清华大学“一二·九”辅导员郭明秋奖 | 学业与学生工作兼顾，每年全体研究生中评选约 40 人","2":"2021 | 清华大学优秀学生干部 | 全校前 0.5%","3":"2019–2022 | 清华大学校级二等奖学金 | 清华大学 · 计算机科学与技术 硕士","4":"2019–2022 | 清华大学先进研究生集体 | 担任中法硕士项目班班长，带领班级获评","5":"2019 | 四川省优秀毕业生 | 省级","6":"2018 | 国家奖学金 | 全国本专科生获奖比例约 0.2%","7":"2015–2019 | 成都理工大学最高奖学金 | 连续三年"},"about":{"label":"关于我","text":"我是洛桑联邦理工学院（EPFL）微系统实验室的博士生，与苏黎世联邦理工学院（ETH Zürich）联合培养。我把扩展现实、微纳工程和学生的学习连在一起，以具身学习为理论基础，用基于设计的研究方法开展工作。","off":"工作之外：摄影、单板滑雪、羽毛球、网球，还有做饭放太多辣椒。"},"contact":{"label":"打个招呼","epfl":"EPFL 个人主页","copy":"© 2026 单晴岚"}}}/*/I18N*/; }
   qsLang() {
     try {
       const q = new URLSearchParams(window.location.search).get('lang');
       if (q === 'zh' || q === 'en') { window.localStorage.setItem('qs-lang', q); return q; }
       const s = window.localStorage.getItem('qs-lang');
       if (s === 'zh' || s === 'en') return s;
-      return /^zh/i.test(window.navigator.language || '') ? 'zh' : 'en';
+      return 'en'; // English unless the visitor picks 中文
     } catch (e) { return 'en'; }
   }
   toggleLang() {
@@ -400,6 +400,44 @@ class Component extends DCLogic {
       click(t + 0.43, 0.045, 3800, 0.9); click(t + 0.5, 0.07, 1600, 0.6);
     } catch (e) {}
   }
+  // Mafia purrs: one breath in and out, made on the spot with Web Audio (no sound file)
+  purr() {
+    const now = Date.now();
+    if (this.lastPurr && now - this.lastPurr < 2600) return;
+    this.lastPurr = now;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      this.ac = this.ac || new AC();
+      const ac = this.ac;
+      if (ac.state === 'suspended') ac.resume();
+      if (!this.purrBuf) {
+        const sr = ac.sampleRate, n = Math.floor(sr * 2.4);
+        const buf = ac.createBuffer(1, n, sr), d = buf.getChannelData(0);
+        const segs = [[0.1, 1.0, 27, 1], [1.2, 0.95, 23.5, 0.75]];
+        let a1 = 0, a2 = 0, peak = 0;
+        const k = 1 - Math.exp(-2 * Math.PI * 260 / sr);
+        for (const [st, len, f, amp] of segs) {
+          const a = Math.floor(st * sr), b = Math.min(n, Math.floor((st + len) * sr));
+          let ph = Math.random();
+          for (let i = a; i < b; i += 1) {
+            const x = (i - a) / (b - a);
+            a1 += k * (Math.random() * 2 - 1 - a1); a2 += k * (a1 - a2);
+            ph += f * (1 + 0.04 * Math.sin(2 * Math.PI * 1.3 * x)) / sr;
+            const p = ph % 1;
+            const pulse = Math.exp(-p * 9) * (1 - Math.exp(-p * 120));
+            const v = Math.pow(Math.sin(Math.PI * x), 0.6) * amp * pulse * (a2 * 9 + 0.25 * Math.sin(2 * Math.PI * 2 * f * i / sr));
+            d[i] = v; peak = Math.max(peak, Math.abs(v));
+          }
+        }
+        for (let i = 0; i < n; i += 1) d[i] = d[i] / (peak || 1) * 0.8;
+        this.purrBuf = buf;
+      }
+      const src = ac.createBufferSource(); src.buffer = this.purrBuf;
+      const g = ac.createGain(); g.gain.value = 0.6;
+      src.connect(g); g.connect(ac.destination); src.start();
+    } catch (e) {}
+  }
   renderVals() {
     const CUP = 'assets/site/224fedc880c0aabea1948ad07c97bdd9.webp';
     const L = this.state.lang === 'zh' ? 'zh' : 'en';
@@ -413,13 +451,15 @@ class Component extends DCLogic {
         note2: k === 'me' && L === 'en' ? (o.text || '') : '', link: k === 'me' ? 'mailto:qinglan.shan@epfl.ch' : '', linkLabel: n.link || '' };
     });
     const open = {};
-    Object.keys(notes).forEach((k) => { open[k] = () => this.setState({ active: k }); });
+    Object.keys(notes).forEach((k) => { open[k] = () => { if (k === 'cat') this.purr(); this.setState({ active: k }); }; });
     const active = this.state.active ? notes[this.state.active] : { tag: '', title: '', sub: '', note: '', note2: '', link: '', linkLabel: '' };
     const night = this.state.night;
     const fonts = { 'Caprasimo': "'Caprasimo', serif", 'Gochi Hand': "'Gochi Hand', cursive", 'Bagel Fat One': "'Bagel Fat One', sans-serif", 'Fraunces': "'Fraunces', serif" };
     return {
       t,
+      purr: () => this.purr(),
       toggleLang: () => this.toggleLang(),
+      heroSize: L === 'zh' ? 'clamp(28px, 2.8vw, 38px)' : 'clamp(56px, 7vw, 96px)',
       nameFont: fonts[this.props.nameFont ?? 'Caprasimo'] || fonts['Caprasimo'],
       open,
       active,

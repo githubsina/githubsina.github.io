@@ -14,11 +14,12 @@ EN: XR designer · learning sciences researcher
 
 ## hero.hi
 EN: Hi, I'm
-中: 你好，我是
+中: 嗨，我是岚子。
 
+> 中文版只用上面一行小字，这一条中文留空
 ## hero.name
 EN: Qinglan.
-中: 单晴岚。
+中:
 
 ## hero.text
 EN: I design mixed-reality spaces and embodied interactions, and study how people learn in them.

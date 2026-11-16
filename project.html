@@ -10,20 +10,20 @@
 <style>
 body{margin:0;background:#F3EDE1}
 a{color:#22201C}a:hover{color:#B23A26}
-.navlink{text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
+.navlink{text-decoration:none;font-family:'Josefin Sans','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',sans-serif;font-size:14px;font-weight:500;letter-spacing:.04em;padding:10px 4px;border-bottom:2px solid transparent}
 .navlink:hover{border-bottom-color:#B23A26}
 .lang{background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:inherit;min-height:40px}
-.lbl{font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#5C564C}
+.lbl{font-family:'Josefin Sans','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#5C564C}
 .shot{position:relative;margin:0;background:#FBF8F1;border:1.5px solid #E6DECF;border-radius:22px;padding:16px}
 .frame{display:block;border-radius:12px;overflow:hidden;background:#FFFFFF}
 .frame img{display:block;width:100%;height:auto}
 .frame.vid{aspect-ratio:16 / 9}
-.tab{background:none;border:0;cursor:pointer;font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:600;color:#5C564C;padding:10px 8px;min-height:44px;position:relative}
+.tab{background:none;border:0;cursor:pointer;font-family:'Josefin Sans','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',sans-serif;font-size:14px;font-weight:600;color:#5C564C;padding:10px 8px;min-height:44px;position:relative}
 .tab:hover{color:#B23A26}
 .tab:focus-visible{outline:2px dashed #B23A26;outline-offset:2px}
 .in{animation:in .6s cubic-bezier(.2,.7,.2,1) both}
 @keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.lnk{font-family:'Josefin Sans',sans-serif;font-weight:600;font-size:15px;padding:10px 0}
+.lnk{font-family:'Josefin Sans','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',sans-serif;font-weight:600;font-size:15px;padding:10px 0}
 .gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:start}
 .gal .wide{grid-column:1 / -1}
 .thread{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:40px;align-items:center;padding:28px;background:#FBF8F1;border:1.5px solid #E6DECF;border-radius:26px}
@@ -69,7 +69,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 .amb .lens{position:absolute;border-radius:50%;box-shadow:0 0 0 3px #B23A26,0 0 18px 4px rgba(178,58,38,.45);animation:ambpulse 1.8s ease-in-out infinite}
 .amb .lens.r{animation-delay:.9s}
 @keyframes ambpulse{0%,100%{opacity:.1}50%{opacity:1}}
-.amb .hz{position:absolute;padding:2px 7px;border-radius:999px;background:#B23A26;color:#FFFFFF;font-family:'Josefin Sans',sans-serif;font-size:clamp(9px,.8vw,12px);font-weight:600;white-space:nowrap;animation:ambpulse 1.8s ease-in-out infinite}
+.amb .hz{position:absolute;padding:2px 7px;border-radius:999px;background:#B23A26;color:#FFFFFF;font-family:'Josefin Sans','Songti SC','STSong','SimSun','Noto Serif SC','Source Han Serif SC',sans-serif;font-size:clamp(9px,.8vw,12px);font-weight:600;white-space:nowrap;animation:ambpulse 1.8s ease-in-out infinite}
 .amb .hz.r{animation-delay:.9s}
 .amb .scan{position:absolute;top:1.5%;height:97%;border:3px solid #B23A26;border-radius:14px;box-sizing:border-box;animation:ambscan 9s cubic-bezier(.6,0,.3,1) infinite}
 @keyframes ambscan{0%,28%{left:.4%;width:32.6%}34%,61%{left:33.8%;width:24.4%}67%,94%{left:58.4%;width:41.2%}100%{left:.4%;width:32.6%}}
@@ -81,7 +81,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <body>
 <div id="dc-root"></div>
 <template id="dc-template">
-<div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', sans-serif">
+<div style="min-height: 100vh; background: #F3EDE1; color: #22201C; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif">
 <header style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="index.html" aria-label="{{t.nav.home}}" style="text-decoration: none; display: flex; align-items: center; padding: 4px 0"><img src="assets/site/f263d74ed1eebd543953fc578079680c.webp" alt="Shan, Qinglan" style="display: block; height: 58px; width: auto"></a>
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px"><a class="navlink" href="index.html#about">{{t.nav.about}}</a><a class="navlink" href="gallery.html">{{t.nav.gallery}}</a><a class="navlink" href="xr-lab.html" style="border-bottom-color: #22201C">{{t.nav.xrlab}}</a><a class="navlink" href="research.html">{{t.nav.research}}</a><button class="navlink lang" onClick="{{toggleLang}}" aria-label="{{t.nav.langLabel}}">{{t.nav.lang}}</button></nav>
@@ -89,7 +89,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 
 <!-- project switcher -->
 <div style="max-width: 1080px; margin: 0 auto; padding: 40px 24px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-<a href="xr-lab.html" style="font-family: 'Josefin Sans', sans-serif; font-size: 18px; text-decoration: none; padding: 10px 0; letter-spacing: -.01em">{{t.proj.all}}</a>
+<a href="xr-lab.html" style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: 18px; text-decoration: none; padding: 10px 0; letter-spacing: -.01em">{{t.proj.all}}</a>
 <nav aria-label="Projects" style="display: flex; gap: 4px">
 <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
 <button class="tab" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" aria-label="{{t.title}}" style="color: {{t.color}}">{{t.no}}
@@ -104,7 +104,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- TITLE -->
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 40px 24px 0; display: flex; flex-direction: column; gap: 14px">
 <p class="lbl" style="margin: 0; color: #B23A26">{{p.venue}}</p>
-<h1 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: clamp(42px, 7vw, 74px); line-height: 1.02; max-width: 18ch; letter-spacing: -.01em">{{p.title}}</h1>
+<h1 style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: clamp(42px, 7vw, 74px); line-height: 1.02; max-width: 18ch; letter-spacing: -.01em">{{p.title}}</h1>
 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #5C564C; max-width: 72ch">{{p.paper}}</p>
 <p style="margin: 8px 0 0; font-size: 20px; line-height: 1.55; color: #3A3730; max-width: 58ch">{{p.lede}}</p>
 <dl style="margin: 14px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px 32px; border-top: 1.5px dashed #9A9284; padding-top: 20px">
@@ -171,7 +171,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 56px 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px">
 <sc-for list="{{p.stats}}" as="n" hint-placeholder-count="3">
 <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 3px solid #22201C">
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 42px; line-height: 1.02; color: #B23A26; letter-spacing: -.01em">{{n.v}}</span>
+<span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: 42px; line-height: 1.02; color: #B23A26; letter-spacing: -.01em">{{n.v}}</span>
 <span style="font-size: 15px; line-height: 1.4; color: #3A3730">{{n.k}}</span>
 </div>
 </sc-for>
@@ -182,7 +182,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 64px 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 40px 56px">
 <sc-for list="{{p.story}}" as="b" hint-placeholder-count="2">
 <div style="display: flex; flex-direction: column; gap: 10px">
-<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">{{b.h}}</h2>
+<h2 style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">{{b.h}}</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3A3730">{{b.t}}</p>
 </div>
 </sc-for>
@@ -191,15 +191,15 @@ a{color:#22201C}a:hover{color:#B23A26}
 <!-- THREADS: one paper, two lines of work -->
 <sc-if value="{{p.hasThreads}}" hint-placeholder-val="{{ false }}">
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-direction: column; gap: 28px">
-<h2 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">{{t.proj.threads}}</h2>
+<h2 style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -.01em">{{t.proj.threads}}</h2>
 <sc-for list="{{p.threads}}" as="th" hint-placeholder-count="2">
 <article class="thread">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 45px; line-height: 1.02; color: #B23A26; letter-spacing: -.01em">{{th.no}}</span>
-<h3 style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 27px; line-height: 1; letter-spacing: -.01em">{{th.h}}</h3>
+<span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: 45px; line-height: 1.02; color: #B23A26; letter-spacing: -.01em">{{th.no}}</span>
+<h3 style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: 27px; line-height: 1; letter-spacing: -.01em">{{th.h}}</h3>
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3A3730">{{th.t}}</p>
 <sc-if value="{{th.quote}}" hint-placeholder-val="{{ false }}">
-<p style="margin: 6px 0 0; font-family: 'Josefin Sans', sans-serif; font-size: 21px; line-height: 1.2; letter-spacing: -.01em">“{{th.quote}}” <span class="lbl" style="font-family: 'Josefin Sans', sans-serif">{{th.quoteBy}}</span></p>
+<p style="margin: 6px 0 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: 21px; line-height: 1.2; letter-spacing: -.01em">“{{th.quote}}” <span class="lbl" style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif">{{th.quoteBy}}</span></p>
 </sc-if>
 </div>
 <div class="frame">
@@ -228,7 +228,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 <sc-if value="{{p.quote}}" hint-placeholder-val="{{ false }}">
 <section class="in" style="max-width: 1080px; margin: 0 auto; padding: 64px 24px 0">
 <figure style="margin: 0; background: #FBF8F1; border: 1.5px solid #E6DECF; border-radius: 22px; padding: 32px 40px 26px; max-width: 760px">
-<blockquote style="margin: 0; font-family: 'Josefin Sans', sans-serif; font-size: clamp(22px, 3vw, 32px); line-height: 1.15; letter-spacing: -.01em">“{{p.quote}}”</blockquote>
+<blockquote style="margin: 0; font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-size: clamp(22px, 3vw, 32px); line-height: 1.15; letter-spacing: -.01em">“{{p.quote}}”</blockquote>
 <figcaption class="lbl" style="padding-top: 12px">{{p.quoteBy}}</figcaption>
 </figure>
 </section>
@@ -262,7 +262,7 @@ a{color:#22201C}a:hover{color:#B23A26}
 </div>
 <button onClick="{{goNext}}" style="background: none; border: 0; cursor: pointer; text-align: right; padding: 10px 0; color: #22201C; display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
 <span class="lbl">{{t.proj.next}}</span>
-<span style="font-family: 'Josefin Sans', sans-serif; font-weight: 600; font-size: 29px; line-height: 1; letter-spacing: -.01em">{{nextTitle}} →</span>
+<span style="font-family: 'Josefin Sans', 'Songti SC', 'STSong', 'SimSun', 'Noto Serif SC', 'Source Han Serif SC', sans-serif; font-weight: 600; font-size: 29px; line-height: 1; letter-spacing: -.01em">{{nextTitle}} →</span>
 </button>
 </section>
 </div>
@@ -281,7 +281,7 @@ class Component extends DCLogic {
       if (q === 'zh' || q === 'en') { window.localStorage.setItem('qs-lang', q); return q; }
       const s = window.localStorage.getItem('qs-lang');
       if (s === 'zh' || s === 'en') return s;
-      return /^zh/i.test(window.navigator.language || '') ? 'zh' : 'en';
+      return 'en'; // English unless the visitor picks 中文
     } catch (e) { return 'en'; }
   }
   toggleLang() {
