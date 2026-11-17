@@ -26,8 +26,8 @@ EN: Cleanroom training still runs on one instructor, one student, one machine. T
 中: 洁净室培训至今仍是一位老师、一名学生、一台设备。这个系统让老师一次制作 MR 培训，新手就能独立完成光刻操作。
 
 ## caption
-EN: A student works the spin coater with MR guidance, in a real microfabrication course.
-中: 真实的微加工课程中，学生在 MR 引导下操作匀胶机。
+EN: Students work through the steps on their own, guided in MR, in a real microfabrication course.
+中: 真实的微加工课程中，学生戴着 MR 头显，独立完成每一步操作。
 
 ## meta.1
 EN: Year | 2024 – 2026
@@ -73,3 +73,40 @@ EN: the invisible bubble | Students stopped imitating the teacher and worked on 
 ## link.1
 EN: Paper (ACM DOI)
 中: 论文（ACM DOI）
+
+> 第一条线索里的动图上的文字：三栏小标题 h、三栏说明 c、底部一行 foot、卡片上的“步骤”和按钮“发布”
+## fig.h1
+EN: web editor
+中: 网页编辑器
+
+## fig.h2
+EN: spatial anchors
+中: 空间锚点
+
+## fig.h3
+EN: through the headset
+中: 头显视角
+
+## fig.c1
+EN: write the steps
+中: 编写步骤
+
+## fig.c2
+EN: pin them in place
+中: 锚定到设备上
+
+## fig.c3
+EN: students follow
+中: 学生跟着做
+
+## fig.foot
+EN: web editor · on-site or off-site anchoring · HoloLens 2
+中: 网页编辑器 · 现场或远程锚定 · HoloLens 2
+
+## fig.step
+EN: Step
+中: 步骤
+
+## fig.pub
+EN: publish
+中: 发布

@@ -35,15 +35,16 @@ EN: Publications
 
 ## desk.poke
 EN: poke the things on my desk
-中: 戳戳我桌上的小东西
+中: 点点看看？
 
+> 台灯旁的小提示：中文版不显示，所以中文留空
 ## lamp.toNight
 EN: click for night
-中: 点一下，天黑了
+中:
 
 ## lamp.toDay
 EN: click for daylight
-中: 点一下，天亮了
+中:
 
 ## note.close
 EN: crumple it back
@@ -154,12 +155,12 @@ EN: music
 中: 音乐
 
 ## note.rnb.title
-EN: R&B
-中: 节奏布鲁斯
+EN: “If” · Bread
+中: 《If》· Bread
 
 ## note.rnb.text
-EN: [Three songs on repeat.]
-中: [三首单曲循环的歌。]
+EN: A soft 1971 ballad by Bread, where David Gates sings, almost in a whisper, about how words run out when you try to describe someone you love.
+中: Bread 乐队 1971 年的抒情慢歌，David Gates 用近乎耳语的嗓音，唱出想形容所爱之人时，语言总是不够用。
 
 ## prize.kicker
 EN: prize collection
