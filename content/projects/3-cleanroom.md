@@ -110,3 +110,24 @@ EN: Step
 ## fig.pub
 EN: publish
 中: 发布
+
+> 第二条线索里五张小图的名字（顺序和图一致）
+## bubble.1
+EN: Individual training
+中: 独立训练
+
+## bubble.2
+EN: Hands-on operation
+中: 动手操作
+
+## bubble.3
+EN: Team collaboration
+中: 团队协作
+
+## bubble.4
+EN: Information-seeking
+中: 寻求信息
+
+## bubble.5
+EN: Co-located interaction
+中: 同场互动

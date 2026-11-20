@@ -99,8 +99,8 @@ EN: Sleep
 中: 《眠》
 
 ## note.book.text
-EN: Haruki Murakami. [Why this story stays with you.]
-中: 村上春树。[这个故事为什么让你念念不忘。]
+EN: Haruki Murakami. “I am a body waiting for sleep, and a consciousness about to wake.” A short story I felt in my bones. I recommend it to every friend who can’t sleep.
+中: 村上春树。“我是企待睡去的肉体，也是行将醒来的意识。”非常能够感同身受的短篇，推荐给所有失眠的朋友阅读。
 
 ## note.badminton.tag
 EN: sport
